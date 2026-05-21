@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>
+    SEFERAN CMMS
+  </title>
+
+  <link
+    rel="stylesheet"
+    href="styles.css"
+  />
+
+</head>
+
+<body>
+
+  <!-- =========================================
+       LOGIN OVERLAY
+       =========================================
+
+       DESACTIVADO EN MODO DESARROLLO
+
+       Si después quieres activar login real:
+       1. Descomenta este bloque
+       2. Agrega JWT/session backend
+       3. Activa validarLogin()
+
+  ========================================== -->
+
+  <!--
+
+  <div
+    class="login-overlay"
+    id="loginOverlay"
+  >
+
+    <div class="login-card">
+
+      <div class="login-header">
+
+        <h1>
+          ⚙️ SEFERAN
+        </h1>
+
+        <span>
+          INDUSTRIAL CMMS
+        </span>
+
+      </div>
+
+      <div class="login-form">
+
+        <input
+          type="text"
+          id="loginUser"
+          placeholder="Usuario"
+        />
+
+        <input
+          type="password"
+          id="loginPassword"
+          placeholder="Contraseña"
+        />
+
+        <button
+          class="login-btn"
+          onclick="validarLogin()"
+        >
+          Ingresar
+        </button>
+
+        <p id="loginError"></p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  -->
+
+  <!-- =========================================
+       APP PRINCIPAL
+  ========================================== -->
+
+  <div class="app-layout">
+
+    <!-- =========================================
+         SIDEBAR
+    ========================================== -->
+
+    <aside class="sidebar">
+
+      <div>
+
+        <!-- LOGO -->
+
+        <div class="logo-area">
+
+          <h1>
+            ⚙️ SEFERAN
+          </h1>
+
+          <span>
+            ASSET CONTROL
+          </span>
+
+        </div>
+
+        <!-- MENÚ -->
+
+        <nav class="menu">
+
+          <button class="menu-item active">
+            Dashboard
+          </button>
+
+          <button class="menu-item">
+            Inventario
+          </button>
+
+          <button class="menu-item">
+            Movimientos
+          </button>
+
+          <button class="menu-item">
+            Auditoría
+          </button>
+
+          <!--
+          FUTURO:
+          Módulo RBAC / usuarios reales
+          -->
+
+          <button class="menu-item">
+            Usuarios
+          </button>
+
+          <!--
+          FUTURO:
+          Evidencias centralizadas
+          -->
+
+          <button class="menu-item">
+            Evidencias
+          </button>
+
+        </nav>
+
+      </div>
+
+      <!-- =========================================
+           USER PANEL
+      ========================================== -->
+
+      <div class="sidebar-user">
+
+        <div class="user-avatar">
+          👷
+        </div>
+
+        <div class="user-data">
+
+          <strong id="sidebarUser">
+            ADMIN
+          </strong>
+
+          <span id="sidebarRole">
+            MODO DESARROLLO
+          </span>
+
+        </div>
+
+      </div>
+
+    </aside>
+
+    <!-- =========================================
+         MAIN CONTENT
+    ========================================== -->
+
+    <main class="main-content">
+
+      <!-- =========================================
+           TOPBAR
+      ========================================== -->
+
+      <header class="topbar">
+
+        <div>
+
+          <h2>
+            Gestión Industrial de Refacciones
+          </h2>
+
+          <p>
+            Control técnico de inventario y mantenimiento
+          </p>
+
+        </div>
+
+        <div class="topbar-actions">
+          <!-- STATUS -->
+
+          <div class="status-live">
+
+            <span class="dot"></span>
+
+            Sistema Activo
+
+          </div>
+
+          <!--
+          DESACTIVADO EN DEV MODE
+
+          Cuando exista autenticación real:
+          1. Descomentar botón
+          2. Crear logout()
+          3. Limpiar JWT/token
+          -->
+
+          <!--
+
+          <button
+            class="logout-btn"
+            onclick="logout()"
+          >
+            Cerrar Sesión
+          </button>
+
+          -->
+
+        </div>
+
+      </header>
+
+      <!-- =========================================
+           KPIs
+      ========================================== -->
+
+      <section class="kpi-grid">
+
+        <div class="kpi-card">
+
+          <div class="kpi-info">
+
+            <span>
+              Componentes
+            </span>
+
+            <strong id="kpiTotal">
+              0
+            </strong>
+
+          </div>
+
+        </div>
+
+        <div class="kpi-card critical">
+
+          <div class="kpi-info">
+
+            <span>
+              Paro de Línea
+            </span>
+
+            <strong id="kpiCriticos">
+              0
+            </strong>
+
+          </div>
+
+        </div>
+
+        <div class="kpi-card warning">
+
+          <div class="kpi-info">
+
+            <span>
+              Stock Bajo
+            </span>
+
+            <strong id="kpiStock">
+              0
+            </strong>
+
+          </div>
+
+        </div>
+
+        <div class="kpi-card">
+
+          <div class="kpi-info">
+
+            <span>
+              Total Piezas
+            </span>
+
+            <strong id="kpiPiezas">
+              0
+            </strong>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- =========================================
+           FILTROS
+      ========================================== -->
+
+      <section class="filters">
+
+        <!-- BUSCADOR -->
+
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Buscar componente o No. Parte..."
+        />
+
+        <!-- FILTRO MÁQUINA -->
+
+        <select id="machineFilter">
+
+          <option value="Todas">
+            Todas las máquinas
+          </option>
+
+          <option value="VS250">
+            VS250
+          </option>
+
+          <option value="VS300">
+            VS300
+          </option>
+
+          <option value="MXCP-16">
+            MXCP-16
+          </option>
+
+          <option value="MXCP-14">
+            MXCP-14
+          </option>
+
+        </select>
+
+        <!-- FILTRO CRITICIDAD -->
+
+        <select id="criticalFilter">
+
+          <option value="Todos">
+            Todas las criticidades
+          </option>
+
+          <option value="PARO DE LINEA">
+            Paro de Línea
+          </option>
+
+          <option value="CRÍTICO">
+            Crítico
+          </option>
+
+          <option value="OPERACIONAL">
+            Operacional
+          </option>
+
+        </select>
+
+      </section>
+
+      <!-- =========================================
+           TABLA INVENTARIO
+      ========================================== -->
+
+      <section class="table-container">
+
+        <table>
+
+          <thead>
+
+            <tr>
+
+              <th>No. Parte</th>
+
+              <th>Descripción</th>
+
+              <th>Máquina</th>
+
+              <th>Modelo</th>
+
+          <!--     <th>Unidad</th> -->
+
+              <th>Criticidad</th>
+
+              <th>Stock</th>
+
+          <!--     <th>Última Modificación</th> -->
+
+           <!--   <th>Usuario</th> -->
+
+              <th>Acciones</th>
+
+            </tr>
+
+          </thead>
+
+          <tbody id="inventoryTable">
+
+          </tbody>
+
+        </table>
+
+      </section>
+
+      <!-- =========================================
+           BITÁCORA
+      ========================================== -->
+
+      <section class="history-section">
+
+        <div class="section-header">
+
+          <h3>
+            Bitácora Operativa
+          </h3>
+
+          <span>
+            Auditoría de movimientos en tiempo real
+          </span>
+
+        </div>
+
+        <div
+          class="history-list"
+          id="historyList"
+        >
+
+        </div>
+
+      </section>
+
+    </main>
+
+  </div>
+
+  <!-- =========================================
+       MODAL EVIDENCIA
+  ========================================== -->
+
+  <div
+    class="modal-overlay hidden"
+    id="evidenceModal"
+  >
+
+    <div class="modal-card">
+
+      <!-- HEADER -->
+
+      <div class="modal-header">
+
+        <h2>
+          Evidencia de Movimiento
+        </h2>
+
+        <button
+          class="close-btn"
+          onclick="cerrarModal()"
+        >
+          ✕
+        </button>
+
+      </div>
+
+      <!-- BODY -->
+
+      <div class="modal-body">
+
+        <div class="evidence-info">
+
+          <span>
+            Pieza:
+          </span>
+
+          <strong id="evidencePart">
+
+          </strong>
+
+        </div>
+
+        <!-- COMENTARIO -->
+
+        <textarea
+          id="evidenceComment"
+          placeholder="Comentarios del movimiento..."
+        ></textarea>
+
+        <!-- ARCHIVO -->
+
+        <input
+          type="file"
+          id="evidenceFile"
+          accept="image/*"
+        />
+
+        <!-- PREVIEW FUTURO -->
+
+        <div
+          class="preview-container"
+          id="previewContainer"
+        >
+
+        </div>
+
+      </div>
+
+      <!-- ACTIONS -->
+
+      <div class="modal-actions">
+
+        <button
+          class="secondary-btn"
+          onclick="cerrarModal()"
+        >
+          Cancelar
+        </button>
+
+        <button
+          class="primary-btn"
+          onclick="guardarEvidencia()"
+        >
+          Guardar Evidencia
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- =========================================
+       LOADER GLOBAL
+  ========================================== -->
+
+  <div
+    class="loading-overlay hidden"
+    id="loadingOverlay"
+  >
+
+    <div class="loader"></div>
+
+  </div>
+
+  <!-- SCRIPT -->
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
