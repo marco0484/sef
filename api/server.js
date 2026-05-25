@@ -9,19 +9,6 @@ app.use(cors());
 app.use(express.json());
 
 /* =========================
-   CONFIG
-========================= */
-
-app.use(cors());
-app.use(express.json());
-
-/* =========================
-   DATABASE
-========================= */
-
-const pool = require("../db");
-
-/* =========================
    TEST DB CONNECTION
 ========================= */
 
@@ -69,12 +56,15 @@ app.get("/api/piezas", async (req, res) => {
     `);
 
     res.json(result.rows);
+
   } catch (error) {
+
     console.log(error);
 
     res.status(500).json({
       error: error.message,
     });
+
   }
 });
 
@@ -83,7 +73,9 @@ app.get("/api/piezas", async (req, res) => {
 ========================= */
 
 app.put("/api/piezas/:id", async (req, res) => {
+
   try {
+
     const { id } = req.params;
     const { cantidad } = req.body;
 
@@ -103,17 +95,16 @@ app.put("/api/piezas/:id", async (req, res) => {
       ok: true,
       message: "Stock actualizado",
     });
+
   } catch (error) {
+
     console.log(error);
 
     res.status(500).json({
       error: error.message,
     });
+
   }
 });
-
-/* =========================
-   SERVER
-========================= */
 
 module.exports = app;
