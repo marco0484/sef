@@ -836,6 +836,49 @@ function toggleTheme(){
 
 }
 
+
+async function cargarInventario() {
+
+  try {
+
+    const response = await fetch(
+      "https://TU-PROYECTO.vercel.app/api/piezas"
+    );
+
+    const piezas = await response.json();
+
+    const grid = document.getElementById("inventoryGrid");
+
+    grid.innerHTML = "";
+
+    piezas.forEach((pieza) => {
+
+      grid.innerHTML += `
+        <div class="inventory-box">
+
+          <strong>
+            ${pieza.nombre}
+          </strong>
+
+          <span>
+            Stock disponible: ${pieza.cantidad} piezas
+          </span>
+
+        </div>
+      `;
+
+    });
+
+  } catch (error) {
+
+    console.log(error);
+
+  }
+
+}
+
+cargarInventario();
+
 /* CARGAR TEMA */
 
 const temaGuardado =
