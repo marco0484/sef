@@ -102,9 +102,9 @@ async function cargarInventario(){
   try{
 
     const response =
-      await fetch(
-        /api/piezas
-      );
+  await fetch(
+    "/api/piezas"
+  );
 
     inventario =
       await response.json();
