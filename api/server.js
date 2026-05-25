@@ -37,7 +37,6 @@ app.get("/api/piezas", async (req, res) => {
   try {
 
     const { data, error } = await supabase
-      .schema("sef")
       .from("cat_piezas")
       .select("*")
       .eq("ind_activo", 1)
@@ -73,7 +72,6 @@ app.put("/api/piezas/:id", async (req, res) => {
     const { cantidad } = req.body;
 
     const { data, error } = await supabase
-      .schema("sef")
       .from("cat_piezas")
       .update({
         cantidad: cantidad,
