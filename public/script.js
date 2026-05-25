@@ -581,7 +581,7 @@ function cerrarModal(){
 
 }
 
-function guardarEvidencia(){
+async function guardarEvidencia(){
 
   const archivo =
     document.getElementById(
@@ -602,47 +602,85 @@ function guardarEvidencia(){
     return;
   }
 
-  const reader =
-    new FileReader();
+  mostrarLoader(true);
 
-  reader.onload = () => {
+  try{
 
-    const evidencia = {
+    /* =========================================
+       SUBIR IMAGEN
+    ========================================= */
 
-      pieza:
-        evidenciaActual.descripcion,
+    const formData =
+      new FormData();
 
-      comentario,
-
-      imagen:
-        reader.result,
-
-      fecha:
-        new Date()
-        .toLocaleString()
-
-    };
-
-    const evidencias =
-      JSON.parse(
-        localStorage.getItem(
-          "evidenciasCMMS"
-        )
-      ) || [];
-
-    evidencias.push(
-      evidencia
+    formData.append(
+      "imagen",
+      archivo
     );
 
-    localStorage.setItem(
+    const uploadResponse =
+      await fetch(
+        "/api/upload",
+        {
+          method:"POST",
+          body:formData
+        }
+      );
 
-      "evidenciasCMMS",
+    const uploadData =
+      await uploadResponse.json();
 
-      JSON.stringify(
-        evidencias
-      )
+    if(uploadData.error){
 
-    );
+      throw new Error(
+        uploadData.error
+      );
+
+    }
+
+    /* =========================================
+       GUARDAR EN BASE
+    ========================================= */
+
+    const response =
+      await fetch(
+        "/api/evidencias",
+        {
+
+          method:"POST",
+
+          headers:{
+            "Content-Type":
+              "application/json"
+          },
+
+          body:JSON.stringify({
+
+            id_pieza:
+              evidenciaActual.id_pieza,
+
+            comentario,
+
+            imagen_url:
+              uploadData.url,
+
+            usuario:"ADMIN"
+
+          })
+
+        }
+      );
+
+    const data =
+      await response.json();
+
+    if(data.error){
+
+      throw new Error(
+        data.error
+      );
+
+    }
 
     registrarMovimiento(
       "EVIDENCIA CARGADA",
@@ -655,11 +693,19 @@ function guardarEvidencia(){
       "Evidencia guardada"
     );
 
-  };
+  }
 
-  reader.readAsDataURL(
-    archivo
-  );
+  catch(error){
+
+    console.log(error);
+
+    mostrarToast(
+      "Error guardando evidencia"
+    );
+
+  }
+
+  mostrarLoader(false);
 
 }
 

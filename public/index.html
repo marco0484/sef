@@ -118,43 +118,33 @@
 
         <!-- MENÚ -->
 
-        <nav class="menu">
+<nav class="menu">
 
-          <button class="menu-item active">
-            Dashboard
-          </button>
+  <button class="menu-item active" onclick="window.location.href='index.html'">
+    Dashboard
+  </button>
 
-          <button class="menu-item">
-            Inventario
-          </button>
+  <button class="menu-item" onclick="window.location.href='inventario.html'">
+    Inventario
+  </button>
 
-          <button class="menu-item">
-            Movimientos
-          </button>
+  <button class="menu-item" onclick="window.location.href='movimientos.html'">
+    Movimientos
+  </button>
 
-          <button class="menu-item">
-            Auditoría
-          </button>
+  <button class="menu-item" onclick="window.location.href='auditoria.html'">
+    Auditoría
+  </button>
 
-          <!--
-          FUTURO:
-          Módulo RBAC / usuarios reales
-          -->
+  <button class="menu-item" onclick="window.location.href='usuarios.html'">
+    Usuarios
+  </button>
 
-          <button class="menu-item">
-            Usuarios
-          </button>
+  <button class="menu-item" onclick="window.location.href='evidencias.html'">
+    Evidencias
+  </button>
 
-          <!--
-          FUTURO:
-          Evidencias centralizadas
-          -->
-
-          <button class="menu-item">
-            Evidencias
-          </button>
-
-        </nav>
+</nav>
 
       </div>
 
@@ -246,7 +236,7 @@
       <!-- =========================================
            KPIs
       ========================================== -->
-
+<section id="dashboardView"></section>
       <section class="kpi-grid">
 
         <div class="kpi-card">
@@ -314,6 +304,7 @@
         </div>
 
       </section>
+    </section>
 
       <!-- =========================================
            FILTROS

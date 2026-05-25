@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<body>
+
+<div class="app-layout">
+
+  <aside class="sidebar">
+
+    <div>
+
+      <div class="logo-area">
+        <h1>⚙️ SEFERAN</h1>
+        <span>ASSET CONTROL</span>
+      </div>
+
+      <nav class="menu">
+
+        <button class="menu-item" onclick="window.location.href='index.html'">Dashboard</button>
+
+        <button class="menu-item" onclick="window.location.href='inventario.html'">Inventario</button>
+
+        <button class="menu-item active" onclick="window.location.href='movimientos.html'">Movimientos</button>
+
+        <button class="menu-item" onclick="window.location.href='auditoria.html'">Auditoría</button>
+
+        <button class="menu-item" onclick="window.location.href='usuarios.html'">Usuarios</button>
+
+        <button class="menu-item" onclick="window.location.href='evidencias.html'">Evidencias</button>
+
+      </nav>
+
+    </div>
+
+  </aside>
+
+  <main class="main-content">
+
+    <header class="topbar">
+      <div>
+        <h2>Movimientos de Inventario</h2>
+        <p>Entradas, salidas y consumo de piezas</p>
+      </div>
+    </header>
+
+    <section class="history-section">
+
+      <div class="section-header">
+        <h3>Historial de Movimientos</h3>
+        <span>Registro operativo en tiempo real</span>
+      </div>
+
+      <div class="history-list">
+
+        <div class="history-item">
+          <strong>ADMIN</strong>
+          realizó:
+          CONSUMO PIEZA
+          sobre:
+          Sensor VS250
+          <span>Hoy 10:45 AM</span>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
