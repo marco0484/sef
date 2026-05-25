@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 
-const pool = require("../db");
+const { createClient } = require("@supabase/supabase-js");
 
 const app = express();
 
@@ -9,20 +9,13 @@ app.use(cors());
 app.use(express.json());
 
 /* =========================
-   TEST DB CONNECTION
+   SUPABASE
 ========================= */
 
-pool.connect((err, client, release) => {
-  if (err) {
-    return console.error(
-      "❌ Error connecting to PostgreSQL:",
-      err.message
-    );
-  }
-
-  console.log("✅ PostgreSQL connected");
-  release();
-});
+const supabase = createClient(
+  "https://uqrbykxgsarsfyyvmibr.supabase.co",
+  "sb_publishable_8K6sVOFwsLbVOUGUr6a-5A_ldVlLQxu"
+);
 
 /* =========================
    ROOT
@@ -40,22 +33,20 @@ app.get("/", (req, res) => {
 ========================= */
 
 app.get("/api/piezas", async (req, res) => {
-  try {
-    const result = await pool.query(`
-      SELECT
-        id_pieza,
-        modelo,
-        no_parte,
-        descripcion,
-        cantidad,
-        unidad,
-        ind_activo
-      FROM sef.cat_piezas
-      WHERE ind_activo = 1
-      ORDER BY id_pieza
-    `);
 
-    res.json(result.rows);
+  try {
+
+    const { data, error } = await supabase
+      .from("cat_piezas")
+      .select("*")
+      .eq("ind_activo", 1)
+      .order("id_pieza", { ascending: true });
+
+    if (error) {
+      throw error;
+    }
+
+    res.json(data);
 
   } catch (error) {
 
@@ -66,6 +57,7 @@ app.get("/api/piezas", async (req, res) => {
     });
 
   }
+
 });
 
 /* =========================
@@ -79,21 +71,23 @@ app.put("/api/piezas/:id", async (req, res) => {
     const { id } = req.params;
     const { cantidad } = req.body;
 
-    await pool.query(
-      `
-      UPDATE sef.cat_piezas
-      SET
-        cantidad = $1,
-        fec_modificacion = CURRENT_TIMESTAMP,
-        usuario_modificacion = $2
-      WHERE id_pieza = $3
-      `,
-      [cantidad, "ADMIN", id]
-    );
+    const { data, error } = await supabase
+      .from("cat_piezas")
+      .update({
+        cantidad: cantidad,
+        fec_modificacion: new Date(),
+        usuario_modificacion: "ADMIN",
+      })
+      .eq("id_pieza", id);
+
+    if (error) {
+      throw error;
+    }
 
     res.json({
       ok: true,
       message: "Stock actualizado",
+      data,
     });
 
   } catch (error) {
@@ -105,6 +99,7 @@ app.put("/api/piezas/:id", async (req, res) => {
     });
 
   }
+
 });
 
 module.exports = app;
