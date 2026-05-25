@@ -833,6 +833,16 @@ function toggleTheme(){
 
 }
 
+document.getElementById("btnWhats").addEventListener("click", () => {
+
+    const mensaje = `
+Hola, necesito solicitar una refacción.
+`;
+
+    const url = `https://wa.me/525559307784?text=${encodeURIComponent(mensaje)}`;
+
+    window.open(url, "_blank");
+});
 
 
 /* CARGAR TEMA */
