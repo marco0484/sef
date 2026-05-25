@@ -889,15 +889,26 @@ Hola, necesito solicitar una refacción.
    AUDITORIA
 ========================================= */
 
+/* =========================================
+   AUDITORIA
+========================================= */
+
 async function cargarAuditoria(){
 
   try{
 
     const response =
-      await fetch("/api/piezas");
+      await fetch(
+        "/api/piezas"
+      );
 
-    const inventario =
+    const data =
       await response.json();
+
+    console.log(
+      "AUDITORIA DATA:",
+      data
+    );
 
     /* =========================
        INCIDENCIAS
@@ -905,10 +916,14 @@ async function cargarAuditoria(){
     ========================= */
 
     const incidencias =
-      inventario.filter(
-        item =>
-          Number(item.cantidad) <= 1
-      ).length;
+      data.filter(item => {
+
+        const cantidad =
+          Number(item.cantidad || 0);
+
+        return cantidad <= 1;
+
+      }).length;
 
     /* =========================
        ALERTAS
@@ -916,10 +931,24 @@ async function cargarAuditoria(){
     ========================= */
 
     const alertas =
-      inventario.filter(
-        item =>
-          Number(item.cantidad) <= 3
-      ).length;
+      data.filter(item => {
+
+        const cantidad =
+          Number(item.cantidad || 0);
+
+        return cantidad <= 3;
+
+      }).length;
+
+    console.log(
+      "INCIDENCIAS:",
+      incidencias
+    );
+
+    console.log(
+      "ALERTAS:",
+      alertas
+    );
 
     /* =========================
        RENDER
