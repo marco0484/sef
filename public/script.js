@@ -83,15 +83,29 @@ function iniciarSistema(){
 
   }
 
+const sidebarUser =
   document.getElementById(
     "sidebarUser"
-  ).innerText =
+  );
+
+if(sidebarUser){
+
+  sidebarUser.innerText =
     "ADMIN";
 
+}
+
+const sidebarRole =
   document.getElementById(
     "sidebarRole"
-  ).innerText =
+  );
+
+if(sidebarRole){
+
+  sidebarRole.innerText =
     "MODO DESARROLLO";
+
+}
 
   cargarInventario();
 
@@ -841,16 +855,33 @@ function toggleTheme(){
 
 }
 
-document.getElementById("btnWhats").addEventListener("click", () => {
+const btnWhats =
+  document.getElementById(
+    "btnWhats"
+  );
 
-    const mensaje = `
+if(btnWhats){
+
+  btnWhats.addEventListener(
+    "click",
+    () => {
+
+      const mensaje = `
 Hola, necesito solicitar una refacción.
 `;
 
-    const url = `https://wa.me/525559307784?text=${encodeURIComponent(mensaje)}`;
+      const url =
+        `https://wa.me/525559307784?text=${encodeURIComponent(mensaje)}`;
 
-    window.open(url, "_blank");
-});
+      window.open(
+        url,
+        "_blank"
+      );
+
+    }
+  );
+
+}
 
 
 
