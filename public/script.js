@@ -54,6 +54,14 @@ window.onload = () => {
 
   iniciarSistema();
 
+  if(
+    window.location.pathname.includes(
+      "auditoria.html"
+    )
+  ){
+    cargarAuditoria();
+  }
+
 };
 
 /* =========================================
@@ -844,6 +852,84 @@ Hola, necesito solicitar una refacción.
     window.open(url, "_blank");
 });
 
+
+
+/* =========================================
+   AUDITORIA
+========================================= */
+
+async function cargarAuditoria(){
+
+  try{
+
+    const response =
+      await fetch("/api/piezas");
+
+    const inventario =
+      await response.json();
+
+    /* =========================
+       INCIDENCIAS
+       STOCK <= 1
+    ========================= */
+
+    const incidencias =
+      inventario.filter(
+        item =>
+          Number(item.cantidad) <= 1
+      ).length;
+
+    /* =========================
+       ALERTAS
+       STOCK <= 3
+    ========================= */
+
+    const alertas =
+      inventario.filter(
+        item =>
+          Number(item.cantidad) <= 3
+      ).length;
+
+    /* =========================
+       RENDER
+    ========================= */
+
+    const incidenciasElement =
+      document.getElementById(
+        "kpiIncidencias"
+      );
+
+    const alertasElement =
+      document.getElementById(
+        "kpiAlertas"
+      );
+
+    if(incidenciasElement){
+
+      incidenciasElement.innerText =
+        incidencias;
+
+    }
+
+    if(alertasElement){
+
+      alertasElement.innerText =
+        alertas;
+
+    }
+
+  }
+
+  catch(error){
+
+    console.log(
+      "Error auditoria:",
+      error
+    );
+
+  }
+
+}
 
 /* CARGAR TEMA */
 
