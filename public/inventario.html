@@ -115,49 +115,37 @@
 
     <section class="page-card">
 
-      <h3>
-        Inventario General
-      </h3>
+      <div class="section-header">
 
-      <p>
-        Gestión visual de refacciones industriales.
-      </p>
+        <div>
 
-      <div class="inventory-grid">
+          <h3>
+            Inventario General
+          </h3>
 
-        <div class="inventory-box">
-
-          <strong>
-            Rodamiento SKF
-          </strong>
-
-          <span>
-            Stock disponible: 12 piezas
-          </span>
+          <p>
+            Inventario dinámico conectado con Supabase.
+          </p>
 
         </div>
 
-        <div class="inventory-box">
+        <button
+          class="primary-btn"
+          onclick="cargarInventario()"
+        >
+          Actualizar
+        </button>
 
-          <strong>
-            Sensor VS250
-          </strong>
+      </div>
 
-          <span>
-            Stock disponible: 4 piezas
-          </span>
+      <div
+        class="inventory-grid"
+        id="inventoryGrid"
+      >
 
-        </div>
+        <div class="loading-card">
 
-        <div class="inventory-box">
-
-          <strong>
-            Motor MXCP
-          </strong>
-
-          <span>
-            Stock disponible: 2 piezas
-          </span>
+          Cargando inventario...
 
         </div>
 
@@ -169,7 +157,95 @@
 
 </div>
 
-<script src="script.js"></script>
+<script>
+
+async function cargarInventario() {
+
+  try {
+
+    const response = await fetch(
+      "https://TU-PROYECTO.vercel.app/api/piezas"
+    );
+
+    const piezas = await response.json();
+
+    const grid = document.getElementById(
+      "inventoryGrid"
+    );
+
+    grid.innerHTML = "";
+
+    if (!piezas.length) {
+
+      grid.innerHTML = `
+        <div class="inventory-box">
+
+          <strong>
+            Sin registros
+          </strong>
+
+          <span>
+            No existen piezas registradas
+          </span>
+
+        </div>
+      `;
+
+      return;
+
+    }
+
+    piezas.forEach((pieza) => {
+
+      grid.innerHTML += `
+
+        <div class="inventory-box">
+
+          <strong>
+            ${pieza.nombre}
+          </strong>
+
+          <span>
+            Stock disponible:
+            ${pieza.cantidad}
+            piezas
+          </span>
+
+        </div>
+
+      `;
+
+    });
+
+  } catch (error) {
+
+    console.log(error);
+
+    document.getElementById(
+      "inventoryGrid"
+    ).innerHTML = `
+
+      <div class="inventory-box">
+
+        <strong>
+          Error
+        </strong>
+
+        <span>
+          No fue posible cargar el inventario
+        </span>
+
+      </div>
+
+    `;
+
+  }
+
+}
+
+cargarInventario();
+
+</script>
 
 </body>
 </html>
