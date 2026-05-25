@@ -16,7 +16,7 @@
 
     {
       "src": "/api/(.*)",
-      "dest": "/api/server.js"
+      "dest": "api/server.js"
     },
 
     {
