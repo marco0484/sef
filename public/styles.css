@@ -1155,6 +1155,235 @@ font-size:0.8rem;
 
 }
 
+/* =========================================
+   INVENTARIO
+========================================= */
+
+.page-card{
+
+  background:#111827;
+
+  border:1px solid #1e293b;
+
+  border-radius:22px;
+
+  padding:24px;
+
+  margin-bottom:24px;
+
+  box-shadow:
+    0 10px 30px
+    rgba(0,0,0,0.25);
+}
+
+.page-card h3{
+
+  font-size:1.4rem;
+
+  margin-bottom:10px;
+
+  color:white;
+}
+
+.page-card p{
+
+  color:#94a3b8;
+
+  margin-bottom:20px;
+}
+
+.inventory-grid{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(auto-fit,minmax(240px,1fr));
+
+  gap:20px;
+}
+
+.inventory-box{
+
+  background:#0f172a;
+
+  border:1px solid #1e293b;
+
+  border-radius:18px;
+
+  padding:20px;
+
+  transition:.2s ease;
+}
+
+.inventory-box:hover{
+
+  transform:translateY(-4px);
+
+  border-color:#2563eb;
+}
+
+.inventory-box strong{
+
+  display:block;
+
+  font-size:1.2rem;
+
+  margin-bottom:12px;
+
+  color:white;
+}
+
+.inventory-box span{
+
+  color:#94a3b8;
+
+  font-size:.9rem;
+}
+
+/* =========================================
+   MOVIMIENTOS
+========================================= */
+
+.timeline{
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:18px;
+}
+
+.timeline-item{
+
+  background:#0f172a;
+
+  border:1px solid #1e293b;
+
+  border-left:5px solid #2563eb;
+
+  border-radius:18px;
+
+  padding:20px;
+
+  transition:.2s;
+}
+
+.timeline-item:hover{
+
+  transform:translateX(4px);
+}
+
+.timeline-item strong{
+
+  display:block;
+
+  color:#60a5fa;
+
+  margin-bottom:8px;
+}
+
+.timeline-item p{
+
+  color:#cbd5e1;
+
+  margin-bottom:10px;
+}
+
+.timeline-item span{
+
+  color:#64748b;
+
+  font-size:.8rem;
+}
+
+/* =========================================
+   AUDITORÍA
+========================================= */
+
+.audit-grid{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+
+  gap:20px;
+}
+
+.audit-card{
+
+  background:#0f172a;
+
+  border:1px solid #1e293b;
+
+  border-radius:20px;
+
+  padding:22px;
+
+  position:relative;
+
+  overflow:hidden;
+
+  transition:.25s ease;
+}
+
+.audit-card:hover{
+
+  transform:translateY(-4px);
+
+  border-color:#2563eb;
+}
+
+.audit-card::before{
+
+  content:"";
+
+  position:absolute;
+
+  top:0;
+  left:0;
+
+  width:100%;
+  height:4px;
+
+  background:#2563eb;
+}
+
+.audit-card h4{
+
+  font-size:1.1rem;
+
+  margin-bottom:12px;
+
+  color:white;
+}
+
+.audit-card p{
+
+  color:#94a3b8;
+
+  line-height:1.5;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media(max-width:768px){
+
+  .inventory-grid,
+  .audit-grid{
+
+    grid-template-columns:1fr;
+  }
+
+  .page-card{
+
+    padding:18px;
+  }
+
+}
+
 .theme-btn{
 
   background:var(--card);
