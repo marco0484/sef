@@ -1,12 +1,28 @@
 const express = require("express");
 const cors = require("cors");
+const multer = require("multer");
 
 const { createClient } = require("@supabase/supabase-js");
 
 const app = express();
 
+/* =========================
+   MIDDLEWARES
+========================= */
+
 app.use(cors());
+
 app.use(express.json());
+
+/* =========================
+   MULTER
+========================= */
+
+const storage = multer.memoryStorage();
+
+const upload = multer({
+  storage,
+});
 
 /* =========================
    SUPABASE
@@ -22,10 +38,12 @@ const supabase = createClient(
 ========================= */
 
 app.get("/", (req, res) => {
+
   res.json({
     ok: true,
     message: "API funcionando 🚀",
   });
+
 });
 
 /* =========================
@@ -37,10 +55,19 @@ app.get("/api/piezas", async (req, res) => {
   try {
 
     const { data, error } = await supabase
+
       .from("cat_piezas")
+
       .select("*")
+
       .eq("ind_activo", 1)
-      .order("id_pieza", { ascending: true });
+
+      .order(
+        "id_pieza",
+        {
+          ascending: true
+        }
+      );
 
     if (error) {
       throw error;
@@ -48,7 +75,9 @@ app.get("/api/piezas", async (req, res) => {
 
     res.json(data);
 
-  } catch (error) {
+  }
+
+  catch (error) {
 
     console.log(error);
 
@@ -69,28 +98,48 @@ app.put("/api/piezas/:id", async (req, res) => {
   try {
 
     const { id } = req.params;
+
     const { cantidad } = req.body;
 
     const { data, error } = await supabase
+
       .from("cat_piezas")
+
       .update({
-        cantidad: cantidad,
-        fec_modificacion: new Date(),
-        usuario_modificacion: "ADMIN",
+
+        cantidad,
+
+        fec_modificacion:
+          new Date(),
+
+        usuario_modificacion:
+          "ADMIN",
+
       })
-      .eq("id_pieza", id);
+
+      .eq(
+        "id_pieza",
+        id
+      );
 
     if (error) {
       throw error;
     }
 
     res.json({
+
       ok: true,
-      message: "Stock actualizado",
+
+      message:
+        "Stock actualizado",
+
       data,
+
     });
 
-  } catch (error) {
+  }
+
+  catch (error) {
 
     console.log(error);
 
@@ -102,4 +151,181 @@ app.put("/api/piezas/:id", async (req, res) => {
 
 });
 
+/* =========================
+   SUBIR IMAGEN
+========================= */
+
+app.post(
+
+  "/api/upload",
+
+  upload.single("imagen"),
+
+  async (req, res) => {
+
+    try {
+
+      if (!req.file) {
+
+        return res.status(400).json({
+          error: "No se recibió imagen",
+        });
+
+      }
+
+      /* =========================
+         NOMBRE ARCHIVO
+      ========================= */
+
+      const fileName = `
+
+        ${Date.now()}-
+        ${req.file.originalname}
+
+      `.replace(/\s/g, "");
+
+      /* =========================
+         SUBIR A SUPABASE STORAGE
+      ========================= */
+
+      const { error } = await supabase
+
+        .storage
+
+        .from("evidencias")
+
+        .upload(
+
+          fileName,
+
+          req.file.buffer,
+
+          {
+
+            contentType:
+              req.file.mimetype,
+
+          }
+
+        );
+
+      if (error) {
+        throw error;
+      }
+
+      /* =========================
+         OBTENER URL
+      ========================= */
+
+      const { data } = supabase
+
+        .storage
+
+        .from("evidencias")
+
+        .getPublicUrl(fileName);
+
+      res.json({
+
+        ok: true,
+
+        message:
+          "Imagen subida correctamente",
+
+        url:
+          data.publicUrl,
+
+      });
+
+    }
+
+    catch (error) {
+
+      console.log(error);
+
+      res.status(500).json({
+        error: error.message,
+      });
+
+    }
+
+  }
+
+);
+
+/* =========================
+   GUARDAR EVIDENCIAS
+========================= */
+
+app.post("/api/evidencias", async (req, res) => {
+
+  try {
+
+    const {
+
+      id_pieza,
+
+      comentario,
+
+      imagen_url,
+
+      usuario,
+
+    } = req.body;
+
+    const { data, error } = await supabase
+
+      .from("tbl_evidencias")
+
+      .insert([{
+
+        id_pieza,
+
+        comentario,
+
+        imagen_url,
+
+        usuario,
+
+        fecha:
+          new Date(),
+
+      }])
+
+      .select();
+
+    if (error) {
+      throw error;
+    }
+
+    res.json({
+
+      ok: true,
+
+      message:
+        "Evidencia guardada",
+
+      data,
+
+    });
+
+  }
+
+  catch (error) {
+
+    console.log(error);
+
+    res.status(500).json({
+      error: error.message,
+    });
+
+  }
+
+});
+
+/* =========================
+   EXPORT
+========================= */
+
 module.exports = app;
+
