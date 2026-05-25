@@ -12,10 +12,15 @@
     }
   ],
 
-  "rewrites": [
+  "routes": [
     {
-      "source": "/api/(.*)",
-      "destination": "/api/server.js"
+      "src": "/api/(.*)",
+      "dest": "api/server.js"
+    },
+
+    {
+      "src": "/(.*)",
+      "dest": "/public/$1"
     }
   ]
 }
