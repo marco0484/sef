@@ -19,7 +19,10 @@ const upload = multer({
    SUPABASE
 ========================= */
 
-
+const supabase = createClient(
+  "https://uqrbykxgsarsfyyvmibr.supabase.co",
+  "sb_publishable_8K6sVOFwsLbVOUGUr6a-5A_ldVlLQxu"
+);
 
 /* =========================
    ROOT
