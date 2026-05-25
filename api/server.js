@@ -210,4 +210,91 @@ app.post("/api/evidencias", async (req, res) => {
 
 });
 
+/* =========================
+   OBTENER EVIDENCIAS
+========================= */
+
+app.get("/api/evidencias", async (req, res) => {
+
+  try {
+
+    const { data, error } = await supabase
+
+      .from("tbl_evidencias")
+
+      .select("*")
+
+      .order(
+        "fecha",
+        {
+          ascending: false
+        }
+      );
+
+    if (error) {
+
+      throw error;
+
+    }
+
+    res.json(data);
+
+  }
+
+  catch (error) {
+
+    console.log(error);
+
+    res.status(500).json({
+      error: error.message,
+    });
+
+  }
+
+});
+
+
+/* =========================
+   OBTENER EVIDENCIAS
+========================= */
+
+app.get("/api/evidencias", async (req, res) => {
+
+  try {
+
+    const { data, error } = await supabase
+
+      .from("tbl_evidencias")
+
+      .select("*")
+
+      .order(
+        "fecha",
+        {
+          ascending: false
+        }
+      );
+
+    if (error) {
+
+      throw error;
+
+    }
+
+    res.json(data);
+
+  }
+
+  catch (error) {
+
+    console.log(error);
+
+    res.status(500).json({
+      error: error.message,
+    });
+
+  }
+
+});
+
 module.exports = app;
