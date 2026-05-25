@@ -1,11 +1,26 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Evidencias | SEFERAN</title>
-  <link rel="stylesheet" href="styles.css">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    Evidencias | SEFERAN
+  </title>
+
+  <link
+    rel="stylesheet"
+    href="styles.css"
+  >
+
 </head>
+
 <body>
 
 <div class="app-layout">
@@ -15,18 +30,39 @@
     <div>
 
       <div class="logo-area">
-        <h1>⚙️ SEFERAN</h1>
-        <span>ASSET CONTROL</span>
+
+        <h1>
+          ⚙️ SEFERAN
+        </h1>
+
+        <span>
+          ASSET CONTROL
+        </span>
+
       </div>
 
       <nav class="menu">
 
-        <button class="menu-item" onclick="window.location.href='index.html'">Dashboard</button>
-        <button class="menu-item" onclick="window.location.href='inventario.html'">Inventario</button>
-        <button class="menu-item" onclick="window.location.href='movimientos.html'">Movimientos</button>
-        <button class="menu-item" onclick="window.location.href='auditoria.html'">Auditoría</button>
-        <button class="menu-item" onclick="window.location.href='usuarios.html'">Usuarios</button>
-        <button class="menu-item active" onclick="window.location.href='evidencias.html'">Evidencias</button>
+        <button
+          class="menu-item"
+          onclick="window.location.href='index.html'"
+        >
+          Dashboard
+        </button>
+
+        <button
+          class="menu-item"
+          onclick="window.location.href='inventario.html'"
+        >
+          Inventario
+        </button>
+
+        <button
+          class="menu-item active"
+          onclick="window.location.href='evidencias.html'"
+        >
+          Evidencias
+        </button>
 
       </nav>
 
@@ -37,29 +73,32 @@
   <main class="main-content">
 
     <header class="topbar">
+
       <div>
-        <h2>Evidencias Operativas</h2>
-        <p>Gestión de fotografías y archivos técnicos</p>
+
+        <h2>
+          Evidencias
+        </h2>
+
+        <p>
+          Historial visual de mantenimiento
+        </p>
+
       </div>
+
     </header>
 
-    <section class="history-section">
+    <section class="page-card">
 
-      <div class="section-header">
-        <h3>Archivos Subidos</h3>
-        <span>Evidencias recientes del sistema</span>
-      </div>
+      <div
+        class="evidence-grid"
+        id="evidenceGrid"
+      >
 
-      <div class="history-list">
+        <div class="inventory-box">
 
-        <div class="history-item">
-          <strong>Motor VS250.jpg</strong>
-          <span>Subido hoy</span>
-        </div>
+          Cargando evidencias...
 
-        <div class="history-item">
-          <strong>Reporte-Mantenimiento.pdf</strong>
-          <span>Subido ayer</span>
         </div>
 
       </div>
@@ -70,6 +109,75 @@
 
 </div>
 
-<script src="script.js"></script>
+<script>
+
+async function cargarEvidencias() {
+
+  try {
+
+    const response =
+      await fetch(
+        "/api/evidencias"
+      );
+
+    const evidencias =
+      await response.json();
+
+    const grid =
+      document.getElementById(
+        "evidenceGrid"
+      );
+
+    grid.innerHTML = "";
+
+    evidencias.forEach(item => {
+
+      grid.innerHTML += `
+
+        <div class="evidence-card">
+
+          <img
+            src="${item.imagen_url}"
+            class="evidence-image"
+          >
+
+          <div class="evidence-info">
+
+            <strong>
+              Pieza ID:
+              ${item.id_pieza}
+            </strong>
+
+            <p>
+              ${item.comentario || "-"}
+            </p>
+
+            <span>
+              ${new Date(item.fecha)
+                .toLocaleString()}
+            </span>
+
+          </div>
+
+        </div>
+
+      `;
+
+    });
+
+  }
+
+  catch(error){
+
+    console.log(error);
+
+  }
+
+}
+
+cargarEvidencias();
+
+</script>
+
 </body>
 </html>

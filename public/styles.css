@@ -1448,6 +1448,74 @@ font-size:0.8rem;
 
 }
 
+.evidence-grid{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(
+      auto-fit,
+      minmax(280px,1fr)
+    );
+
+  gap:20px;
+
+}
+
+.evidence-card{
+
+  background:#111827;
+
+  border:1px solid #1f2937;
+
+  border-radius:20px;
+
+  overflow:hidden;
+
+}
+
+.evidence-image{
+
+  width:100%;
+
+  height:240px;
+
+  object-fit:cover;
+
+}
+
+.evidence-info{
+
+  padding:16px;
+
+}
+
+.evidence-info strong{
+
+  display:block;
+
+  margin-bottom:10px;
+
+  color:white;
+
+}
+
+.evidence-info p{
+
+  color:#cbd5e1;
+
+  margin-bottom:10px;
+
+}
+
+.evidence-info span{
+
+  color:#64748b;
+
+  font-size:12px;
+
+}
+
 /* =========================================
    MOBILE
 ========================================= */
