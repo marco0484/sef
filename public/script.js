@@ -103,7 +103,7 @@ async function cargarInventario(){
 
     const response =
       await fetch(
-        "http://localhost:3000/api/piezas"
+        /api/piezas
       );
 
     inventario =
@@ -432,7 +432,7 @@ async function actualizarStock(
 
     await fetch(
 
-      `http://localhost:3000/api/piezas/${id}`,
+      `/api/piezas/${id}`,
 
       {
 
