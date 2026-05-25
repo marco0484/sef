@@ -37,7 +37,7 @@ app.get("/api/piezas", async (req, res) => {
   try {
 
     const { data, error } = await supabase
-      .from("cat_piezas")
+      .from("sef.cat_piezas")
       .select("*")
       .eq("ind_activo", 1)
       .order("id_pieza", { ascending: true });
@@ -72,7 +72,7 @@ app.put("/api/piezas/:id", async (req, res) => {
     const { cantidad } = req.body;
 
     const { data, error } = await supabase
-      .from("cat_piezas")
+      .from("sef.cat_piezas")
       .update({
         cantidad: cantidad,
         fec_modificacion: new Date(),
