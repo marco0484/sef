@@ -114,35 +114,97 @@ app.put("/api/piezas/:id", async (req, res) => {
    SUBIR IMAGEN
 ========================= */
 
-app.post("/api/upload", upload.single("imagen"), async (req, res) => {
+app.post(
+  "/api/upload",
+  upload.single("imagen"),
+  async (req, res) => {
 
-  try {
+    try {
 
-    if (!req.file) {
+      if (!req.file) {
 
-      return res.status(400).json({
-        error: "No se recibió imagen",
+        return res.status(400).json({
+          error: "No se recibió imagen",
+        });
+
+      }
+
+      const fileName = `
+
+        ${Date.now()}-
+        ${req.file.originalname}
+
+      `.replace(/\s/g, "");
+
+      /* =========================
+         SUBIR A STORAGE
+      ========================= */
+
+      const { error } = await supabase
+
+        .storage
+
+        .from("evidencias")
+
+        .upload(
+
+          fileName,
+
+          req.file.buffer,
+
+          {
+
+            contentType:
+              req.file.mimetype,
+
+          }
+
+        );
+
+      if (error) {
+
+        throw error;
+
+      }
+
+      /* =========================
+         URL PUBLICA
+      ========================= */
+
+      const { data } = supabase
+
+        .storage
+
+        .from("evidencias")
+
+        .getPublicUrl(fileName);
+
+      res.json({
+
+        ok: true,
+
+        message:
+          "Imagen subida",
+
+        url:
+          data.publicUrl,
+
       });
 
     }
 
-    res.json({
-  ok: true,
-  message: "Imagen subida",
-  url: req.file.originalname,
-});
+    catch (error) {
 
-  } catch (error) {
+      console.log(error);
 
-    console.log(error);
+      res.status(500).json({
+        error: error.message,
+      });
 
-    res.status(500).json({
-      error: error.message,
-    });
+    }
 
   }
-
-});
+);
 
 /* =========================
    GUARDAR EVIDENCIA
