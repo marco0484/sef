@@ -13,9 +13,10 @@
   ],
 
   "routes": [
+
     {
       "src": "/api/(.*)",
-      "dest": "api/server.js"
+      "dest": "/api/server.js"
     },
 
     {
@@ -24,8 +25,39 @@
     },
 
     {
-      "src": "/(.*)",
-      "dest": "/public/$1"
+      "src": "/inventario",
+      "dest": "/public/inventario.html"
+    },
+
+    {
+      "src": "/movimientos",
+      "dest": "/public/movimientos.html"
+    },
+
+    {
+      "src": "/evidencias",
+      "dest": "/public/evidencias.html"
+    },
+
+    {
+      "src": "/auditoria",
+      "dest": "/public/auditoria.html"
+    },
+
+    {
+      "src": "/usuarios",
+      "dest": "/public/usuarios.html"
+    },
+
+    {
+      "src": "/styles.css",
+      "dest": "/public/styles.css"
+    },
+
+    {
+      "src": "/script.js",
+      "dest": "/public/script.js"
     }
+
   ]
 }
