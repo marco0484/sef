@@ -1,4 +1,26 @@
 <!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    Movimientos | SEFERAN
+  </title>
+
+  <link
+    rel="stylesheet"
+    href="styles.css"
+  >
+
+</head>
+
 <body>
 
 <div class="app-layout">
@@ -8,23 +30,60 @@
     <div>
 
       <div class="logo-area">
-        <h1>⚙️ SEFERAN</h1>
-        <span>ASSET CONTROL</span>
+
+        <h1>
+          ⚙️ SEFERAN
+        </h1>
+
+        <span>
+          ASSET CONTROL
+        </span>
+
       </div>
 
       <nav class="menu">
 
-        <button class="menu-item" onclick="window.location.href='index.html'">Dashboard</button>
+        <button
+          class="menu-item"
+          onclick="window.location.href='index.html'"
+        >
+          Dashboard
+        </button>
 
-        <button class="menu-item" onclick="window.location.href='inventario.html'">Inventario</button>
+        <button
+          class="menu-item"
+          onclick="window.location.href='inventario.html'"
+        >
+          Inventario
+        </button>
 
-        <button class="menu-item active" onclick="window.location.href='movimientos.html'">Movimientos</button>
+        <button
+          class="menu-item active"
+          onclick="window.location.href='movimientos.html'"
+        >
+          Movimientos
+        </button>
 
-        <button class="menu-item" onclick="window.location.href='auditoria.html'">Auditoría</button>
+        <button
+          class="menu-item"
+          onclick="window.location.href='auditoria.html'"
+        >
+          Auditoría
+        </button>
 
-        <button class="menu-item" onclick="window.location.href='usuarios.html'">Usuarios</button>
+        <button
+          class="menu-item"
+          onclick="window.location.href='usuarios.html'"
+        >
+          Usuarios
+        </button>
 
-        <button class="menu-item" onclick="window.location.href='evidencias.html'">Evidencias</button>
+        <button
+          class="menu-item"
+          onclick="window.location.href='evidencias.html'"
+        >
+          Evidencias
+        </button>
 
       </nav>
 
@@ -35,28 +94,59 @@
   <main class="main-content">
 
     <header class="topbar">
+
       <div>
-        <h2>Movimientos de Inventario</h2>
-        <p>Entradas, salidas y consumo de piezas</p>
+
+        <h2>
+          Movimientos de Inventario
+        </h2>
+
+        <p>
+          Entradas, salidas y consumo de piezas
+        </p>
+
       </div>
+
     </header>
 
-    <section class="history-section">
+    <section class="page-card">
 
-      <div class="section-header">
-        <h3>Historial de Movimientos</h3>
-        <span>Registro operativo en tiempo real</span>
-      </div>
+      <h3>
+        Movimientos Recientes
+      </h3>
 
-      <div class="history-list">
+      <div class="timeline">
 
-        <div class="history-item">
-          <strong>ADMIN</strong>
-          realizó:
-          CONSUMO PIEZA
-          sobre:
-          Sensor VS250
-          <span>Hoy 10:45 AM</span>
+        <div class="timeline-item">
+
+          <strong>
+            CONSUMO DE PIEZA
+          </strong>
+
+          <p>
+            Se utilizó un sensor industrial VS250.
+          </p>
+
+          <span>
+            Hoy · 10:45 AM
+          </span>
+
+        </div>
+
+        <div class="timeline-item">
+
+          <strong>
+            ENTRADA DE INVENTARIO
+          </strong>
+
+          <p>
+            Ingreso de 20 rodamientos SKF.
+          </p>
+
+          <span>
+            Ayer · 05:12 PM
+          </span>
+
         </div>
 
       </div>
@@ -68,5 +158,6 @@
 </div>
 
 <script src="script.js"></script>
+
 </body>
 </html>
