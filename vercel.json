@@ -1,8 +1,6 @@
 {
   "version": 2,
 
-  "cleanUrls": true,
-
   "builds": [
     {
       "src": "api/server.js",
@@ -14,15 +12,10 @@
     }
   ],
 
-  "routes": [
+  "rewrites": [
     {
-      "src": "/api/(.*)",
-      "dest": "api/server.js"
-    },
-
-    {
-      "src": "/(.*)",
-      "dest": "/public/$1"
+      "source": "/api/(.*)",
+      "destination": "/api/server.js"
     }
   ]
 }
