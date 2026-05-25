@@ -1,8 +1,12 @@
 const express = require("express");
 const cors = require("cors");
-const { Pool } = require("pg");
+
+const pool = require("../db");
 
 const app = express();
+
+app.use(cors());
+app.use(express.json());
 
 /* =========================
    CONFIG
@@ -15,12 +19,7 @@ app.use(express.json());
    DATABASE
 ========================= */
 
-const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
-  ssl: {
-    rejectUnauthorized: false,
-  },
-});
+const pool = require("../db");
 
 /* =========================
    TEST DB CONNECTION
