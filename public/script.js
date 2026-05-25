@@ -211,9 +211,6 @@ function renderTable(){
         </div>
       </td>
 
-      <td>
-        ${item.modelo || "-"}
-      </td>
 
       <td>
         ${item.modelo || "-"}
