@@ -981,17 +981,29 @@ if(temaGuardado === "light"){
    EVENTOS
 ========================================= */
 
-searchInput.addEventListener(
-  "input",
-  renderTable
-);
+if(searchInput){
 
-machineFilter.addEventListener(
-  "change",
-  renderTable
-);
+  searchInput.addEventListener(
+    "input",
+    renderTable
+  );
 
-criticalFilter.addEventListener(
-  "change",
-  renderTable
-);
+}
+
+if(machineFilter){
+
+  machineFilter.addEventListener(
+    "change",
+    renderTable
+  );
+
+}
+
+if(criticalFilter){
+
+  criticalFilter.addEventListener(
+    "change",
+    renderTable
+  );
+
+}
