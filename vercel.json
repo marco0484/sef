@@ -1,6 +1,8 @@
 {
   "version": 2,
 
+  "cleanUrls": true,
+
   "builds": [
     {
       "src": "api/server.js",
@@ -16,11 +18,6 @@
     {
       "src": "/api/(.*)",
       "dest": "api/server.js"
-    },
-
-    {
-      "src": "/",
-      "dest": "/public/index.html"
     },
 
     {
