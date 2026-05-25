@@ -159,17 +159,38 @@ async function cargarInventario(){
 
 function renderTable(){
 
+  /* =========================
+     VALIDAR TABLA
+  ========================= */
+
+  if(!table){
+    return;
+  }
+
   table.innerHTML = "";
 
+  /* =========================
+     VALIDAR FILTROS
+  ========================= */
+
   const texto =
-    searchInput.value
-    .toLowerCase();
+    searchInput
+      ? searchInput.value.toLowerCase()
+      : "";
 
   const maquina =
-    machineFilter.value;
+    machineFilter
+      ? machineFilter.value
+      : "Todas";
 
   const criticidad =
-    criticalFilter.value;
+    criticalFilter
+      ? criticalFilter.value
+      : "Todos";
+
+  /* =========================
+     FILTRADO
+  ========================= */
 
   const filtrados =
     inventario.filter(item => {
@@ -212,6 +233,10 @@ function renderTable(){
 
     });
 
+  /* =========================
+     RENDER ROWS
+  ========================= */
+
   filtrados.forEach(item => {
 
     const row =
@@ -233,15 +258,10 @@ function renderTable(){
         </div>
       </td>
 
-
       <td>
         ${item.modelo || "-"}
       </td>
-<!--
-      <td>
-        ${item.unidad || "-"}
-      </td>
--->
+
       <td>
 
         <span class="
@@ -274,26 +294,7 @@ function renderTable(){
         </div>
 
       </td>
-<!--
-      <td>
 
-        ${
-          formatearFecha(
-            item.fec_modificacion
-          )
-        }
-
-      </td>
-
-      <td>
-
-        ${
-          item.usuario_modificacion
-          || "-"
-        }
-
-      </td>
--->
       <td>
 
         <div class="actions">
