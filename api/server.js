@@ -127,12 +127,78 @@ app.post("/api/upload", upload.single("imagen"), async (req, res) => {
     }
 
     res.json({
-      ok: true,
-      message: "Imagen subida",
-      file: req.file.originalname,
-    });
+  ok: true,
+  message: "Imagen subida",
+  url: req.file.originalname,
+});
 
   } catch (error) {
+
+    console.log(error);
+
+    res.status(500).json({
+      error: error.message,
+    });
+
+  }
+
+});
+
+/* =========================
+   GUARDAR EVIDENCIA
+========================= */
+
+app.post("/api/evidencias", async (req, res) => {
+
+  try {
+
+    const {
+
+      id_pieza,
+      comentario,
+      imagen_url,
+      usuario,
+
+    } = req.body;
+
+    const { data, error } = await supabase
+
+      .from("tbl_evidencias")
+
+      .insert([{
+
+        id_pieza,
+        comentario,
+        imagen_url,
+        usuario,
+
+        fecha:
+          new Date(),
+
+      }])
+
+      .select();
+
+    if (error) {
+
+      throw error;
+
+    }
+
+    res.json({
+
+      ok: true,
+
+      message:
+        "Evidencia guardada",
+
+      data,
+
+    });
+
+  }
+
+  catch (error) {
 
     console.log(error);
 
