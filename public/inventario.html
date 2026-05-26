@@ -161,23 +161,38 @@
 
 async function cargarInventario() {
 
-  try {
-
-    const response = await fetch(
-      "https://TU-PROYECTO.vercel.app/api/piezas"
-    );
-
-    const piezas = await response.json();
-
-    const grid = document.getElementById(
+  const grid =
+    document.getElementById(
       "inventoryGrid"
     );
 
+  try {
+
+    // LOADING
+    grid.innerHTML = `
+
+      <div class="loading-card">
+        Cargando inventario...
+      </div>
+
+    `;
+
+    // FETCH LOCAL
+    const response = await fetch(
+      "/api/piezas"
+    );
+
+    const piezas =
+      await response.json();
+
+    // LIMPIAR GRID
     grid.innerHTML = "";
 
+    // SIN DATOS
     if (!piezas.length) {
 
       grid.innerHTML = `
+
         <div class="inventory-box">
 
           <strong>
@@ -189,41 +204,47 @@ async function cargarInventario() {
           </span>
 
         </div>
+
       `;
 
       return;
 
     }
 
+    // RENDER
     piezas.forEach((pieza) => {
 
-      grid.innerHTML += `
+      const card =
+        document.createElement("div");
 
-        <div class="inventory-box">
+      card.className =
+        "inventory-box";
 
-          <strong>
-            ${pieza.nombre}
-          </strong>
+      card.innerHTML = `
 
-          <span>
-            Stock disponible:
-            ${pieza.cantidad}
-            piezas
-          </span>
+        <strong>
+          ${pieza.nombre || "Sin nombre"}
+        </strong>
 
-        </div>
+        <span>
+          Stock disponible:
+          ${pieza.cantidad || 0}
+          piezas
+        </span>
 
       `;
 
+      grid.appendChild(card);
+
     });
 
-  } catch (error) {
+  }
+
+  catch (error) {
 
     console.log(error);
 
-    document.getElementById(
-      "inventoryGrid"
-    ).innerHTML = `
+    grid.innerHTML = `
 
       <div class="inventory-box">
 

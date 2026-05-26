@@ -41,6 +41,8 @@
 
       </div>
 
+      <!-- MENU COMPLETO -->
+
       <nav class="menu">
 
         <button
@@ -55,6 +57,27 @@
           onclick="window.location.href='inventario.html'"
         >
           Inventario
+        </button>
+
+        <button
+          class="menu-item"
+          onclick="window.location.href='movimientos.html'"
+        >
+          Movimientos
+        </button>
+
+        <button
+          class="menu-item"
+          onclick="window.location.href='auditoria.html'"
+        >
+          Auditoría
+        </button>
+
+        <button
+          class="menu-item"
+          onclick="window.location.href='usuarios.html'"
+        >
+          Usuarios
         </button>
 
         <button
@@ -116,9 +139,7 @@ async function cargarEvidencias() {
   try {
 
     const response =
-      await fetch(
-        "/api/evidencias"
-      );
+      await fetch("/api/evidencias");
 
     const evidencias =
       await response.json();
@@ -130,38 +151,56 @@ async function cargarEvidencias() {
 
     grid.innerHTML = "";
 
+    if (!evidencias.length) {
+
+      grid.innerHTML = `
+        <div class="inventory-box">
+          No existen evidencias
+        </div>
+      `;
+
+      return;
+
+    }
+
     evidencias.forEach(item => {
 
-      grid.innerHTML += `
+      // CREAR CARD
+      const card =
+        document.createElement("div");
 
-        <div class="evidence-card">
+      card.className =
+        "evidence-card";
 
-          <img
-            src="${item.imagen_url}"
-            class="evidence-image"
-          >
+      card.innerHTML = `
 
-          <div class="evidence-info">
+        <img
+          src="${item.imagen_url}"
+          class="evidence-image"
+        >
 
-            <strong>
-              Pieza ID:
-              ${item.id_pieza}
-            </strong>
+        <div class="evidence-info">
 
-            <p>
-              ${item.comentario || "-"}
-            </p>
+          <strong>
+            Pieza ID:
+            ${item.id_pieza}
+          </strong>
 
-            <span>
-              ${new Date(item.fecha)
-                .toLocaleString()}
-            </span>
+          <p>
+            ${item.comentario || "-"}
+          </p>
 
-          </div>
+          <span>
+            ${new Date(item.fecha)
+              .toLocaleString()}
+          </span>
 
         </div>
 
       `;
+
+      // INSERTAR CARD
+      grid.appendChild(card);
 
     });
 
@@ -170,6 +209,18 @@ async function cargarEvidencias() {
   catch(error){
 
     console.log(error);
+
+    document.getElementById(
+      "evidenceGrid"
+    ).innerHTML = `
+
+      <div class="inventory-box">
+
+        Error cargando evidencias
+
+      </div>
+
+    `;
 
   }
 
