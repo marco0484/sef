@@ -35,6 +35,66 @@ app.get("/", (req, res) => {
   });
 });
 
+
+/* =========================
+   LOGIN
+========================= */
+
+app.post("/api/login", async (req, res) => {
+
+  try {
+
+    const {
+      usuario,
+      password
+    } = req.body;
+
+    const { data, error } = await supabase
+
+      .from("usuarios")
+
+      .select("*")
+
+      .eq("usuario", usuario)
+
+      .eq("password", password)
+
+      .eq("activo", true)
+
+      .single();
+
+    if(error || !data){
+
+      return res.status(401).json({
+        error:"Credenciales inválidas"
+      });
+
+    }
+
+    res.json({
+
+      ok:true,
+
+      usuario:data.usuario,
+
+      rol:data.rol
+
+    });
+
+  }
+
+  catch(error){
+
+    console.log(error);
+
+    res.status(500).json({
+      error:error.message
+    });
+
+  }
+
+});
+
 /* =========================
    OBTENER INVENTARIO
 ========================= */

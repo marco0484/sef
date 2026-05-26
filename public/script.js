@@ -1,6 +1,38 @@
 /* =========================================
-   SEFERAN CMMS
+   AUTH
 ========================================= */
+
+const rutasPublicas = [
+
+  "/login.html"
+
+];
+
+const usuario =
+  localStorage.getItem(
+    "usuario"
+  );
+
+const rutaActual =
+  window.location.pathname;
+
+if(
+
+  !usuario
+
+  &&
+
+  !rutasPublicas.some(
+    ruta =>
+      rutaActual.includes(ruta)
+  )
+
+){
+
+  window.location.href =
+    "login.html";
+
+}
 
 /* =========================================
    VARIABLES
@@ -110,6 +142,85 @@ if(sidebarRole){
   cargarInventario();
 
   renderHistorial();
+
+}
+
+/* =========================================
+   LOGIN
+========================================= */
+
+async function login(){
+
+  const usuario =
+    document.getElementById(
+      "loginUser"
+    ).value;
+
+  const password =
+    document.getElementById(
+      "loginPass"
+    ).value;
+
+  try{
+
+    const response =
+      await fetch(
+        "/api/login",
+        {
+
+          method:"POST",
+
+          headers:{
+            "Content-Type":
+              "application/json"
+          },
+
+          body:JSON.stringify({
+
+            usuario,
+            password
+
+          })
+
+        }
+      );
+
+    const data =
+      await response.json();
+
+    if(data.error){
+
+      document.getElementById(
+        "loginError"
+      ).innerText =
+        data.error;
+
+      return;
+
+    }
+
+    // GUARDAR SESION
+    localStorage.setItem(
+      "usuario",
+      data.usuario
+    );
+
+    localStorage.setItem(
+      "rol",
+      data.rol
+    );
+
+    // REDIRECT
+    window.location.href =
+      "index.html";
+
+  }
+
+  catch(error){
+
+    console.log(error);
+
+  }
 
 }
 
