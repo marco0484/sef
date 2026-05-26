@@ -315,29 +315,25 @@ app.get("/api/evidencias", async (req, res) => {
 
 });
 
-
 /* =========================
-   OBTENER EVIDENCIAS
+   MOVIMIENTOS
 ========================= */
 
-app.get("/api/evidencias", async (req, res) => {
+app.get("/api/movimientos", async (req, res) => {
 
   try {
 
     const { data, error } = await supabase
 
-      .from("tbl_evidencias")
+      .from("movimientos_inventario")
 
       .select("*")
 
-      .order(
-        "fecha",
-        {
-          ascending: false
-        }
-      );
+      .order("fecha", {
+        ascending: false
+      });
 
-    if (error) {
+    if(error){
 
       throw error;
 
@@ -347,12 +343,12 @@ app.get("/api/evidencias", async (req, res) => {
 
   }
 
-  catch (error) {
+  catch(error){
 
     console.log(error);
 
     res.status(500).json({
-      error: error.message,
+      error:error.message
     });
 
   }
