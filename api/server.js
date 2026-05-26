@@ -51,7 +51,7 @@ app.post("/api/login", async (req, res) => {
 
     const { data, error } = await supabase
 
-      .from("usuarios")
+      .from("usuarios_sfa")
 
       .select("*")
 
