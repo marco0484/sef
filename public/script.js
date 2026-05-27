@@ -1,40 +1,4 @@
 /* =========================================
-   AUTH
-========================================= */
-
-const rutasPublicas = [
-
-  "/login.html"
-
-];
-
-const usuario =
-  localStorage.getItem(
-    "usuario"
-  );
-
-const rutaActual =
-  window.location.pathname;
-
-if(
-
-  !usuario
-
-  &&
-
-  !rutasPublicas.some(
-    ruta =>
-      rutaActual.includes(ruta)
-  )
-
-){
-
-  window.location.href =
-    "login.html";
-
-}
-
-/* =========================================
    VARIABLES
 ========================================= */
 
@@ -211,8 +175,8 @@ async function login(){
     );
 
     // REDIRECT
-    window.location.href =
-      "index.html";
+window.location.href =
+  "/index.html";
 
   }
 
