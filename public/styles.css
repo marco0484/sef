@@ -892,6 +892,118 @@ tbody tr:hover{
 }
 
 /* =========================================
+   HISTORY / BITACORA
+========================================= */
+
+.history-section{
+
+  margin-top:28px;
+
+  background:#111827;
+
+  border:1px solid #1e293b;
+
+  border-radius:24px;
+
+  padding:24px;
+
+  box-shadow:
+    0 10px 40px
+    rgba(0,0,0,.24);
+
+}
+
+.section-header{
+
+  display:flex;
+
+  align-items:flex-start;
+
+  justify-content:space-between;
+
+  gap:12px;
+
+  margin-bottom:22px;
+
+  flex-wrap:wrap;
+
+}
+
+.section-header h3{
+
+  font-size:1.2rem;
+
+  color:white;
+
+}
+
+.section-header span{
+
+  color:#94a3b8;
+
+  font-size:.85rem;
+
+}
+
+.history-list{
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:14px;
+
+}
+
+.history-item{
+
+  background:#0f172a;
+
+  border:1px solid #1e293b;
+
+  border-left:4px solid #2563eb;
+
+  border-radius:18px;
+
+  padding:16px 18px;
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:8px;
+
+  transition:.2s;
+
+}
+
+.history-item:hover{
+
+  transform:translateX(4px);
+
+  border-left-color:#60a5fa;
+
+  background:#131c31;
+
+}
+
+.history-item strong{
+
+  color:#60a5fa;
+
+  font-size:.92rem;
+
+}
+
+.history-item span{
+
+  color:#94a3b8;
+
+  font-size:.78rem;
+
+}
+
+/* =========================================
    EVIDENCE
 ========================================= */
 

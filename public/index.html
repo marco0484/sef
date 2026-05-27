@@ -22,75 +22,9 @@
 </head>
 
 <body>
-
-  <!-- =========================================
-       LOGIN OVERLAY
-       =========================================
-
-       DESACTIVADO EN MODO DESARROLLO
-
-       Si después quieres activar login real:
-       1. Descomenta este bloque
-       2. Agrega JWT/session backend
-       3. Activa validarLogin()
-
-  ========================================== -->
-
-  <!--
-
-  <div
-    class="login-overlay"
-    id="loginOverlay"
-  >
-
-    <div class="login-card">
-
-      <div class="login-header">
-
-        <h1>
-          ⚙️ SEFERAN
-        </h1>
-
-        <span>
-          INDUSTRIAL CMMS
-        </span>
-
-      </div>
-
-      <div class="login-form">
-
-        <input
-          type="text"
-          id="loginUser"
-          placeholder="Usuario"
-        />
-
-        <input
-          type="password"
-          id="loginPassword"
-          placeholder="Contraseña"
-        />
-
-        <button
-          class="login-btn"
-          onclick="validarLogin()"
-        >
-          Ingresar
-        </button>
-
-        <p id="loginError"></p>
-
-      </div>
-
-    </div>
-
-  </div>
-
-  -->
-
-  <!-- =========================================
+ =========================================
        APP PRINCIPAL
-  ========================================== -->
+  ========================================== 
 
   <div class="app-layout">
 
@@ -165,7 +99,6 @@
           </strong>
 
           <span id="sidebarRole">
-            MODO DESARROLLO
           </span>
 
         </div>
@@ -209,25 +142,12 @@
 
           </div>
 
-          <!--
-          DESACTIVADO EN DEV MODE
-
-          Cuando exista autenticación real:
-          1. Descomentar botón
-          2. Crear logout()
-          3. Limpiar JWT/token
-          -->
-
-          
-
           <button
             class="logout-btn"
             onclick="logout()"
           >
             Cerrar Sesión
           </button>
-
-         
 
         </div>
 
