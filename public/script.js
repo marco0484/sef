@@ -1,4 +1,30 @@
 /* =========================================
+   AUTH
+========================================= */
+
+const usuario =
+  localStorage.getItem("usuario");
+
+const rutaActual =
+  window.location.pathname.toLowerCase();
+
+const esLogin =
+  rutaActual.includes("login");
+
+if(!usuario && !esLogin){
+
+  window.location.href =
+    "/login.html";
+
+}
+
+/* =========================================
+   VARIABLES
+========================================= */
+
+let inventario = [];
+
+/* =========================================
    VARIABLES
 ========================================= */
 
