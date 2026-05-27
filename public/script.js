@@ -24,12 +24,6 @@ if(!usuario && !esLogin){
 
 let inventario = [];
 
-/* =========================================
-   VARIABLES
-========================================= */
-
-let inventario = [];
-
 let historial =
   JSON.parse(
     localStorage.getItem(
