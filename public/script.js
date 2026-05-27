@@ -209,6 +209,21 @@ window.location.href =
 }
 
 /* =========================================
+   LOGOUT
+========================================= */
+
+function logout(){
+
+  localStorage.removeItem("usuario");
+
+  localStorage.removeItem("rol");
+
+  window.location.href =
+    "/login.html";
+
+}
+
+/* =========================================
    API
 ========================================= */
 
