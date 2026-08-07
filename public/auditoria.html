@@ -1,70 +1,2415 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Auditoría | SEFERAN</title>
-  <link rel="stylesheet" href="styles.css">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  >
+
+  <meta
+    name="theme-color"
+    content="#07111f"
+  >
+
+  <meta
+    name="color-scheme"
+    content="dark"
+  >
+
+  <meta
+    name="description"
+    content="Auditoría industrial y trazabilidad operativa de SEFERAN Asset Control."
+  >
+
+  <title>
+    Auditoría | SEFERAN Asset Control
+  </title>
+
+  <link
+    rel="stylesheet"
+    href="styles.css"
+  >
+
 </head>
-<body>
 
-<div class="app-layout">
 
-  <aside class="sidebar">
+<body class="app-page audit-page">
 
-    <div>
 
-      <div class="logo-area">
-        <h1>⚙️ SEFERAN</h1>
-        <span>ASSET CONTROL</span>
+  <!-- =========================================
+       APP
+  ========================================== -->
+
+  <div class="app-layout">
+
+
+
+    <!-- =========================================
+         SIDEBAR DESKTOP
+    ========================================== -->
+
+    <aside
+      class="sidebar"
+      aria-label="Navegación principal"
+    >
+
+
+      <div class="sidebar-main">
+
+
+        <!-- =====================================
+             BRAND
+        ====================================== -->
+
+        <div class="app-brand">
+
+
+          <div
+            class="brand-mark"
+            aria-hidden="true"
+          >
+
+            <svg viewBox="0 0 48 48">
+
+              <path
+                d="
+                  M24 6.5
+                  39 15
+                  v18
+                  L24 41.5
+                  9 33
+                  V15
+                  L24 6.5Z
+                "
+              ></path>
+
+              <path
+                d="
+                  M17 20.5h14
+                  M17 27.5h9
+                "
+              ></path>
+
+            </svg>
+
+          </div>
+
+
+          <div class="app-brand__text">
+
+            <strong>
+              SEFERAN
+            </strong>
+
+            <span>
+              ASSET CONTROL
+            </span>
+
+          </div>
+
+
+        </div>
+
+
+
+        <!-- =====================================
+             MENU
+        ====================================== -->
+
+        <nav class="menu">
+
+
+          <!-- DASHBOARD -->
+
+          <button
+            type="button"
+            class="menu-item"
+            onclick="window.location.href='index.html'"
+          >
+
+            <span class="menu-icon">
+
+              <svg viewBox="0 0 24 24">
+
+                <path
+                  d="
+                    M4 13h6V4H4v9Z
+                    M14 20h6v-9h-6v9Z
+                    M4 20h6v-3H4v3Z
+                    M14 7h6V4h-6v3Z
+                  "
+                ></path>
+
+              </svg>
+
+            </span>
+
+            <span>
+              Dashboard
+            </span>
+
+          </button>
+
+
+
+          <!-- INVENTARIO -->
+
+          <button
+            type="button"
+            class="menu-item"
+            onclick="window.location.href='inventario.html'"
+          >
+
+            <span class="menu-icon">
+
+              <svg viewBox="0 0 24 24">
+
+                <path
+                  d="
+                    M4 7.5
+                    12 3
+                    l8 4.5
+                    V17
+                    l-8 4
+                    -8-4
+                    V7.5Z
+
+                    M4 7.5
+                    12 12
+                    l8-4.5
+
+                    M12 12v9
+                  "
+                ></path>
+
+              </svg>
+
+            </span>
+
+            <span>
+              Inventario
+            </span>
+
+          </button>
+
+
+
+          <!-- MOVIMIENTOS -->
+
+          <button
+            type="button"
+            class="menu-item"
+            onclick="window.location.href='movimientos.html'"
+          >
+
+            <span class="menu-icon">
+
+              <svg viewBox="0 0 24 24">
+
+                <path
+                  d="
+                    M7 7h11
+                    M15 4l3 3-3 3
+
+                    M17 17H6
+                    M9 14l-3 3 3 3
+                  "
+                ></path>
+
+              </svg>
+
+            </span>
+
+            <span>
+              Movimientos
+            </span>
+
+          </button>
+
+
+
+          <!-- AUDITORÍA -->
+
+          <button
+            type="button"
+            class="menu-item active"
+            aria-current="page"
+            onclick="window.location.href='auditoria.html'"
+          >
+
+            <span class="menu-icon">
+
+              <svg viewBox="0 0 24 24">
+
+                <path
+                  d="
+                    M9 5H6
+                    a2 2 0 0 0-2 2
+                    v12h12
+
+                    M14 5h4
+                    a2 2 0 0 1 2 2v4
+
+                    M9 3h6v4H9V3Z
+
+                    M14 16l2 2 4-5
+                  "
+                ></path>
+
+              </svg>
+
+            </span>
+
+            <span>
+              Auditoría
+            </span>
+
+          </button>
+
+
+
+          <!-- USUARIOS -->
+
+          <button
+            type="button"
+            class="menu-item"
+            onclick="window.location.href='usuarios.html'"
+          >
+
+            <span class="menu-icon">
+
+              <svg viewBox="0 0 24 24">
+
+                <path
+                  d="
+                    M16 21v-2
+                    a4 4 0 0 0-4-4H6
+                    a4 4 0 0 0-4 4v2
+
+                    M9 11
+                    a4 4 0 1 0 0-8
+                    4 4 0 0 0 0 8Z
+                  "
+                ></path>
+
+              </svg>
+
+            </span>
+
+            <span>
+              Usuarios
+            </span>
+
+          </button>
+
+
+
+          <!-- EVIDENCIAS -->
+
+          <button
+            type="button"
+            class="menu-item"
+            onclick="window.location.href='evidencias.html'"
+          >
+
+            <span class="menu-icon">
+
+              <svg viewBox="0 0 24 24">
+
+                <rect
+                  x="3"
+                  y="4"
+                  width="18"
+                  height="16"
+                  rx="2"
+                ></rect>
+
+                <circle
+                  cx="9"
+                  cy="10"
+                  r="2"
+                ></circle>
+
+                <path
+                  d="
+                    m21 15
+                    -5-5
+                    L5 20
+                  "
+                ></path>
+
+              </svg>
+
+            </span>
+
+            <span>
+              Evidencias
+            </span>
+
+          </button>
+
+
+        </nav>
+
+
       </div>
 
-      <nav class="menu">
 
-        <button class="menu-item" onclick="window.location.href='index.html'">Dashboard</button>
-        <button class="menu-item" onclick="window.location.href='inventario.html'">Inventario</button>
-        <button class="menu-item" onclick="window.location.href='movimientos.html'">Movimientos</button>
-        <button class="menu-item active" onclick="window.location.href='auditoria.html'">Auditoría</button>
-        <button class="menu-item" onclick="window.location.href='usuarios.html'">Usuarios</button>
-        <button class="menu-item" onclick="window.location.href='evidencias.html'">Evidencias</button>
 
-      </nav>
+      <!-- =====================================
+           USER
+      ====================================== -->
 
-    </div>
+      <div class="sidebar-footer">
 
-  </aside>
 
-  <main class="main-content">
+        <div class="sidebar-user">
 
-    <header class="topbar">
+
+          <div class="user-avatar">
+
+            <svg viewBox="0 0 24 24">
+
+              <path
+                d="
+                  M20 21
+                  a8 8 0 0 0-16 0
+
+                  M12 13
+                  a5 5 0 1 0 0-10
+                  5 5 0 0 0 0 10Z
+                "
+              ></path>
+
+            </svg>
+
+          </div>
+
+
+          <div class="user-data">
+
+            <strong id="sidebarUser">
+              ADMIN
+            </strong>
+
+            <span id="sidebarRole">
+              Administrador
+            </span>
+
+          </div>
+
+
+          <button
+            type="button"
+            class="sidebar-logout"
+            onclick="logout()"
+            aria-label="Cerrar sesión"
+          >
+
+            <svg viewBox="0 0 24 24">
+
+              <path
+                d="
+                  M10 17l5-5-5-5
+                  M15 12H3
+
+                  M15 4h4
+                  a2 2 0 0 1 2 2v12
+                  a2 2 0 0 1-2 2h-4
+                "
+              ></path>
+
+            </svg>
+
+          </button>
+
+
+        </div>
+
+
+      </div>
+
+
+    </aside>
+
+
+
+    <!-- =========================================
+         MAIN CONTENT
+    ========================================== -->
+
+    <main class="main-content">
+
+
+
+      <!-- =====================================
+           TOPBAR DESKTOP
+      ====================================== -->
+
+      <header class="topbar">
+
+
+        <div class="topbar-heading">
+
+          <span class="page-eyebrow">
+            Control y trazabilidad
+          </span>
+
+          <h1>
+            Auditoría Industrial
+          </h1>
+
+          <p>
+            Seguimiento de riesgos, alertas y operaciones críticas.
+          </p>
+
+        </div>
+
+
+
+        <div class="topbar-actions">
+
+
+          <div class="system-status">
+
+            <span class="status-dot"></span>
+
+            <div>
+
+              <span>
+                Monitoreo
+              </span>
+
+              <strong>
+                Activo
+              </strong>
+
+            </div>
+
+          </div>
+
+
+          <button
+            type="button"
+            class="icon-btn logout-icon-btn"
+            onclick="logout()"
+            aria-label="Cerrar sesión"
+          >
+
+            <svg viewBox="0 0 24 24">
+
+              <path
+                d="
+                  M10 17l5-5-5-5
+                  M15 12H3
+
+                  M15 4h4
+                  a2 2 0 0 1 2 2v12
+                  a2 2 0 0 1-2 2h-4
+                "
+              ></path>
+
+            </svg>
+
+          </button>
+
+
+        </div>
+
+
+      </header>
+
+
+
+      <!-- =====================================
+           MOBILE HEADER
+      ====================================== -->
+
+      <header class="mobile-page-header">
+
+
+        <div>
+
+          <span class="mobile-page-label">
+            Control y trazabilidad
+          </span>
+
+          <strong>
+            Auditoría
+          </strong>
+
+        </div>
+
+
+        <div class="mobile-header-actions">
+
+
+          <span
+            class="mobile-live-status"
+            aria-label="Monitoreo activo"
+          >
+
+            <span class="status-dot"></span>
+
+          </span>
+
+
+          <button
+            type="button"
+            class="mobile-profile-btn"
+            onclick="logout()"
+            aria-label="Cerrar sesión"
+          >
+
+            <svg viewBox="0 0 24 24">
+
+              <path
+                d="
+                  M20 21
+                  a8 8 0 0 0-16 0
+
+                  M12 13
+                  a5 5 0 1 0 0-10
+                  5 5 0 0 0 0 10Z
+                "
+              ></path>
+
+            </svg>
+
+          </button>
+
+
+        </div>
+
+
+      </header>
+
+
+
+      <!-- =========================================
+           HERO AUDITORÍA
+      ========================================== -->
+
+      <section class="audit-hero">
+
+
+        <div class="audit-hero__content">
+
+
+          <div class="section-icon section-icon--audit">
+
+            <svg viewBox="0 0 24 24">
+
+              <path
+                d="
+                  M9 5H6
+                  a2 2 0 0 0-2 2
+                  v12h12
+
+                  M14 5h4
+                  a2 2 0 0 1 2 2v4
+
+                  M9 3h6v4H9V3Z
+
+                  M14 16l2 2 4-5
+                "
+              ></path>
+
+            </svg>
+
+          </div>
+
+
+          <div>
+
+            <span>
+              Supervisión operativa
+            </span>
+
+            <h2>
+              Estado del sistema
+            </h2>
+
+            <p>
+              Identifica rápidamente situaciones que
+              requieren atención dentro del inventario.
+            </p>
+
+          </div>
+
+
+        </div>
+
+
+        <div class="audit-live-badge">
+
+          <span class="status-dot"></span>
+
+          <span>
+            Monitoreando
+          </span>
+
+        </div>
+
+
+      </section>
+
+
+
+      <!-- =========================================
+           KPIs AUDITORÍA
+      ========================================== -->
+
+      <section
+        class="audit-kpi-grid"
+        aria-label="Indicadores de auditoría"
+      >
+
+
+
+        <!-- =====================================
+             INCIDENCIAS
+        ====================================== -->
+
+        <article class="audit-kpi-card audit-kpi-card--critical">
+
+
+          <div class="audit-kpi-card__top">
+
+
+            <div class="audit-kpi-icon audit-kpi-icon--red">
+
+              <svg viewBox="0 0 24 24">
+
+                <path
+                  d="
+                    M12 3
+                    2.5 20h19
+                    L12 3Z
+
+                    M12 9v5
+                    M12 18h.01
+                  "
+                ></path>
+
+              </svg>
+
+            </div>
+
+
+            <span class="audit-kpi-badge audit-kpi-badge--danger">
+              Crítico
+            </span>
+
+
+          </div>
+
+
+
+          <div class="audit-kpi-content">
+
+
+            <span>
+              Incidencias
+            </span>
+
+
+            <strong id="kpiIncidencias">
+              0
+            </strong>
+
+
+            <p>
+              Eventos que requieren atención inmediata.
+            </p>
+
+
+          </div>
+
+
+          <div class="audit-kpi-footer">
+
+            <span class="audit-status-indicator audit-status-indicator--red"></span>
+
+            <span>
+              Revisión prioritaria
+            </span>
+
+          </div>
+
+
+        </article>
+
+
+
+        <!-- =====================================
+             ALERTAS
+        ====================================== -->
+
+        <article class="audit-kpi-card audit-kpi-card--warning">
+
+
+          <div class="audit-kpi-card__top">
+
+
+            <div class="audit-kpi-icon audit-kpi-icon--orange">
+
+              <svg viewBox="0 0 24 24">
+
+                <path
+                  d="
+                    M12 4v10
+                    M12 18h.01
+
+                    M5 20h14
+                    a2 2 0 0 0 1.7-3
+
+                    L13.7 5
+                    a2 2 0 0 0-3.4 0
+
+                    L3.3 17
+                    A2 2 0 0 0 5 20Z
+                  "
+                ></path>
+
+              </svg>
+
+            </div>
+
+
+            <span class="audit-kpi-badge audit-kpi-badge--warning">
+              Atención
+            </span>
+
+
+          </div>
+
+
+
+          <div class="audit-kpi-content">
+
+
+            <span>
+              Alertas
+            </span>
+
+
+            <strong id="kpiAlertas">
+              0
+            </strong>
+
+
+            <p>
+              Condiciones que deben mantenerse bajo seguimiento.
+            </p>
+
+
+          </div>
+
+
+          <div class="audit-kpi-footer">
+
+            <span class="audit-status-indicator audit-status-indicator--orange"></span>
+
+            <span>
+              Seguimiento requerido
+            </span>
+
+          </div>
+
+
+        </article>
+
+
+
+        <!-- =====================================
+             TOTAL COMPONENTES
+        ====================================== -->
+
+        <article class="audit-kpi-card">
+
+
+          <div class="audit-kpi-card__top">
+
+
+            <div class="audit-kpi-icon audit-kpi-icon--blue">
+
+              <svg viewBox="0 0 24 24">
+
+                <path
+                  d="
+                    M4 7.5
+                    12 3
+                    l8 4.5
+                    V17
+                    l-8 4
+                    -8-4
+                    V7.5Z
+                  "
+                ></path>
+
+              </svg>
+
+            </div>
+
+
+            <span class="audit-kpi-badge">
+              Inventario
+            </span>
+
+
+          </div>
+
+
+
+          <div class="audit-kpi-content">
+
+
+            <span>
+              Componentes
+            </span>
+
+
+            <strong id="auditTotalComponents">
+              —
+            </strong>
+
+
+            <p>
+              Referencias actualmente supervisadas.
+            </p>
+
+
+          </div>
+
+
+          <div class="audit-kpi-footer">
+
+            <span class="audit-status-indicator audit-status-indicator--blue"></span>
+
+            <span>
+              Bajo monitoreo
+            </span>
+
+          </div>
+
+
+        </article>
+
+
+
+        <!-- =====================================
+             OPERACIÓN ESTABLE
+        ====================================== -->
+
+        <article class="audit-kpi-card audit-kpi-card--success">
+
+
+          <div class="audit-kpi-card__top">
+
+
+            <div class="audit-kpi-icon audit-kpi-icon--green">
+
+              <svg viewBox="0 0 24 24">
+
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="9"
+                ></circle>
+
+                <path
+                  d="
+                    m8 12
+                    2.5 2.5
+                    L16 9
+                  "
+                ></path>
+
+              </svg>
+
+            </div>
+
+
+            <span class="audit-kpi-badge audit-kpi-badge--success">
+              Estable
+            </span>
+
+
+          </div>
+
+
+
+          <div class="audit-kpi-content">
+
+
+            <span>
+              Operacionales
+            </span>
+
+
+            <strong id="auditOperational">
+              —
+            </strong>
+
+
+            <p>
+              Componentes con disponibilidad adecuada.
+            </p>
+
+
+          </div>
+
+
+          <div class="audit-kpi-footer">
+
+            <span class="audit-status-indicator audit-status-indicator--green"></span>
+
+            <span>
+              Operación normal
+            </span>
+
+          </div>
+
+
+        </article>
+
+
+      </section>
+
+
+
+      <!-- =========================================
+           PANEL AUDITORÍA
+      ========================================== -->
+
+      <section class="page-card audit-panel">
+
+
+
+        <!-- =====================================
+             HEADER
+        ====================================== -->
+
+        <div class="section-header audit-section-header">
+
+
+          <div>
+
+            <span class="section-kicker">
+              Diagnóstico
+            </span>
+
+            <h2>
+              Estado de inventario
+            </h2>
+
+            <p>
+              Distribución actual por nivel de criticidad.
+            </p>
+
+          </div>
+
+
+          <button
+            type="button"
+            class="refresh-btn"
+            onclick="cargarAuditoria()"
+          >
+
+            <svg viewBox="0 0 24 24">
+
+              <path
+                d="
+                  M20 11
+                  a8 8 0 1 0-2.3 5.7
+
+                  M20 4v7h-7
+                "
+              ></path>
+
+            </svg>
+
+            <span>
+              Actualizar
+            </span>
+
+          </button>
+
+
+        </div>
+
+
+
+        <!-- =====================================
+             HEALTH
+        ====================================== -->
+
+        <div class="audit-health">
+
+
+          <div class="audit-health__main">
+
+
+            <div class="audit-health__visual">
+
+
+              <div
+                class="audit-health-ring"
+                id="auditHealthRing"
+              >
+
+                <div>
+
+                  <strong id="auditHealthPercentage">
+                    —
+                  </strong>
+
+                  <span>
+                    Salud
+                  </span>
+
+                </div>
+
+              </div>
+
+
+            </div>
+
+
+
+            <div class="audit-health__info">
+
+
+              <span class="audit-health-label">
+                Estado general
+              </span>
+
+
+              <h3 id="auditHealthStatus">
+                Calculando...
+              </h3>
+
+
+              <p>
+                El indicador considera la cantidad de
+                componentes con existencias operativas
+                respecto al total registrado.
+              </p>
+
+
+            </div>
+
+
+          </div>
+
+
+
+          <!-- LEGEND -->
+
+          <div class="audit-health__legend">
+
+
+            <div>
+
+              <span class="legend-dot legend-dot--red"></span>
+
+              <div>
+
+                <strong>
+                  Paro de línea
+                </strong>
+
+                <span id="auditCriticalLegend">
+                  0 componentes
+                </span>
+
+              </div>
+
+            </div>
+
+
+
+            <div>
+
+              <span class="legend-dot legend-dot--orange"></span>
+
+              <div>
+
+                <strong>
+                  Crítico
+                </strong>
+
+                <span id="auditWarningLegend">
+                  0 componentes
+                </span>
+
+              </div>
+
+            </div>
+
+
+
+            <div>
+
+              <span class="legend-dot legend-dot--green"></span>
+
+              <div>
+
+                <strong>
+                  Operacional
+                </strong>
+
+                <span id="auditOkLegend">
+                  0 componentes
+                </span>
+
+              </div>
+
+            </div>
+
+
+          </div>
+
+
+        </div>
+
+
+      </section>
+
+
+
+      <!-- =========================================
+           PRIORIDADES
+      ========================================== -->
+
+      <section class="page-card audit-priority-panel">
+
+
+        <div class="section-header">
+
+
+          <div>
+
+            <span class="section-kicker">
+              Prioridad operativa
+            </span>
+
+            <h2>
+              Requieren atención
+            </h2>
+
+            <p>
+              Componentes con existencias comprometidas.
+            </p>
+
+          </div>
+
+
+          <button
+            type="button"
+            class="history-link-btn"
+            onclick="window.location.href='inventario.html'"
+          >
+
+            Ver inventario
+
+            <svg viewBox="0 0 24 24">
+
+              <path
+                d="
+                  M5 12h14
+                  M14 7l5 5-5 5
+                "
+              ></path>
+
+            </svg>
+
+          </button>
+
+
+        </div>
+
+
+
+        <div
+          class="audit-priority-list"
+          id="auditPriorityList"
+          aria-live="polite"
+        >
+
+
+          <div class="audit-loading-state">
+
+            <span class="loading-spinner"></span>
+
+            <div>
+
+              <strong>
+                Analizando inventario
+              </strong>
+
+              <span>
+                Identificando componentes críticos...
+              </span>
+
+            </div>
+
+          </div>
+
+
+        </div>
+
+
+      </section>
+
+
+    </main>
+
+
+
+    <!-- =========================================
+         MOBILE NAVIGATION
+    ========================================== -->
+
+    <nav
+      class="mobile-nav"
+      aria-label="Navegación móvil"
+    >
+
+
+
+      <!-- INICIO -->
+
+      <button
+        type="button"
+        class="mobile-nav-item"
+        onclick="window.location.href='index.html'"
+      >
+
+        <svg viewBox="0 0 24 24">
+
+          <path
+            d="
+              M4 13h6V4H4v9Z
+              M14 20h6v-9h-6v9Z
+              M4 20h6v-3H4v3Z
+              M14 7h6V4h-6v3Z
+            "
+          ></path>
+
+        </svg>
+
+        <span>
+          Inicio
+        </span>
+
+      </button>
+
+
+
+      <!-- INVENTARIO -->
+
+      <button
+        type="button"
+        class="mobile-nav-item"
+        onclick="window.location.href='inventario.html'"
+      >
+
+        <svg viewBox="0 0 24 24">
+
+          <path
+            d="
+              M4 7.5
+              12 3
+              l8 4.5
+              V17
+              l-8 4
+              -8-4
+              V7.5Z
+
+              M4 7.5
+              12 12
+              l8-4.5
+
+              M12 12v9
+            "
+          ></path>
+
+        </svg>
+
+        <span>
+          Inventario
+        </span>
+
+      </button>
+
+
+
+      <!-- MOVIMIENTOS -->
+
+      <button
+        type="button"
+        class="mobile-nav-item"
+        onclick="window.location.href='movimientos.html'"
+      >
+
+        <svg viewBox="0 0 24 24">
+
+          <path
+            d="
+              M7 7h11
+              M15 4l3 3-3 3
+
+              M17 17H6
+              M9 14l-3 3 3 3
+            "
+          ></path>
+
+        </svg>
+
+        <span>
+          Movimientos
+        </span>
+
+      </button>
+
+
+
+      <!-- EVIDENCIAS -->
+
+      <button
+        type="button"
+        class="mobile-nav-item"
+        onclick="window.location.href='evidencias.html'"
+      >
+
+        <svg viewBox="0 0 24 24">
+
+          <rect
+            x="3"
+            y="4"
+            width="18"
+            height="16"
+            rx="2"
+          ></rect>
+
+          <circle
+            cx="9"
+            cy="10"
+            r="2"
+          ></circle>
+
+          <path
+            d="
+              m21 15
+              -5-5
+              L5 20
+            "
+          ></path>
+
+        </svg>
+
+        <span>
+          Evidencias
+        </span>
+
+      </button>
+
+
+
+      <!-- MÁS -->
+
+      <details
+        class="mobile-more"
+        open
+      >
+
+
+        <summary
+          class="mobile-nav-item active mobile-more-trigger"
+          aria-current="page"
+          aria-label="Más opciones"
+        >
+
+          <span class="mobile-nav-active-icon">
+
+            <svg viewBox="0 0 24 24">
+
+              <circle
+                cx="5"
+                cy="12"
+                r="1"
+              ></circle>
+
+              <circle
+                cx="12"
+                cy="12"
+                r="1"
+              ></circle>
+
+              <circle
+                cx="19"
+                cy="12"
+                r="1"
+              ></circle>
+
+            </svg>
+
+          </span>
+
+          <span>
+            Más
+          </span>
+
+        </summary>
+
+
+
+        <div class="mobile-more-backdrop"></div>
+
+
+
+        <div class="mobile-more-sheet">
+
+
+          <div class="mobile-sheet-handle"></div>
+
+
+          <div class="mobile-sheet-header">
+
+            <div>
+
+              <span>
+                SEFERAN
+              </span>
+
+              <h2>
+                Más opciones
+              </h2>
+
+            </div>
+
+          </div>
+
+
+
+          <div class="mobile-sheet-options">
+
+
+            <!-- AUDITORÍA -->
+
+            <button
+              type="button"
+              class="active"
+              onclick="window.location.href='auditoria.html'"
+            >
+
+              <span class="mobile-sheet-option-icon">
+
+                <svg viewBox="0 0 24 24">
+
+                  <path
+                    d="
+                      M9 5H6
+                      a2 2 0 0 0-2 2
+                      v12h12
+
+                      M14 5h4
+                      a2 2 0 0 1 2 2v4
+
+                      M9 3h6v4H9V3Z
+
+                      M14 16l2 2 4-5
+                    "
+                  ></path>
+
+                </svg>
+
+              </span>
+
+
+              <span>
+
+                <strong>
+                  Auditoría
+                </strong>
+
+                <small>
+                  Incidencias y trazabilidad
+                </small>
+
+              </span>
+
+
+              <span class="mobile-sheet-active-dot"></span>
+
+
+            </button>
+
+
+
+            <!-- USUARIOS -->
+
+            <button
+              type="button"
+              onclick="window.location.href='usuarios.html'"
+            >
+
+              <span class="mobile-sheet-option-icon">
+
+                <svg viewBox="0 0 24 24">
+
+                  <path
+                    d="
+                      M16 21v-2
+                      a4 4 0 0 0-4-4H6
+                      a4 4 0 0 0-4 4v2
+
+                      M9 11
+                      a4 4 0 1 0 0-8
+                      4 4 0 0 0 0 8Z
+                    "
+                  ></path>
+
+                </svg>
+
+              </span>
+
+
+              <span>
+
+                <strong>
+                  Usuarios
+                </strong>
+
+                <small>
+                  Accesos y permisos
+                </small>
+
+              </span>
+
+
+            </button>
+
+
+
+            <!-- LOGOUT -->
+
+            <button
+              type="button"
+              class="mobile-sheet-logout"
+              onclick="logout()"
+            >
+
+              <span class="mobile-sheet-option-icon">
+
+                <svg viewBox="0 0 24 24">
+
+                  <path
+                    d="
+                      M10 17l5-5-5-5
+                      M15 12H3
+
+                      M15 4h4
+                      a2 2 0 0 1 2 2v12
+                      a2 2 0 0 1-2 2h-4
+                    "
+                  ></path>
+
+                </svg>
+
+              </span>
+
+
+              <span>
+
+                <strong>
+                  Cerrar sesión
+                </strong>
+
+                <small>
+                  Salir de SEFERAN
+                </small>
+
+              </span>
+
+
+            </button>
+
+
+          </div>
+
+
+        </div>
+
+
+      </details>
+
+
+    </nav>
+
+
+  </div>
+
+
+
+  <!-- =========================================
+       LOADER
+  ========================================== -->
+
+  <div
+    class="loading-overlay hidden"
+    id="loadingOverlay"
+  >
+
+    <div class="global-loader-card">
+
+      <div class="loader"></div>
+
       <div>
-        <h2>Auditoría Industrial</h2>
-        <p>Seguimiento y trazabilidad de operaciones</p>
+
+        <strong>
+          Analizando inventario
+        </strong>
+
+        <span>
+          Actualizando auditoría...
+        </span>
+
       </div>
-    </header>
 
-  <section class="kpi-grid">
-
-  <div class="kpi-card critical">
-    <div class="kpi-info">
-      <span>Incidencias</span>
-      <strong id="kpiIncidencias">0</strong>
     </div>
+
   </div>
 
-  <div class="kpi-card warning">
-    <div class="kpi-info">
-      <span>Alertas</span>
-      <strong id="kpiAlertas">0</strong>
-    </div>
-  </div>
 
-</section>
 
-  </main>
+  <!-- =========================================
+       SCRIPT PRINCIPAL
+  ========================================== -->
 
-</div>
+  <script src="script.js"></script>
 
-<script src="script.js"></script>
+
+  <!-- =========================================
+       AUDITORÍA V2
+  ========================================== -->
+
+  <script>
+
+
+    /* =========================================
+       VARIABLES
+    ========================================== */
+
+    let auditInventory = [];
+
+
+
+    /* =========================================
+       CARGAR AUDITORÍA
+    ========================================== */
+
+    async function cargarAuditoriaV2(){
+
+
+      const priorityList =
+        document.getElementById(
+          "auditPriorityList"
+        );
+
+
+      try{
+
+
+        const response =
+          await fetch(
+            "/api/piezas"
+          );
+
+
+        if(!response.ok){
+
+          throw new Error(
+            "No fue posible consultar el inventario"
+          );
+
+        }
+
+
+        const data =
+          await response.json();
+
+
+        auditInventory =
+          Array.isArray(data)
+            ? data
+            : [];
+
+
+        actualizarAuditoria();
+
+        renderPrioridades();
+
+
+      }
+
+
+      catch(error){
+
+
+        console.error(
+          "Error auditoría:",
+          error
+        );
+
+
+        if(priorityList){
+
+          priorityList.innerHTML = `
+
+            <div class="
+              audit-empty-state
+              audit-empty-state--error
+            ">
+
+              <div class="empty-state-icon">
+
+                <svg viewBox="0 0 24 24">
+
+                  <path
+                    d="
+                      M12 9v4
+                      M12 17h.01
+
+                      M10.3 4.2
+                      2.3 18
+                      a2 2 0 0 0 1.7 3h16
+                      a2 2 0 0 0 1.7-3
+                      l-8-13.8
+                      a2 2 0 0 0-3.4 0Z
+                    "
+                  ></path>
+
+                </svg>
+
+              </div>
+
+              <strong>
+                No fue posible analizar el inventario
+              </strong>
+
+              <span>
+                Intenta actualizar nuevamente.
+              </span>
+
+              <button
+                type="button"
+                class="primary-btn"
+                onclick="cargarAuditoriaV2()"
+              >
+                Reintentar
+              </button>
+
+            </div>
+
+          `;
+
+        }
+
+
+      }
+
+
+    }
+
+
+
+    /* =========================================
+       CALCULAR
+    ========================================== */
+
+    function actualizarAuditoria(){
+
+
+      const total =
+        auditInventory.length;
+
+
+
+      const criticos =
+        auditInventory.filter(
+          item => {
+
+            return Number(
+              item.cantidad || 0
+            ) <= 1;
+
+          }
+        );
+
+
+
+      const alertas =
+        auditInventory.filter(
+          item => {
+
+            const cantidad =
+              Number(
+                item.cantidad || 0
+              );
+
+
+            return (
+              cantidad > 1 &&
+              cantidad <= 3
+            );
+
+          }
+        );
+
+
+
+      const operacionales =
+        auditInventory.filter(
+          item => {
+
+            return Number(
+              item.cantidad || 0
+            ) > 3;
+
+          }
+        );
+
+
+
+      /* =====================================
+         KPIS
+      ===================================== */
+
+      setTexto(
+        "kpiIncidencias",
+        criticos.length
+      );
+
+
+      setTexto(
+        "kpiAlertas",
+        alertas.length
+      );
+
+
+      setTexto(
+        "auditTotalComponents",
+        total
+      );
+
+
+      setTexto(
+        "auditOperational",
+        operacionales.length
+      );
+
+
+
+      /* =====================================
+         LEYENDA
+      ===================================== */
+
+      setTexto(
+        "auditCriticalLegend",
+        `${criticos.length} ${
+          criticos.length === 1
+            ? "componente"
+            : "componentes"
+        }`
+      );
+
+
+      setTexto(
+        "auditWarningLegend",
+        `${alertas.length} ${
+          alertas.length === 1
+            ? "componente"
+            : "componentes"
+        }`
+      );
+
+
+      setTexto(
+        "auditOkLegend",
+        `${operacionales.length} ${
+          operacionales.length === 1
+            ? "componente"
+            : "componentes"
+        }`
+      );
+
+
+
+      /* =====================================
+         SALUD GENERAL
+      ===================================== */
+
+      let porcentaje = 100;
+
+
+      if(total > 0){
+
+        porcentaje =
+          Math.round(
+            (
+              operacionales.length /
+              total
+            ) * 100
+          );
+
+      }
+
+
+      setTexto(
+        "auditHealthPercentage",
+        `${porcentaje}%`
+      );
+
+
+
+      const status =
+        document.getElementById(
+          "auditHealthStatus"
+        );
+
+
+      const ring =
+        document.getElementById(
+          "auditHealthRing"
+        );
+
+
+      if(status){
+
+
+        if(porcentaje >= 80){
+
+          status.textContent =
+            "Operación estable";
+
+
+          status.dataset.status =
+            "success";
+
+        }
+
+
+        else if(porcentaje >= 60){
+
+          status.textContent =
+            "Requiere seguimiento";
+
+
+          status.dataset.status =
+            "warning";
+
+        }
+
+
+        else{
+
+          status.textContent =
+            "Atención prioritaria";
+
+
+          status.dataset.status =
+            "critical";
+
+        }
+
+
+      }
+
+
+
+      if(ring){
+
+        ring.style.setProperty(
+          "--health-value",
+          porcentaje
+        );
+
+      }
+
+
+    }
+
+
+
+    /* =========================================
+       PRIORIDADES
+    ========================================== */
+
+    function renderPrioridades(){
+
+
+      const container =
+        document.getElementById(
+          "auditPriorityList"
+        );
+
+
+      if(!container){
+        return;
+      }
+
+
+
+      const prioridades =
+        auditInventory
+
+          .filter(
+            item => {
+
+              return Number(
+                item.cantidad || 0
+              ) <= 3;
+
+            }
+          )
+
+          .sort(
+            (a,b) => {
+
+              return Number(
+                a.cantidad || 0
+              ) -
+              Number(
+                b.cantidad || 0
+              );
+
+            }
+          )
+
+          .slice(
+            0,
+            8
+          );
+
+
+
+      container.innerHTML = "";
+
+
+
+      /* =====================================
+         VACÍO
+      ===================================== */
+
+      if(!prioridades.length){
+
+
+        container.innerHTML = `
+
+          <div class="audit-empty-state">
+
+            <div class="
+              empty-state-icon
+              empty-state-icon--success
+            ">
+
+              <svg viewBox="0 0 24 24">
+
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="9"
+                ></circle>
+
+                <path
+                  d="
+                    m8 12
+                    2.5 2.5
+                    L16 9
+                  "
+                ></path>
+
+              </svg>
+
+            </div>
+
+            <strong>
+              Inventario estable
+            </strong>
+
+            <span>
+              No existen componentes con stock crítico.
+            </span>
+
+          </div>
+
+        `;
+
+
+        return;
+
+      }
+
+
+
+      /* =====================================
+         ITEMS
+      ===================================== */
+
+      prioridades.forEach(
+        item => {
+
+
+          const cantidad =
+            Number(
+              item.cantidad || 0
+            );
+
+
+          const critico =
+            cantidad <= 1;
+
+
+          const card =
+            document.createElement(
+              "article"
+            );
+
+
+          card.className =
+            `audit-priority-item ${
+              critico
+                ? "critical"
+                : "warning"
+            }`;
+
+
+
+          card.innerHTML = `
+
+
+            <div class="
+              audit-priority-status
+              ${
+                critico
+                  ? "audit-priority-status--critical"
+                  : "audit-priority-status--warning"
+              }
+            ">
+
+              <svg viewBox="0 0 24 24">
+
+                ${
+                  critico
+
+                    ? `
+                      <path
+                        d="
+                          M12 3
+                          2.5 20h19
+                          L12 3Z
+
+                          M12 9v5
+                          M12 18h.01
+                        "
+                      ></path>
+                    `
+
+                    : `
+                      <path
+                        d="
+                          M12 4v10
+                          M12 18h.01
+
+                          M5 20h14
+                          a2 2 0 0 0 1.7-3
+
+                          L13.7 5
+                          a2 2 0 0 0-3.4 0
+
+                          L3.3 17
+                          A2 2 0 0 0 5 20Z
+                        "
+                      ></path>
+                    `
+                }
+
+              </svg>
+
+            </div>
+
+
+
+            <div class="audit-priority-info">
+
+
+              <span>
+
+                ${
+                  item.no_parte ||
+                  `PIEZA-${item.id_pieza || "-"}`
+                }
+
+              </span>
+
+
+              <strong>
+
+                ${
+                  item.descripcion ||
+                  item.nombre ||
+                  "Componente sin descripción"
+                }
+
+              </strong>
+
+
+              <small>
+
+                ${
+                  item.modelo
+                    ? `Modelo ${item.modelo}`
+                    : "Modelo no disponible"
+                }
+
+              </small>
+
+
+            </div>
+
+
+
+            <div class="audit-priority-stock">
+
+
+              <span>
+                Stock
+              </span>
+
+
+              <strong>
+                ${cantidad}
+              </strong>
+
+
+              <small>
+
+                ${
+                  critico
+                    ? "Paro de línea"
+                    : "Crítico"
+                }
+
+              </small>
+
+
+            </div>
+
+
+          `;
+
+
+          container.appendChild(
+            card
+          );
+
+
+        }
+      );
+
+
+    }
+
+
+
+    /* =========================================
+       HELPER
+    ========================================== */
+
+    function setTexto(id,valor){
+
+
+      const element =
+        document.getElementById(
+          id
+        );
+
+
+      if(element){
+
+        element.textContent =
+          valor;
+
+      }
+
+
+    }
+
+
+
+    /* =========================================
+       USER
+    ========================================== */
+
+    function cargarUsuarioAuditoria(){
+
+
+      const user =
+        localStorage.getItem(
+          "usuario"
+        );
+
+
+      const role =
+        localStorage.getItem(
+          "rol"
+        );
+
+
+      setTexto(
+        "sidebarUser",
+        user || "ADMIN"
+      );
+
+
+      setTexto(
+        "sidebarRole",
+        role || "Administrador"
+      );
+
+
+    }
+
+
+
+    /* =========================================
+       INIT
+    ========================================== */
+
+    document.addEventListener(
+      "DOMContentLoaded",
+      () => {
+
+
+        cargarUsuarioAuditoria();
+
+        cargarAuditoriaV2();
+
+
+      }
+    );
+
+
+  </script>
+
+
 </body>
+
 </html>

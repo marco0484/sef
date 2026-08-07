@@ -7,11 +7,26 @@
 
   <meta
     name="viewport"
-    content="width=device-width, initial-scale=1.0"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  >
+
+  <meta
+    name="theme-color"
+    content="#07111f"
+  >
+
+  <meta
+    name="color-scheme"
+    content="dark"
+  >
+
+  <meta
+    name="description"
+    content="Historial visual de evidencias y mantenimiento de SEFERAN Asset Control."
   >
 
   <title>
-    Evidencias | SEFERAN
+    Evidencias | SEFERAN Asset Control
   </title>
 
   <link
@@ -21,214 +36,2922 @@
 
 </head>
 
-<body>
 
-<div class="app-layout">
+<body class="app-page evidencias-page">
 
-  <aside class="sidebar">
 
-    <div>
+  <!-- =========================================
+       APP
+  ========================================== -->
 
-      <div class="logo-area">
+  <div class="app-layout">
 
-        <h1>
-          ⚙️ SEFERAN
-        </h1>
 
-        <span>
-          ASSET CONTROL
-        </span>
+
+    <!-- =========================================
+         SIDEBAR DESKTOP
+    ========================================== -->
+
+    <aside
+      class="sidebar"
+      aria-label="Navegación principal"
+    >
+
+
+      <div class="sidebar-main">
+
+
+        <!-- BRAND -->
+
+        <div class="app-brand">
+
+
+          <div
+            class="brand-mark"
+            aria-hidden="true"
+          >
+
+            <svg viewBox="0 0 48 48">
+
+              <path
+                d="
+                  M24 6.5
+                  39 15
+                  v18
+                  L24 41.5
+                  9 33
+                  V15
+                  L24 6.5Z
+                "
+              ></path>
+
+              <path
+                d="
+                  M17 20.5h14
+                  M17 27.5h9
+                "
+              ></path>
+
+            </svg>
+
+          </div>
+
+
+          <div class="app-brand__text">
+
+            <strong>
+              SEFERAN
+            </strong>
+
+            <span>
+              ASSET CONTROL
+            </span>
+
+          </div>
+
+
+        </div>
+
+
+
+        <!-- =====================================
+             MENU
+        ====================================== -->
+
+        <nav class="menu">
+
+
+          <!-- DASHBOARD -->
+
+          <button
+            type="button"
+            class="menu-item"
+            onclick="window.location.href='index.html'"
+          >
+
+            <span class="menu-icon">
+
+              <svg viewBox="0 0 24 24">
+
+                <path
+                  d="
+                    M4 13h6V4H4v9Z
+                    M14 20h6v-9h-6v9Z
+                    M4 20h6v-3H4v3Z
+                    M14 7h6V4h-6v3Z
+                  "
+                ></path>
+
+              </svg>
+
+            </span>
+
+            <span>
+              Dashboard
+            </span>
+
+          </button>
+
+
+
+          <!-- INVENTARIO -->
+
+          <button
+            type="button"
+            class="menu-item"
+            onclick="window.location.href='inventario.html'"
+          >
+
+            <span class="menu-icon">
+
+              <svg viewBox="0 0 24 24">
+
+                <path
+                  d="
+                    M4 7.5
+                    12 3
+                    l8 4.5
+                    V17
+                    l-8 4
+                    -8-4
+                    V7.5Z
+
+                    M4 7.5
+                    12 12
+                    l8-4.5
+
+                    M12 12v9
+                  "
+                ></path>
+
+              </svg>
+
+            </span>
+
+            <span>
+              Inventario
+            </span>
+
+          </button>
+
+
+
+          <!-- MOVIMIENTOS -->
+
+          <button
+            type="button"
+            class="menu-item"
+            onclick="window.location.href='movimientos.html'"
+          >
+
+            <span class="menu-icon">
+
+              <svg viewBox="0 0 24 24">
+
+                <path
+                  d="
+                    M7 7h11
+                    M15 4l3 3-3 3
+
+                    M17 17H6
+                    M9 14l-3 3 3 3
+                  "
+                ></path>
+
+              </svg>
+
+            </span>
+
+            <span>
+              Movimientos
+            </span>
+
+          </button>
+
+
+
+          <!-- AUDITORÍA -->
+
+          <button
+            type="button"
+            class="menu-item"
+            onclick="window.location.href='auditoria.html'"
+          >
+
+            <span class="menu-icon">
+
+              <svg viewBox="0 0 24 24">
+
+                <path
+                  d="
+                    M9 5H6
+                    a2 2 0 0 0-2 2
+                    v12h12
+
+                    M14 5h4
+                    a2 2 0 0 1 2 2v4
+
+                    M9 3h6v4H9V3Z
+
+                    M14 16l2 2 4-5
+                  "
+                ></path>
+
+              </svg>
+
+            </span>
+
+            <span>
+              Auditoría
+            </span>
+
+          </button>
+
+
+
+          <!-- USUARIOS -->
+
+          <button
+            type="button"
+            class="menu-item"
+            onclick="window.location.href='usuarios.html'"
+          >
+
+            <span class="menu-icon">
+
+              <svg viewBox="0 0 24 24">
+
+                <path
+                  d="
+                    M16 21v-2
+                    a4 4 0 0 0-4-4H6
+                    a4 4 0 0 0-4 4v2
+
+                    M9 11
+                    a4 4 0 1 0 0-8
+                    4 4 0 0 0 0 8Z
+                  "
+                ></path>
+
+              </svg>
+
+            </span>
+
+            <span>
+              Usuarios
+            </span>
+
+          </button>
+
+
+
+          <!-- EVIDENCIAS -->
+
+          <button
+            type="button"
+            class="menu-item active"
+            aria-current="page"
+            onclick="window.location.href='evidencias.html'"
+          >
+
+            <span class="menu-icon">
+
+              <svg viewBox="0 0 24 24">
+
+                <rect
+                  x="3"
+                  y="4"
+                  width="18"
+                  height="16"
+                  rx="2"
+                ></rect>
+
+                <circle
+                  cx="9"
+                  cy="10"
+                  r="2"
+                ></circle>
+
+                <path
+                  d="
+                    m21 15
+                    -5-5
+                    L5 20
+                  "
+                ></path>
+
+              </svg>
+
+            </span>
+
+            <span>
+              Evidencias
+            </span>
+
+          </button>
+
+
+        </nav>
+
 
       </div>
 
-      <!-- MENU COMPLETO -->
 
-      <nav class="menu">
+
+      <!-- =====================================
+           USER
+      ====================================== -->
+
+      <div class="sidebar-footer">
+
+
+        <div class="sidebar-user">
+
+
+          <div class="user-avatar">
+
+            <svg viewBox="0 0 24 24">
+
+              <path
+                d="
+                  M20 21
+                  a8 8 0 0 0-16 0
+
+                  M12 13
+                  a5 5 0 1 0 0-10
+                  5 5 0 0 0 0 10Z
+                "
+              ></path>
+
+            </svg>
+
+          </div>
+
+
+          <div class="user-data">
+
+            <strong id="sidebarUser">
+              ADMIN
+            </strong>
+
+            <span id="sidebarRole">
+              Administrador
+            </span>
+
+          </div>
+
+
+          <button
+            type="button"
+            class="sidebar-logout"
+            onclick="logout()"
+            aria-label="Cerrar sesión"
+          >
+
+            <svg viewBox="0 0 24 24">
+
+              <path
+                d="
+                  M10 17l5-5-5-5
+                  M15 12H3
+
+                  M15 4h4
+                  a2 2 0 0 1 2 2v12
+                  a2 2 0 0 1-2 2h-4
+                "
+              ></path>
+
+            </svg>
+
+          </button>
+
+
+        </div>
+
+
+      </div>
+
+
+    </aside>
+
+
+
+    <!-- =========================================
+         MAIN
+    ========================================== -->
+
+    <main class="main-content">
+
+
+
+      <!-- =====================================
+           TOPBAR DESKTOP
+      ====================================== -->
+
+      <header class="topbar">
+
+
+        <div class="topbar-heading">
+
+          <span class="page-eyebrow">
+            Trazabilidad visual
+          </span>
+
+          <h1>
+            Evidencias
+          </h1>
+
+          <p>
+            Historial fotográfico de operaciones y mantenimiento.
+          </p>
+
+        </div>
+
+
+
+        <div class="topbar-actions">
+
+
+          <div class="system-status">
+
+            <span class="status-dot"></span>
+
+            <div>
+
+              <span>
+                Sistema
+              </span>
+
+              <strong>
+                Operativo
+              </strong>
+
+            </div>
+
+          </div>
+
+
+          <button
+            type="button"
+            class="icon-btn logout-icon-btn"
+            onclick="logout()"
+            aria-label="Cerrar sesión"
+          >
+
+            <svg viewBox="0 0 24 24">
+
+              <path
+                d="
+                  M10 17l5-5-5-5
+                  M15 12H3
+
+                  M15 4h4
+                  a2 2 0 0 1 2 2v12
+                  a2 2 0 0 1-2 2h-4
+                "
+              ></path>
+
+            </svg>
+
+          </button>
+
+
+        </div>
+
+
+      </header>
+
+
+
+      <!-- =====================================
+           MOBILE HEADER
+      ====================================== -->
+
+      <header class="mobile-page-header">
+
+
+        <div>
+
+          <span class="mobile-page-label">
+            Trazabilidad visual
+          </span>
+
+          <strong>
+            Evidencias
+          </strong>
+
+        </div>
+
+
+        <div class="mobile-header-actions">
+
+
+          <span class="mobile-live-status">
+
+            <span class="status-dot"></span>
+
+          </span>
+
+
+          <button
+            type="button"
+            class="mobile-profile-btn"
+            onclick="logout()"
+            aria-label="Cerrar sesión"
+          >
+
+            <svg viewBox="0 0 24 24">
+
+              <path
+                d="
+                  M20 21
+                  a8 8 0 0 0-16 0
+
+                  M12 13
+                  a5 5 0 1 0 0-10
+                  5 5 0 0 0 0 10Z
+                "
+              ></path>
+
+            </svg>
+
+          </button>
+
+
+        </div>
+
+
+      </header>
+
+
+
+      <!-- =========================================
+           HERO
+      ========================================== -->
+
+      <section class="evidence-hero">
+
+
+        <div class="evidence-hero__content">
+
+
+          <div class="section-icon">
+
+            <svg viewBox="0 0 24 24">
+
+              <rect
+                x="3"
+                y="4"
+                width="18"
+                height="16"
+                rx="2"
+              ></rect>
+
+              <circle
+                cx="9"
+                cy="10"
+                r="2"
+              ></circle>
+
+              <path
+                d="
+                  m21 15
+                  -5-5
+                  L5 20
+                "
+              ></path>
+
+            </svg>
+
+          </div>
+
+
+          <div>
+
+            <span>
+              Evidencia operativa
+            </span>
+
+            <h2>
+              Historial visual
+            </h2>
+
+            <p>
+              Consulta fotografías asociadas a piezas,
+              movimientos y trabajos realizados.
+            </p>
+
+          </div>
+
+
+        </div>
+
 
         <button
-          class="menu-item"
-          onclick="window.location.href='index.html'"
+          type="button"
+          class="hero-refresh-btn"
+          onclick="cargarEvidencias()"
         >
-          Dashboard
+
+          <svg viewBox="0 0 24 24">
+
+            <path
+              d="
+                M20 11
+                a8 8 0 1 0-2.3 5.7
+                M20 4v7h-7
+              "
+            ></path>
+
+          </svg>
+
+          <span>
+            Actualizar
+          </span>
+
         </button>
 
-        <button
-          class="menu-item"
-          onclick="window.location.href='inventario.html'"
+
+      </section>
+
+
+
+      <!-- =========================================
+           RESUMEN
+      ========================================== -->
+
+      <section class="evidence-summary">
+
+
+        <!-- TOTAL -->
+
+        <article class="evidence-summary-card">
+
+
+          <div class="summary-icon summary-icon--blue">
+
+            <svg viewBox="0 0 24 24">
+
+              <rect
+                x="3"
+                y="4"
+                width="18"
+                height="16"
+                rx="2"
+              ></rect>
+
+              <circle
+                cx="9"
+                cy="10"
+                r="2"
+              ></circle>
+
+            </svg>
+
+          </div>
+
+
+          <div>
+
+            <span>
+              Evidencias
+            </span>
+
+            <strong id="evidenceTotal">
+              —
+            </strong>
+
+          </div>
+
+
+        </article>
+
+
+
+        <!-- HOY -->
+
+        <article class="evidence-summary-card">
+
+
+          <div class="summary-icon summary-icon--green">
+
+            <svg viewBox="0 0 24 24">
+
+              <rect
+                x="3"
+                y="5"
+                width="18"
+                height="16"
+                rx="2"
+              ></rect>
+
+              <path
+                d="
+                  M8 3v4
+                  M16 3v4
+                  M3 10h18
+                "
+              ></path>
+
+            </svg>
+
+          </div>
+
+
+          <div>
+
+            <span>
+              Registradas hoy
+            </span>
+
+            <strong id="evidenceToday">
+              —
+            </strong>
+
+          </div>
+
+
+        </article>
+
+
+
+        <!-- ÚLTIMA -->
+
+        <article class="evidence-summary-card">
+
+
+          <div class="summary-icon summary-icon--purple">
+
+            <svg viewBox="0 0 24 24">
+
+              <circle
+                cx="12"
+                cy="12"
+                r="9"
+              ></circle>
+
+              <path
+                d="
+                  M12 7v5
+                  l3 2
+                "
+              ></path>
+
+            </svg>
+
+          </div>
+
+
+          <div>
+
+            <span>
+              Último registro
+            </span>
+
+            <strong
+              id="evidenceLast"
+              class="summary-date"
+            >
+              —
+            </strong>
+
+          </div>
+
+
+        </article>
+
+
+      </section>
+
+
+
+      <!-- =========================================
+           EVIDENCIAS
+      ========================================== -->
+
+      <section class="page-card evidence-page-card">
+
+
+
+        <!-- =====================================
+             HEADER
+        ====================================== -->
+
+        <div class="section-header">
+
+
+          <div>
+
+            <span class="section-kicker">
+              Galería
+            </span>
+
+            <h2>
+              Evidencias registradas
+            </h2>
+
+            <p>
+              Fotografías asociadas a operaciones del inventario.
+            </p>
+
+          </div>
+
+
+          <button
+            type="button"
+            class="refresh-btn desktop-refresh"
+            onclick="cargarEvidencias()"
+          >
+
+            <svg viewBox="0 0 24 24">
+
+              <path
+                d="
+                  M20 11
+                  a8 8 0 1 0-2.3 5.7
+
+                  M20 4v7h-7
+                "
+              ></path>
+
+            </svg>
+
+            <span>
+              Actualizar
+            </span>
+
+          </button>
+
+
+        </div>
+
+
+
+        <!-- =====================================
+             TOOLBAR
+        ====================================== -->
+
+        <div class="evidence-toolbar">
+
+
+
+          <!-- SEARCH -->
+
+          <div class="evidence-search">
+
+
+            <svg
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+
+              <circle
+                cx="11"
+                cy="11"
+                r="7"
+              ></circle>
+
+              <path
+                d="
+                  m20 20
+                  -4-4
+                "
+              ></path>
+
+            </svg>
+
+
+            <input
+              type="search"
+              id="evidenceSearch"
+              placeholder="Buscar pieza, comentario o usuario..."
+              autocomplete="off"
+              enterkeyhint="search"
+              aria-label="Buscar evidencias"
+            >
+
+
+            <button
+              type="button"
+              id="clearEvidenceSearch"
+              class="search-clear-btn"
+              aria-label="Limpiar búsqueda"
+              hidden
+            >
+
+              <svg viewBox="0 0 24 24">
+
+                <path
+                  d="
+                    M6 6l12 12
+                    M18 6 6 18
+                  "
+                ></path>
+
+              </svg>
+
+            </button>
+
+
+          </div>
+
+
+
+          <!-- PERIODO -->
+
+          <div class="evidence-filter">
+
+
+            <select
+              id="evidencePeriod"
+              aria-label="Filtrar evidencias por fecha"
+            >
+
+              <option value="all">
+                Todas
+              </option>
+
+              <option value="today">
+                Hoy
+              </option>
+
+              <option value="7">
+                Últimos 7 días
+              </option>
+
+              <option value="30">
+                Últimos 30 días
+              </option>
+
+            </select>
+
+
+            <svg viewBox="0 0 24 24">
+
+              <path
+                d="
+                  m6 9
+                  6 6
+                  6-6
+                "
+              ></path>
+
+            </svg>
+
+
+          </div>
+
+
+        </div>
+
+
+
+        <!-- RESULTADOS -->
+
+        <div class="evidence-results-bar">
+
+
+          <span id="evidenceResults">
+            Cargando...
+          </span>
+
+
+          <span class="evidence-view-label">
+            Más recientes primero
+          </span>
+
+
+        </div>
+
+
+
+        <!-- =====================================
+             GRID
+        ====================================== -->
+
+        <div
+          class="evidence-grid"
+          id="evidenceGrid"
+          aria-live="polite"
         >
+
+
+          <div class="evidence-loading-state">
+
+
+            <div class="evidence-loader">
+
+              <span class="loading-spinner"></span>
+
+            </div>
+
+
+            <div>
+
+              <strong>
+                Cargando evidencias
+              </strong>
+
+              <span>
+                Consultando historial visual...
+              </span>
+
+            </div>
+
+
+          </div>
+
+
+        </div>
+
+
+      </section>
+
+
+    </main>
+
+
+
+    <!-- =========================================
+         MOBILE NAVIGATION
+    ========================================== -->
+
+    <nav
+      class="mobile-nav"
+      aria-label="Navegación móvil"
+    >
+
+
+      <!-- INICIO -->
+
+      <button
+        type="button"
+        class="mobile-nav-item"
+        onclick="window.location.href='index.html'"
+      >
+
+        <svg viewBox="0 0 24 24">
+
+          <path
+            d="
+              M4 13h6V4H4v9Z
+              M14 20h6v-9h-6v9Z
+              M4 20h6v-3H4v3Z
+              M14 7h6V4h-6v3Z
+            "
+          ></path>
+
+        </svg>
+
+        <span>
+          Inicio
+        </span>
+
+      </button>
+
+
+
+      <!-- INVENTARIO -->
+
+      <button
+        type="button"
+        class="mobile-nav-item"
+        onclick="window.location.href='inventario.html'"
+      >
+
+        <svg viewBox="0 0 24 24">
+
+          <path
+            d="
+              M4 7.5
+              12 3
+              l8 4.5
+              V17
+              l-8 4
+              -8-4
+              V7.5Z
+
+              M4 7.5
+              12 12
+              l8-4.5
+
+              M12 12v9
+            "
+          ></path>
+
+        </svg>
+
+        <span>
           Inventario
-        </button>
+        </span>
 
-        <button
-          class="menu-item"
-          onclick="window.location.href='movimientos.html'"
-        >
+      </button>
+
+
+
+      <!-- MOVIMIENTOS -->
+
+      <button
+        type="button"
+        class="mobile-nav-item"
+        onclick="window.location.href='movimientos.html'"
+      >
+
+        <svg viewBox="0 0 24 24">
+
+          <path
+            d="
+              M7 7h11
+              M15 4l3 3-3 3
+
+              M17 17H6
+              M9 14l-3 3 3 3
+            "
+          ></path>
+
+        </svg>
+
+        <span>
           Movimientos
-        </button>
+        </span>
 
-        <button
-          class="menu-item"
-          onclick="window.location.href='auditoria.html'"
-        >
-          Auditoría
-        </button>
+      </button>
 
-        <button
-          class="menu-item"
-          onclick="window.location.href='usuarios.html'"
-        >
-          Usuarios
-        </button>
 
-        <button
-          class="menu-item active"
-          onclick="window.location.href='evidencias.html'"
-        >
+
+      <!-- EVIDENCIAS -->
+
+      <button
+        type="button"
+        class="mobile-nav-item active"
+        aria-current="page"
+        onclick="window.location.href='evidencias.html'"
+      >
+
+        <span class="mobile-nav-active-icon">
+
+          <svg viewBox="0 0 24 24">
+
+            <rect
+              x="3"
+              y="4"
+              width="18"
+              height="16"
+              rx="2"
+            ></rect>
+
+            <circle
+              cx="9"
+              cy="10"
+              r="2"
+            ></circle>
+
+            <path
+              d="
+                m21 15
+                -5-5
+                L5 20
+              "
+            ></path>
+
+          </svg>
+
+        </span>
+
+        <span>
           Evidencias
+        </span>
+
+      </button>
+
+
+
+      <!-- MÁS -->
+
+      <details class="mobile-more">
+
+
+        <summary
+          class="mobile-nav-item mobile-more-trigger"
+          aria-label="Más opciones"
+        >
+
+          <svg viewBox="0 0 24 24">
+
+            <circle
+              cx="5"
+              cy="12"
+              r="1"
+            ></circle>
+
+            <circle
+              cx="12"
+              cy="12"
+              r="1"
+            ></circle>
+
+            <circle
+              cx="19"
+              cy="12"
+              r="1"
+            ></circle>
+
+          </svg>
+
+          <span>
+            Más
+          </span>
+
+        </summary>
+
+
+
+        <div class="mobile-more-backdrop"></div>
+
+
+        <div class="mobile-more-sheet">
+
+
+          <div class="mobile-sheet-handle"></div>
+
+
+          <div class="mobile-sheet-header">
+
+            <div>
+
+              <span>
+                SEFERAN
+              </span>
+
+              <h2>
+                Más opciones
+              </h2>
+
+            </div>
+
+          </div>
+
+
+
+          <div class="mobile-sheet-options">
+
+
+            <button
+              type="button"
+              onclick="window.location.href='auditoria.html'"
+            >
+
+              <span class="mobile-sheet-option-icon">
+
+                <svg viewBox="0 0 24 24">
+
+                  <path
+                    d="
+                      M9 5H6
+                      a2 2 0 0 0-2 2
+                      v12h12
+
+                      M14 5h4
+                      a2 2 0 0 1 2 2v4
+
+                      M9 3h6v4H9V3Z
+
+                      M14 16l2 2 4-5
+                    "
+                  ></path>
+
+                </svg>
+
+              </span>
+
+
+              <span>
+
+                <strong>
+                  Auditoría
+                </strong>
+
+                <small>
+                  Incidencias y trazabilidad
+                </small>
+
+              </span>
+
+            </button>
+
+
+
+            <button
+              type="button"
+              onclick="window.location.href='usuarios.html'"
+            >
+
+              <span class="mobile-sheet-option-icon">
+
+                <svg viewBox="0 0 24 24">
+
+                  <path
+                    d="
+                      M16 21v-2
+                      a4 4 0 0 0-4-4H6
+                      a4 4 0 0 0-4 4v2
+
+                      M9 11
+                      a4 4 0 1 0 0-8
+                      4 4 0 0 0 0 8Z
+                    "
+                  ></path>
+
+                </svg>
+
+              </span>
+
+
+              <span>
+
+                <strong>
+                  Usuarios
+                </strong>
+
+                <small>
+                  Accesos y permisos
+                </small>
+
+              </span>
+
+            </button>
+
+
+
+            <button
+              type="button"
+              class="mobile-sheet-logout"
+              onclick="logout()"
+            >
+
+              <span class="mobile-sheet-option-icon">
+
+                <svg viewBox="0 0 24 24">
+
+                  <path
+                    d="
+                      M10 17l5-5-5-5
+                      M15 12H3
+
+                      M15 4h4
+                      a2 2 0 0 1 2 2v12
+                      a2 2 0 0 1-2 2h-4
+                    "
+                  ></path>
+
+                </svg>
+
+              </span>
+
+
+              <span>
+
+                <strong>
+                  Cerrar sesión
+                </strong>
+
+                <small>
+                  Salir de SEFERAN
+                </small>
+
+              </span>
+
+            </button>
+
+
+          </div>
+
+
+        </div>
+
+
+      </details>
+
+
+    </nav>
+
+
+  </div>
+
+
+
+  <!-- =========================================
+       VISOR DE EVIDENCIA
+  ========================================== -->
+
+  <div
+    class="evidence-viewer"
+    id="evidenceViewer"
+    aria-hidden="true"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="viewerTitle"
+  >
+
+
+    <div class="evidence-viewer__backdrop"></div>
+
+
+    <div class="evidence-viewer__content">
+
+
+      <!-- HEADER -->
+
+      <div class="evidence-viewer__header">
+
+
+        <div>
+
+          <span>
+            Evidencia
+          </span>
+
+          <strong id="viewerTitle">
+            Detalle
+          </strong>
+
+        </div>
+
+
+        <button
+          type="button"
+          class="evidence-viewer__close"
+          id="closeEvidenceViewer"
+          aria-label="Cerrar evidencia"
+        >
+
+          <svg viewBox="0 0 24 24">
+
+            <path
+              d="
+                M6 6l12 12
+                M18 6 6 18
+              "
+            ></path>
+
+          </svg>
+
         </button>
 
-      </nav>
+
+      </div>
+
+
+
+      <!-- IMAGE -->
+
+      <div class="evidence-viewer__image-wrapper">
+
+        <img
+          id="viewerImage"
+          src=""
+          alt="Evidencia seleccionada"
+        >
+
+      </div>
+
+
+
+      <!-- INFO -->
+
+      <div class="evidence-viewer__info">
+
+
+        <div class="viewer-part">
+
+
+          <span>
+            Pieza
+          </span>
+
+
+          <strong id="viewerPart">
+            —
+          </strong>
+
+
+        </div>
+
+
+
+        <p id="viewerComment">
+          —
+        </p>
+
+
+
+        <div class="viewer-meta">
+
+
+          <span id="viewerUser">
+            —
+          </span>
+
+
+          <span id="viewerDate">
+            —
+          </span>
+
+
+        </div>
+
+
+      </div>
+
 
     </div>
 
-  </aside>
 
-  <main class="main-content">
+  </div>
 
-    <header class="topbar">
 
-      <div>
 
-        <h2>
-          Evidencias
-        </h2>
+  <!-- =========================================
+       JAVASCRIPT
+  ========================================== -->
 
-        <p>
-          Historial visual de mantenimiento
-        </p>
+  <script>
 
-      </div>
 
-    </header>
+    /* =========================================
+       AUTH
+    ========================================== */
 
-    <section class="page-card">
-
-      <div
-        class="evidence-grid"
-        id="evidenceGrid"
-      >
-
-        <div class="inventory-box">
-
-          Cargando evidencias...
-
-        </div>
-
-      </div>
-
-    </section>
-
-  </main>
-
-</div>
-
-<script>
-
-async function cargarEvidencias() {
-
-  try {
-
-    const response =
-      await fetch("/api/evidencias");
-
-    const evidencias =
-      await response.json();
-
-    const grid =
-      document.getElementById(
-        "evidenceGrid"
+    const usuarioSesion =
+      localStorage.getItem(
+        "usuario"
       );
 
-    grid.innerHTML = "";
 
-    if (!evidencias.length) {
+    if(!usuarioSesion){
 
-      grid.innerHTML = `
-        <div class="inventory-box">
-          No existen evidencias
-        </div>
-      `;
-
-      return;
+      window.location.href =
+        "/login.html";
 
     }
 
-    evidencias.forEach(item => {
 
-      // CREAR CARD
-      const card =
-        document.createElement("div");
 
-      card.className =
-        "evidence-card";
+    /* =========================================
+       DATA
+    ========================================== */
 
-      card.innerHTML = `
+    let evidenciasActuales = [];
 
-        <img
-          src="${item.imagen_url}"
-          class="evidence-image"
-        >
 
-        <div class="evidence-info">
 
-          <strong>
-            Pieza ID:
-            ${item.id_pieza}
-          </strong>
+    /* =========================================
+       ESCAPAR HTML
+    ========================================== */
 
-          <p>
-            ${item.comentario || "-"}
-          </p>
+    function escaparHTML(valor){
 
-          <span>
-            ${new Date(item.fecha)
-              .toLocaleString()}
-          </span>
+
+      return String(
+        valor ?? ""
+      )
+      .replaceAll(
+        "&",
+        "&amp;"
+      )
+      .replaceAll(
+        "<",
+        "&lt;"
+      )
+      .replaceAll(
+        ">",
+        "&gt;"
+      )
+      .replaceAll(
+        '"',
+        "&quot;"
+      )
+      .replaceAll(
+        "'",
+        "&#039;"
+      );
+
+
+    }
+
+
+
+    /* =========================================
+       FECHA
+    ========================================== */
+
+    function formatearFechaEvidencia(fecha){
+
+
+      if(!fecha){
+        return "Sin fecha";
+      }
+
+
+      const date =
+        new Date(fecha);
+
+
+      if(
+        Number.isNaN(
+          date.getTime()
+        )
+      ){
+
+        return "Sin fecha";
+
+      }
+
+
+      return date.toLocaleString(
+        "es-MX",
+        {
+
+          day:"2-digit",
+
+          month:"short",
+
+          year:"numeric",
+
+          hour:"2-digit",
+
+          minute:"2-digit"
+
+        }
+      );
+
+
+    }
+
+
+
+    /* =========================================
+       CARGAR
+    ========================================== */
+
+    async function cargarEvidencias(){
+
+
+      const grid =
+        document.getElementById(
+          "evidenceGrid"
+        );
+
+
+      const results =
+        document.getElementById(
+          "evidenceResults"
+        );
+
+
+      if(!grid){
+        return;
+      }
+
+
+
+      grid.innerHTML = `
+
+        <div class="evidence-loading-state">
+
+          <div class="evidence-loader">
+
+            <span class="loading-spinner"></span>
+
+          </div>
+
+          <div>
+
+            <strong>
+              Cargando evidencias
+            </strong>
+
+            <span>
+              Consultando historial visual...
+            </span>
+
+          </div>
 
         </div>
 
       `;
 
-      // INSERTAR CARD
-      grid.appendChild(card);
 
-    });
+      if(results){
 
-  }
+        results.textContent =
+          "Consultando evidencias...";
 
-  catch(error){
+      }
 
-    console.log(error);
 
-    document.getElementById(
-      "evidenceGrid"
-    ).innerHTML = `
 
-      <div class="inventory-box">
+      try{
 
-        Error cargando evidencias
 
-      </div>
+        const response =
+          await fetch(
+            "/api/evidencias"
+          );
 
-    `;
 
-  }
+        if(!response.ok){
 
-}
+          throw new Error(
+            "No fue posible consultar evidencias"
+          );
 
-cargarEvidencias();
+        }
 
-</script>
+
+        const data =
+          await response.json();
+
+
+        evidenciasActuales =
+          Array.isArray(data)
+            ? data
+            : [];
+
+
+        actualizarResumenEvidencias();
+
+        filtrarEvidencias();
+
+
+      }
+
+
+      catch(error){
+
+
+        console.error(
+          "Error cargando evidencias:",
+          error
+        );
+
+
+        grid.innerHTML = `
+
+          <div class="
+            evidence-empty-state
+            evidence-empty-state--error
+          ">
+
+            <div class="empty-state-icon">
+
+              <svg viewBox="0 0 24 24">
+
+                <path
+                  d="
+                    M12 9v4
+                    M12 17h.01
+
+                    M10.3 4.2
+                    2.3 18
+                    a2 2 0 0 0 1.7 3h16
+                    a2 2 0 0 0 1.7-3
+                    l-8-13.8
+                    a2 2 0 0 0-3.4 0Z
+                  "
+                ></path>
+
+              </svg>
+
+            </div>
+
+            <strong>
+              No pudimos cargar las evidencias
+            </strong>
+
+            <span>
+              Verifica la conexión e intenta nuevamente.
+            </span>
+
+            <button
+              type="button"
+              class="primary-btn"
+              onclick="cargarEvidencias()"
+            >
+              Reintentar
+            </button>
+
+          </div>
+
+        `;
+
+
+        if(results){
+
+          results.textContent =
+            "Error al consultar";
+
+        }
+
+
+      }
+
+
+    }
+
+
+
+    /* =========================================
+       RENDER
+    ========================================== */
+
+    function renderEvidencias(evidencias){
+
+
+      const grid =
+        document.getElementById(
+          "evidenceGrid"
+        );
+
+
+      const results =
+        document.getElementById(
+          "evidenceResults"
+        );
+
+
+      if(!grid){
+        return;
+      }
+
+
+      grid.innerHTML = "";
+
+
+
+      /* =====================================
+         VACÍO
+      ===================================== */
+
+      if(!evidencias.length){
+
+
+        grid.innerHTML = `
+
+          <div class="evidence-empty-state">
+
+            <div class="empty-state-icon">
+
+              <svg viewBox="0 0 24 24">
+
+                <rect
+                  x="3"
+                  y="4"
+                  width="18"
+                  height="16"
+                  rx="2"
+                ></rect>
+
+                <path
+                  d="
+                    m21 15
+                    -5-5
+                    L5 20
+                  "
+                ></path>
+
+              </svg>
+
+            </div>
+
+            <strong>
+              Sin evidencias
+            </strong>
+
+            <span>
+              No encontramos registros con los filtros actuales.
+            </span>
+
+          </div>
+
+        `;
+
+
+        if(results){
+
+          results.textContent =
+            "0 resultados";
+
+        }
+
+
+        return;
+
+      }
+
+
+
+      /* =====================================
+         CARDS
+      ===================================== */
+
+      evidencias.forEach(
+        (item,index) => {
+
+
+          const card =
+            document.createElement(
+              "article"
+            );
+
+
+          card.className =
+            "evidence-card";
+
+
+          const pieza =
+            item.id_pieza ??
+            "—";
+
+
+          const comentario =
+            item.comentario ||
+            "Sin comentarios";
+
+
+          const usuario =
+            item.usuario ||
+            "Usuario no disponible";
+
+
+          const fecha =
+            formatearFechaEvidencia(
+              item.fecha
+            );
+
+
+          const imagen =
+            item.imagen_url || "";
+
+
+          card.innerHTML = `
+
+
+            <button
+              type="button"
+              class="evidence-card__image-button"
+              aria-label="
+                Ver evidencia de la pieza
+                ${escaparHTML(pieza)}
+              "
+            >
+
+              <img
+                src="${escaparHTML(imagen)}"
+                class="evidence-image"
+                alt="
+                  Evidencia de la pieza
+                  ${escaparHTML(pieza)}
+                "
+                loading="lazy"
+                decoding="async"
+              >
+
+              <span class="evidence-image-overlay">
+
+                <svg viewBox="0 0 24 24">
+
+                  <path
+                    d="
+                      M2.5 12
+                      s3.5-6 9.5-6
+                      9.5 6 9.5 6
+                      -3.5 6-9.5 6
+                      -9.5-6-9.5-6Z
+                    "
+                  ></path>
+
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="2.5"
+                  ></circle>
+
+                </svg>
+
+                Ver evidencia
+
+              </span>
+
+            </button>
+
+
+
+            <div class="evidence-card__content">
+
+
+              <div class="evidence-card__header">
+
+
+                <div>
+
+                  <span class="evidence-card__label">
+                    Pieza
+                  </span>
+
+                  <strong>
+                    #${escaparHTML(pieza)}
+                  </strong>
+
+                </div>
+
+
+                <span class="evidence-card__status">
+
+                  <span></span>
+
+                  Registrada
+
+                </span>
+
+
+              </div>
+
+
+
+              <p class="evidence-card__comment">
+
+                ${escaparHTML(comentario)}
+
+              </p>
+
+
+
+              <div class="evidence-card__meta">
+
+
+                <span>
+
+                  <svg viewBox="0 0 24 24">
+
+                    <path
+                      d="
+                        M20 21
+                        a8 8 0 0 0-16 0
+
+                        M12 13
+                        a5 5 0 1 0 0-10
+                        5 5 0 0 0 0 10Z
+                      "
+                    ></path>
+
+                  </svg>
+
+                  ${escaparHTML(usuario)}
+
+                </span>
+
+
+
+                <span>
+
+                  <svg viewBox="0 0 24 24">
+
+                    <circle
+                      cx="12"
+                      cy="12"
+                      r="9"
+                    ></circle>
+
+                    <path
+                      d="
+                        M12 7v5
+                        l3 2
+                      "
+                    ></path>
+
+                  </svg>
+
+                  ${escaparHTML(fecha)}
+
+                </span>
+
+
+              </div>
+
+
+            </div>
+
+
+          `;
+
+
+
+          /* ===================================
+             ABRIR VISOR
+          =================================== */
+
+          const imageButton =
+            card.querySelector(
+              ".evidence-card__image-button"
+            );
+
+
+          if(imageButton){
+
+            imageButton.addEventListener(
+              "click",
+              () => {
+
+                abrirVisorEvidencia(
+                  item
+                );
+
+              }
+            );
+
+          }
+
+
+
+          /* ===================================
+             ERROR FOTO
+          =================================== */
+
+          const image =
+            card.querySelector(
+              ".evidence-image"
+            );
+
+
+          if(image){
+
+            image.addEventListener(
+              "error",
+              () => {
+
+                image.classList.add(
+                  "evidence-image--error"
+                );
+
+
+                image.alt =
+                  "Imagen no disponible";
+
+              }
+            );
+
+          }
+
+
+          grid.appendChild(
+            card
+          );
+
+
+        }
+      );
+
+
+
+      if(results){
+
+        results.textContent =
+          `${evidencias.length} ${
+            evidencias.length === 1
+              ? "evidencia"
+              : "evidencias"
+          }`;
+
+      }
+
+
+    }
+
+
+
+    /* =========================================
+       FILTROS
+    ========================================== */
+
+    function filtrarEvidencias(){
+
+
+      const search =
+        document.getElementById(
+          "evidenceSearch"
+        );
+
+
+      const period =
+        document.getElementById(
+          "evidencePeriod"
+        );
+
+
+      const clear =
+        document.getElementById(
+          "clearEvidenceSearch"
+        );
+
+
+      const texto =
+        search
+          ? search.value
+              .trim()
+              .toLowerCase()
+          : "";
+
+
+      const periodo =
+        period
+          ? period.value
+          : "all";
+
+
+      if(clear){
+
+        clear.hidden =
+          !texto;
+
+      }
+
+
+
+      const ahora =
+        new Date();
+
+
+
+      const filtradas =
+        evidenciasActuales.filter(
+          item => {
+
+
+            /* ===============================
+               SEARCH
+            =============================== */
+
+            const matchTexto = [
+
+              item.id_pieza,
+
+              item.comentario,
+
+              item.usuario
+
+            ]
+            .some(
+              valor => {
+
+                return String(
+                  valor || ""
+                )
+                .toLowerCase()
+                .includes(
+                  texto
+                );
+
+              }
+            );
+
+
+
+            if(!matchTexto){
+
+              return false;
+
+            }
+
+
+
+            /* ===============================
+               FECHA
+            =============================== */
+
+            if(periodo === "all"){
+
+              return true;
+
+            }
+
+
+            const fecha =
+              new Date(
+                item.fecha
+              );
+
+
+            if(
+              Number.isNaN(
+                fecha.getTime()
+              )
+            ){
+
+              return false;
+
+            }
+
+
+
+            if(periodo === "today"){
+
+              return (
+                fecha.getFullYear() ===
+                  ahora.getFullYear()
+
+                &&
+
+                fecha.getMonth() ===
+                  ahora.getMonth()
+
+                &&
+
+                fecha.getDate() ===
+                  ahora.getDate()
+              );
+
+            }
+
+
+
+            const dias =
+              Number(periodo);
+
+
+            const diferencia =
+              ahora - fecha;
+
+
+            return diferencia <=
+              dias *
+              24 *
+              60 *
+              60 *
+              1000;
+
+
+          }
+        );
+
+
+
+      renderEvidencias(
+        filtradas
+      );
+
+
+    }
+
+
+
+    /* =========================================
+       RESUMEN
+    ========================================== */
+
+    function actualizarResumenEvidencias(){
+
+
+      const total =
+        document.getElementById(
+          "evidenceTotal"
+        );
+
+
+      const today =
+        document.getElementById(
+          "evidenceToday"
+        );
+
+
+      const last =
+        document.getElementById(
+          "evidenceLast"
+        );
+
+
+      const hoy =
+        new Date();
+
+
+
+      const registrosHoy =
+        evidenciasActuales.filter(
+          item => {
+
+
+            const fecha =
+              new Date(
+                item.fecha
+              );
+
+
+            if(
+              Number.isNaN(
+                fecha.getTime()
+              )
+            ){
+
+              return false;
+
+            }
+
+
+            return (
+
+              fecha.getFullYear() ===
+                hoy.getFullYear()
+
+              &&
+
+              fecha.getMonth() ===
+                hoy.getMonth()
+
+              &&
+
+              fecha.getDate() ===
+                hoy.getDate()
+
+            );
+
+
+          }
+        ).length;
+
+
+
+      if(total){
+
+        total.textContent =
+          evidenciasActuales.length;
+
+      }
+
+
+      if(today){
+
+        today.textContent =
+          registrosHoy;
+
+      }
+
+
+
+      if(last){
+
+
+        if(
+          evidenciasActuales.length
+        ){
+
+          last.textContent =
+            formatearFechaEvidencia(
+              evidenciasActuales[0].fecha
+            );
+
+        }
+
+        else{
+
+          last.textContent = "—";
+
+        }
+
+
+      }
+
+
+    }
+
+
+
+    /* =========================================
+       VIEWER
+    ========================================== */
+
+    function abrirVisorEvidencia(item){
+
+
+      const viewer =
+        document.getElementById(
+          "evidenceViewer"
+        );
+
+
+      const image =
+        document.getElementById(
+          "viewerImage"
+        );
+
+
+      const title =
+        document.getElementById(
+          "viewerTitle"
+        );
+
+
+      const part =
+        document.getElementById(
+          "viewerPart"
+        );
+
+
+      const comment =
+        document.getElementById(
+          "viewerComment"
+        );
+
+
+      const user =
+        document.getElementById(
+          "viewerUser"
+        );
+
+
+      const date =
+        document.getElementById(
+          "viewerDate"
+        );
+
+
+      if(!viewer){
+        return;
+      }
+
+
+      const pieza =
+        item.id_pieza ?? "—";
+
+
+      if(image){
+
+        image.src =
+          item.imagen_url || "";
+
+        image.alt =
+          `Evidencia de pieza ${pieza}`;
+
+      }
+
+
+      if(title){
+
+        title.textContent =
+          `Pieza #${pieza}`;
+
+      }
+
+
+      if(part){
+
+        part.textContent =
+          `#${pieza}`;
+
+      }
+
+
+      if(comment){
+
+        comment.textContent =
+          item.comentario ||
+          "Sin comentarios";
+
+      }
+
+
+      if(user){
+
+        user.textContent =
+          item.usuario ||
+          "Usuario no disponible";
+
+      }
+
+
+      if(date){
+
+        date.textContent =
+          formatearFechaEvidencia(
+            item.fecha
+          );
+
+      }
+
+
+      viewer.classList.add(
+        "active"
+      );
+
+
+      viewer.setAttribute(
+        "aria-hidden",
+        "false"
+      );
+
+
+      document.body.classList.add(
+        "viewer-open"
+      );
+
+
+    }
+
+
+
+    function cerrarVisorEvidencia(){
+
+
+      const viewer =
+        document.getElementById(
+          "evidenceViewer"
+        );
+
+
+      const image =
+        document.getElementById(
+          "viewerImage"
+        );
+
+
+      if(!viewer){
+        return;
+      }
+
+
+      viewer.classList.remove(
+        "active"
+      );
+
+
+      viewer.setAttribute(
+        "aria-hidden",
+        "true"
+      );
+
+
+      document.body.classList.remove(
+        "viewer-open"
+      );
+
+
+      if(image){
+
+        setTimeout(
+          () => {
+
+            image.src = "";
+
+          },
+          200
+        );
+
+      }
+
+
+    }
+
+
+
+    /* =========================================
+       USUARIO
+    ========================================== */
+
+    function cargarUsuario(){
+
+
+      const usuario =
+        localStorage.getItem(
+          "usuario"
+        );
+
+
+      const rol =
+        localStorage.getItem(
+          "rol"
+        );
+
+
+      const userElement =
+        document.getElementById(
+          "sidebarUser"
+        );
+
+
+      const roleElement =
+        document.getElementById(
+          "sidebarRole"
+        );
+
+
+      if(userElement){
+
+        userElement.textContent =
+          usuario || "ADMIN";
+
+      }
+
+
+      if(roleElement){
+
+        roleElement.textContent =
+          rol || "Administrador";
+
+      }
+
+
+    }
+
+
+
+    /* =========================================
+       LOGOUT
+    ========================================== */
+
+    function logout(){
+
+
+      localStorage.removeItem(
+        "usuario"
+      );
+
+
+      localStorage.removeItem(
+        "rol"
+      );
+
+
+      window.location.href =
+        "/login.html";
+
+
+    }
+
+
+
+    /* =========================================
+       INIT
+    ========================================== */
+
+    document.addEventListener(
+      "DOMContentLoaded",
+      () => {
+
+
+        cargarUsuario();
+
+
+
+        /* SEARCH */
+
+        const search =
+          document.getElementById(
+            "evidenceSearch"
+          );
+
+
+        if(search){
+
+          search.addEventListener(
+            "input",
+            filtrarEvidencias
+          );
+
+        }
+
+
+
+        /* FILTER */
+
+        const period =
+          document.getElementById(
+            "evidencePeriod"
+          );
+
+
+        if(period){
+
+          period.addEventListener(
+            "change",
+            filtrarEvidencias
+          );
+
+        }
+
+
+
+        /* CLEAR */
+
+        const clear =
+          document.getElementById(
+            "clearEvidenceSearch"
+          );
+
+
+        if(clear){
+
+          clear.addEventListener(
+            "click",
+            () => {
+
+
+              if(search){
+
+                search.value = "";
+
+                search.focus();
+
+              }
+
+
+              filtrarEvidencias();
+
+
+            }
+          );
+
+        }
+
+
+
+        /* VIEWER CLOSE */
+
+        const closeViewer =
+          document.getElementById(
+            "closeEvidenceViewer"
+          );
+
+
+        if(closeViewer){
+
+          closeViewer.addEventListener(
+            "click",
+            cerrarVisorEvidencia
+          );
+
+        }
+
+
+
+        const viewer =
+          document.getElementById(
+            "evidenceViewer"
+          );
+
+
+        if(viewer){
+
+          viewer.addEventListener(
+            "click",
+            event => {
+
+
+              if(
+                event.target.classList.contains(
+                  "evidence-viewer__backdrop"
+                )
+              ){
+
+                cerrarVisorEvidencia();
+
+              }
+
+
+            }
+          );
+
+        }
+
+
+
+        document.addEventListener(
+          "keydown",
+          event => {
+
+
+            if(event.key === "Escape"){
+
+              cerrarVisorEvidencia();
+
+            }
+
+
+          }
+        );
+
+
+
+        /* LOAD */
+
+        cargarEvidencias();
+
+
+      }
+    );
+
+
+  </script>
+
 
 </body>
+
 </html>

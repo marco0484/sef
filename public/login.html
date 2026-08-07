@@ -7,11 +7,21 @@
 
   <meta
     name="viewport"
-    content="width=device-width, initial-scale=1.0"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  >
+
+  <meta
+    name="theme-color"
+    content="#07111f"
+  >
+
+  <meta
+    name="color-scheme"
+    content="dark"
   >
 
   <title>
-    Login | SEFERAN
+    Acceso | SEFERAN Asset Control
   </title>
 
   <link
@@ -21,54 +31,663 @@
 
 </head>
 
-<body>
 
-<div class="login-overlay">
+<body class="login-page">
 
-  <div class="login-card">
+  <main class="login-shell">
 
-    <div class="login-header">
 
-      <h1>
-        ⚙️ SEFERAN
-      </h1>
+    <!-- =========================================
+         HERO / BRANDING DESKTOP
+    ========================================== -->
 
-      <span>
-        ASSET CONTROL
-      </span>
+    <section
+      class="login-hero"
+      aria-label="SEFERAN Asset Control"
+    >
 
-    </div>
+      <div
+        class="login-hero__grid"
+        aria-hidden="true"
+      ></div>
 
-    <div class="login-form">
 
-      <input
-        type="text"
-        id="loginUser"
-        placeholder="Usuario"
-      >
+      <!-- LOGO DESKTOP -->
 
-      <input
-        type="password"
-        id="loginPass"
-        placeholder="Contraseña"
-      >
+      <div class="login-brand login-brand--desktop">
 
-      <button
-        class="login-btn"
-        onclick="login()"
-      >
-        Ingresar
-      </button>
+        <div
+          class="brand-mark"
+          aria-hidden="true"
+        >
 
-      <span id="loginError"></span>
+          <svg
+            viewBox="0 0 48 48"
+            role="img"
+          >
 
-    </div>
+            <path
+              d="
+                M24 6.5
+                39 15
+                v18
+                L24 41.5
+                9 33
+                V15
+                L24 6.5Z
+              "
+            ></path>
 
-  </div>
+            <path
+              d="
+                M17 20.5h14
+                M17 27.5h9
+              "
+            ></path>
 
-</div>
+          </svg>
 
-<script src="script.js"></script>
+        </div>
+
+
+        <div>
+
+          <strong>
+            SEFERAN
+          </strong>
+
+          <span>
+            ASSET CONTROL
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <!-- CONTENIDO -->
+
+      <div class="login-hero__content">
+
+        <span class="login-eyebrow">
+
+          <span class="status-dot"></span>
+
+          Plataforma operativa
+
+        </span>
+
+
+        <h1>
+          Control de refacciones.
+          <br>
+          Sin perder el ritmo.
+        </h1>
+
+
+        <p>
+          Inventario, trazabilidad y evidencia operativa
+          desde una interfaz diseñada para piso de producción
+          y uso móvil.
+        </p>
+
+
+        <!-- FEATURES -->
+
+        <div
+          class="login-hero__metrics"
+          aria-label="Características del sistema"
+        >
+
+          <article>
+
+            <strong>
+              24/7
+            </strong>
+
+            <span>
+              Disponibilidad operativa
+            </span>
+
+          </article>
+
+
+          <article>
+
+            <strong>
+              100%
+            </strong>
+
+            <span>
+              Trazabilidad visual
+            </span>
+
+          </article>
+
+        </div>
+
+      </div>
+
+
+      <p class="login-hero__footer">
+
+        Industrial Asset Management · SEFERAN
+
+      </p>
+
+    </section>
+
+
+
+    <!-- =========================================
+         LOGIN
+    ========================================== -->
+
+    <section class="login-panel">
+
+
+      <!-- LOGO MÓVIL -->
+
+      <div class="login-brand login-brand--mobile">
+
+        <div
+          class="brand-mark"
+          aria-hidden="true"
+        >
+
+          <svg
+            viewBox="0 0 48 48"
+            role="img"
+          >
+
+            <path
+              d="
+                M24 6.5
+                39 15
+                v18
+                L24 41.5
+                9 33
+                V15
+                L24 6.5Z
+              "
+            ></path>
+
+            <path
+              d="
+                M17 20.5h14
+                M17 27.5h9
+              "
+            ></path>
+
+          </svg>
+
+        </div>
+
+
+        <div>
+
+          <strong>
+            SEFERAN
+          </strong>
+
+          <span>
+            ASSET CONTROL
+          </span>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- =========================================
+           CARD LOGIN
+      ========================================== -->
+
+      <div class="login-card">
+
+
+        <header class="login-card__header">
+
+          <span class="login-kicker">
+            Acceso seguro
+          </span>
+
+
+          <h2>
+            Bienvenido
+          </h2>
+
+
+          <p>
+            Ingresa tus credenciales para acceder
+            al sistema de control industrial.
+          </p>
+
+        </header>
+
+
+
+        <!-- =========================================
+             FORMULARIO
+        ========================================== -->
+
+        <form
+          class="login-form"
+          id="loginForm"
+          autocomplete="on"
+        >
+
+
+          <!-- USUARIO -->
+
+          <div class="form-field">
+
+            <label for="loginUser">
+              Usuario
+            </label>
+
+
+            <div class="input-control">
+
+
+              <span
+                class="input-icon"
+                aria-hidden="true"
+              >
+
+                <svg viewBox="0 0 24 24">
+
+                  <path
+                    d="
+                      M20 21
+                      a8 8 0 0 0-16 0
+
+                      M12 13
+                      a5 5 0 1 0 0-10
+                      5 5 0 0 0 0 10Z
+                    "
+                  ></path>
+
+                </svg>
+
+              </span>
+
+
+              <input
+                type="text"
+                id="loginUser"
+                name="usuario"
+                placeholder="Ej. ADMIN"
+                autocomplete="username"
+                autocapitalize="none"
+                spellcheck="false"
+                enterkeyhint="next"
+                required
+              >
+
+            </div>
+
+          </div>
+
+
+
+          <!-- CONTRASEÑA -->
+
+          <div class="form-field">
+
+            <label for="loginPass">
+              Contraseña
+            </label>
+
+
+            <div class="input-control">
+
+
+              <span
+                class="input-icon"
+                aria-hidden="true"
+              >
+
+                <svg viewBox="0 0 24 24">
+
+                  <path
+                    d="
+                      M7 10V8
+                      a5 5 0 0 1 10 0
+                      v2
+
+                      M6 10h12
+                      a2 2 0 0 1 2 2
+                      v8H4
+                      v-8
+                      a2 2 0 0 1 2-2Z
+                    "
+                  ></path>
+
+                </svg>
+
+              </span>
+
+
+              <input
+                type="password"
+                id="loginPass"
+                name="password"
+                placeholder="Ingresa tu contraseña"
+                autocomplete="current-password"
+                enterkeyhint="go"
+                required
+              >
+
+
+
+              <!-- MOSTRAR CONTRASEÑA -->
+
+              <button
+                type="button"
+                class="password-toggle"
+                id="togglePassword"
+                aria-label="Mostrar contraseña"
+                aria-pressed="false"
+              >
+
+
+                <!-- OJO ABIERTO -->
+
+                <svg
+                  class="eye-open"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+
+                  <path
+                    d="
+                      M2.5 12
+                      s3.5-6 9.5-6
+                      9.5 6 9.5 6
+                      -3.5 6-9.5 6
+                      -9.5-6-9.5-6Z
+                    "
+                  ></path>
+
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="2.5"
+                  ></circle>
+
+                </svg>
+
+
+
+                <!-- OJO CERRADO -->
+
+                <svg
+                  class="eye-closed"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+
+                  <path
+                    d="
+                      m4 4 16 16
+
+                      M10.6 6.2
+                      A10.8 10.8 0 0 1 12 6
+
+                      c6 0 9.5 6 9.5 6
+
+                      a16.6 16.6 0 0 1-2.1 2.7
+
+                      M8.1 8.1
+
+                      C4.5 9.8 2.5 12 2.5 12
+
+                      s3.5 6 9.5 6
+
+                      c1.5 0 2.8-.4 4-.9
+                    "
+                  ></path>
+
+                </svg>
+
+              </button>
+
+            </div>
+
+          </div>
+
+
+
+          <!-- ERROR LOGIN -->
+
+          <div
+            id="loginError"
+            class="login-error"
+            role="alert"
+            aria-live="polite"
+          ></div>
+
+
+
+          <!-- BOTÓN -->
+
+          <button
+            type="submit"
+            class="login-btn"
+            id="loginButton"
+          >
+
+
+            <span class="login-btn__label">
+
+              Ingresar al sistema
+
+            </span>
+
+
+
+            <!-- LOADER -->
+
+            <span
+              class="login-btn__spinner"
+              aria-hidden="true"
+            ></span>
+
+
+
+            <!-- FLECHA -->
+
+            <svg
+              class="login-btn__arrow"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+
+              <path
+                d="
+                  M5 12h14
+                  M14 7l5 5-5 5
+                "
+              ></path>
+
+            </svg>
+
+          </button>
+
+
+        </form>
+
+
+
+        <!-- =========================================
+             SEGURIDAD
+        ========================================== -->
+
+        <div class="login-security">
+
+          <svg
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+
+            <path
+              d="
+                M12 3
+                5 6
+                v5
+                c0 4.6 2.9 8.6 7 10
+                4.1-1.4 7-5.4 7-10
+                V6
+                l-7-3Z
+              "
+            ></path>
+
+            <path
+              d="
+                m9 12
+                2 2
+                4-4
+              "
+            ></path>
+
+          </svg>
+
+
+          <span>
+            Acceso exclusivo para personal autorizado.
+          </span>
+
+        </div>
+
+
+      </div>
+
+
+
+      <!-- =========================================
+           FOOTER
+      ========================================== -->
+
+      <footer class="login-panel__footer">
+
+        <span>
+          SEFERAN Asset Control
+        </span>
+
+        <span class="footer-separator">
+          •
+        </span>
+
+        <span>
+          v2.0
+        </span>
+
+      </footer>
+
+
+    </section>
+
+  </main>
+
+
+
+  <!-- =========================================
+       SCRIPT PRINCIPAL
+  ========================================== -->
+
+  <script src="script.js"></script>
+
+
+  <!-- =========================================
+       INTERACCIONES DEL LOGIN
+       No afecta tu función login()
+  ========================================== -->
+
+  <script>
+
+    document.addEventListener(
+      "DOMContentLoaded",
+      () => {
+
+        const form =
+          document.getElementById("loginForm");
+
+        const password =
+          document.getElementById("loginPass");
+
+        const toggle =
+          document.getElementById("togglePassword");
+
+
+        /* =====================================
+           ENTER / SUBMIT
+        ===================================== */
+
+        if(form){
+
+          form.addEventListener(
+            "submit",
+            (event) => {
+
+              event.preventDefault();
+
+              login();
+
+            }
+          );
+
+        }
+
+
+        /* =====================================
+           MOSTRAR CONTRASEÑA
+        ===================================== */
+
+        if(toggle && password){
+
+          toggle.addEventListener(
+            "click",
+            () => {
+
+              const mostrar =
+                password.type === "password";
+
+
+              password.type =
+                mostrar
+                  ? "text"
+                  : "password";
+
+
+              toggle.setAttribute(
+                "aria-pressed",
+                mostrar
+              );
+
+
+              toggle.setAttribute(
+                "aria-label",
+                mostrar
+                  ? "Ocultar contraseña"
+                  : "Mostrar contraseña"
+              );
+
+
+              password.focus();
+
+            }
+          );
+
+        }
+
+      }
+    );
+
+  </script>
+
 
 </body>
+
 </html>

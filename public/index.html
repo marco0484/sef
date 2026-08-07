@@ -3,106 +3,456 @@
 
 <head>
 
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
 
   <meta
     name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  />
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  >
+
+  <meta
+    name="theme-color"
+    content="#07111f"
+  >
+
+  <meta
+    name="color-scheme"
+    content="dark"
+  >
+
+  <meta
+    name="description"
+    content="SEFERAN Asset Control - Gestión industrial de refacciones, inventario y mantenimiento."
+  >
 
   <title>
-    SEF PKG DASHBOARD
+    Dashboard | SEFERAN Asset Control
   </title>
 
   <link
     rel="stylesheet"
     href="styles.css"
-  />
+  >
 
 </head>
 
-<body>
+
+<body class="app-page dashboard-page">
+
+
+  <!-- =========================================
+       APP
+  ========================================== -->
 
   <div class="app-layout">
 
+
+
     <!-- =========================================
-         SIDEBAR
+         SIDEBAR DESKTOP
     ========================================== -->
 
-    <aside class="sidebar">
+    <aside
+      class="sidebar"
+      aria-label="Navegación principal"
+    >
 
-      <div>
 
-        <!-- LOGO -->
+      <div class="sidebar-main">
 
-        <div class="logo-area">
 
-          <h1>
-            ⚙️ SEFERAN
-          </h1>
+        <!-- =====================================
+             BRAND
+        ====================================== -->
 
-          <span>
-            ASSET CONTROL
-          </span>
+        <div class="app-brand">
+
+
+          <div
+            class="brand-mark"
+            aria-hidden="true"
+          >
+
+            <svg viewBox="0 0 48 48">
+
+              <path
+                d="
+                  M24 6.5
+                  39 15
+                  v18
+                  L24 41.5
+                  9 33
+                  V15
+                  L24 6.5Z
+                "
+              ></path>
+
+              <path
+                d="
+                  M17 20.5h14
+                  M17 27.5h9
+                "
+              ></path>
+
+            </svg>
+
+          </div>
+
+
+          <div class="app-brand__text">
+
+            <strong>
+              SEFERAN
+            </strong>
+
+            <span>
+              ASSET CONTROL
+            </span>
+
+          </div>
+
 
         </div>
 
-        <!-- MENÚ -->
 
-<nav class="menu">
 
-  <button class="menu-item active" onclick="window.location.href='index.html'">
-    Dashboard
-  </button>
+        <!-- =====================================
+             MENU
+        ====================================== -->
 
-  <button class="menu-item" onclick="window.location.href='inventario.html'">
-    Inventario
-  </button>
+        <nav class="menu">
 
-  <button class="menu-item" onclick="window.location.href='movimientos.html'">
-    Movimientos
-  </button>
 
-  <button class="menu-item" onclick="window.location.href='auditoria.html'">
-    Auditoría
-  </button>
+          <!-- DASHBOARD -->
 
-  <button class="menu-item" onclick="window.location.href='usuarios.html'">
-    Usuarios
-  </button>
+          <button
+            type="button"
+            class="menu-item active"
+            aria-current="page"
+            onclick="window.location.href='index.html'"
+          >
 
-  <button class="menu-item" onclick="window.location.href='evidencias.html'">
-    Evidencias
-  </button>
+            <span class="menu-icon">
 
-</nav>
+              <svg viewBox="0 0 24 24">
+
+                <path
+                  d="
+                    M4 13h6V4H4v9Z
+
+                    M14 20h6v-9h-6v9Z
+
+                    M4 20h6v-3H4v3Z
+
+                    M14 7h6V4h-6v3Z
+                  "
+                ></path>
+
+              </svg>
+
+            </span>
+
+            <span>
+              Dashboard
+            </span>
+
+          </button>
+
+
+
+          <!-- INVENTARIO -->
+
+          <button
+            type="button"
+            class="menu-item"
+            onclick="window.location.href='inventario.html'"
+          >
+
+            <span class="menu-icon">
+
+              <svg viewBox="0 0 24 24">
+
+                <path
+                  d="
+                    M4 7.5
+                    12 3
+                    l8 4.5
+                    V17
+                    l-8 4
+                    -8-4
+                    V7.5Z
+
+                    M4 7.5
+                    12 12
+                    l8-4.5
+
+                    M12 12v9
+                  "
+                ></path>
+
+              </svg>
+
+            </span>
+
+            <span>
+              Inventario
+            </span>
+
+          </button>
+
+
+
+          <!-- MOVIMIENTOS -->
+
+          <button
+            type="button"
+            class="menu-item"
+            onclick="window.location.href='movimientos.html'"
+          >
+
+            <span class="menu-icon">
+
+              <svg viewBox="0 0 24 24">
+
+                <path
+                  d="
+                    M7 7h11
+                    M15 4l3 3-3 3
+
+                    M17 17H6
+                    M9 14l-3 3 3 3
+                  "
+                ></path>
+
+              </svg>
+
+            </span>
+
+            <span>
+              Movimientos
+            </span>
+
+          </button>
+
+
+
+          <!-- AUDITORÍA -->
+
+          <button
+            type="button"
+            class="menu-item"
+            onclick="window.location.href='auditoria.html'"
+          >
+
+            <span class="menu-icon">
+
+              <svg viewBox="0 0 24 24">
+
+                <path
+                  d="
+                    M9 5H6
+                    a2 2 0 0 0-2 2
+                    v12
+                    h12
+
+                    M14 5h4
+                    a2 2 0 0 1 2 2
+                    v4
+
+                    M9 3h6v4H9V3Z
+
+                    M14 16l2 2 4-5
+                  "
+                ></path>
+
+              </svg>
+
+            </span>
+
+            <span>
+              Auditoría
+            </span>
+
+          </button>
+
+
+
+          <!-- USUARIOS -->
+
+          <button
+            type="button"
+            class="menu-item"
+            onclick="window.location.href='usuarios.html'"
+          >
+
+            <span class="menu-icon">
+
+              <svg viewBox="0 0 24 24">
+
+                <path
+                  d="
+                    M16 21v-2
+                    a4 4 0 0 0-4-4H6
+                    a4 4 0 0 0-4 4v2
+
+                    M9 11
+                    a4 4 0 1 0 0-8
+                    4 4 0 0 0 0 8Z
+
+                    M22 21v-2
+                    a4 4 0 0 0-3-3.87
+
+                    M16 3.13
+                    a4 4 0 0 1 0 7.75
+                  "
+                ></path>
+
+              </svg>
+
+            </span>
+
+            <span>
+              Usuarios
+            </span>
+
+          </button>
+
+
+
+          <!-- EVIDENCIAS -->
+
+          <button
+            type="button"
+            class="menu-item"
+            onclick="window.location.href='evidencias.html'"
+          >
+
+            <span class="menu-icon">
+
+              <svg viewBox="0 0 24 24">
+
+                <rect
+                  x="3"
+                  y="4"
+                  width="18"
+                  height="16"
+                  rx="2"
+                ></rect>
+
+                <circle
+                  cx="9"
+                  cy="10"
+                  r="2"
+                ></circle>
+
+                <path
+                  d="
+                    m21 15
+                    -5-5
+                    L5 20
+                  "
+                ></path>
+
+              </svg>
+
+            </span>
+
+            <span>
+              Evidencias
+            </span>
+
+          </button>
+
+
+        </nav>
+
 
       </div>
 
-      <!-- =========================================
+
+
+      <!-- =====================================
            USER PANEL
-      ========================================== -->
+      ====================================== -->
 
-      <div class="sidebar-user">
+      <div class="sidebar-footer">
 
-        <div class="user-avatar">
-          👷
+
+        <div class="sidebar-user">
+
+
+          <div
+            class="user-avatar"
+            aria-hidden="true"
+          >
+
+            <svg viewBox="0 0 24 24">
+
+              <path
+                d="
+                  M20 21
+                  a8 8 0 0 0-16 0
+
+                  M12 13
+                  a5 5 0 1 0 0-10
+                  5 5 0 0 0 0 10Z
+                "
+              ></path>
+
+            </svg>
+
+          </div>
+
+
+          <div class="user-data">
+
+            <strong id="sidebarUser">
+              ADMIN
+            </strong>
+
+            <span id="sidebarRole">
+              Administrador
+            </span>
+
+          </div>
+
+
+          <button
+            type="button"
+            class="sidebar-logout"
+            onclick="logout()"
+            aria-label="Cerrar sesión"
+            title="Cerrar sesión"
+          >
+
+            <svg viewBox="0 0 24 24">
+
+              <path
+                d="
+                  M10 17l5-5-5-5
+
+                  M15 12H3
+
+                  M15 4h4
+                  a2 2 0 0 1 2 2v12
+                  a2 2 0 0 1-2 2h-4
+                "
+              ></path>
+
+            </svg>
+
+          </button>
+
+
         </div>
 
-        <div class="user-data">
-
-          <strong id="sidebarUser">
-            ADMIN
-          </strong>
-
-          <span id="sidebarRole">
-          </span>
-
-        </div>
 
       </div>
+
 
     </aside>
+
+
 
     <!-- =========================================
          MAIN CONTENT
@@ -110,53 +460,313 @@
 
     <main class="main-content">
 
-      <!-- =========================================
-           TOPBAR
-      ========================================== -->
+
+
+      <!-- =====================================
+           TOPBAR DESKTOP
+      ====================================== -->
 
       <header class="topbar">
 
-        <div>
 
-          <h2>
-            Gestión Industrial de Refacciones
-          </h2>
+        <div class="topbar-heading">
+
+          <span class="page-eyebrow">
+            Centro de operaciones
+          </span>
+
+          <h1>
+            Gestión de Refacciones
+          </h1>
 
           <p>
-            Control técnico de inventario y mantenimiento
+            Monitoreo de inventario y mantenimiento industrial.
           </p>
 
         </div>
 
+
+
         <div class="topbar-actions">
-          <!-- STATUS -->
 
-          <div class="status-live">
 
-            <span class="dot"></span>
+          <!-- SISTEMA -->
 
-            Sistema Activo
+          <div class="system-status">
+
+            <span class="status-dot"></span>
+
+            <div>
+
+              <span>
+                Sistema
+              </span>
+
+              <strong>
+                Operativo
+              </strong>
+
+            </div>
 
           </div>
 
+
+
+          <!-- LOGOUT -->
+
           <button
-            class="logout-btn"
+            type="button"
+            class="icon-btn logout-icon-btn"
             onclick="logout()"
+            aria-label="Cerrar sesión"
+            title="Cerrar sesión"
           >
-            Cerrar Sesión
+
+            <svg viewBox="0 0 24 24">
+
+              <path
+                d="
+                  M10 17l5-5-5-5
+                  M15 12H3
+
+                  M15 4h4
+                  a2 2 0 0 1 2 2v12
+                  a2 2 0 0 1-2 2h-4
+                "
+              ></path>
+
+            </svg>
+
           </button>
+
 
         </div>
 
+
       </header>
+
+
+
+      <!-- =====================================
+           MOBILE HEADER
+      ====================================== -->
+
+      <header class="mobile-page-header">
+
+
+        <div>
+
+          <span class="mobile-page-label">
+            Centro de operaciones
+          </span>
+
+          <strong>
+            Dashboard
+          </strong>
+
+        </div>
+
+
+        <div class="mobile-header-actions">
+
+
+          <span
+            class="mobile-live-status"
+            aria-label="Sistema operativo"
+          >
+
+            <span class="status-dot"></span>
+
+          </span>
+
+
+          <button
+            type="button"
+            class="mobile-profile-btn"
+            onclick="logout()"
+            aria-label="Cerrar sesión"
+          >
+
+            <svg viewBox="0 0 24 24">
+
+              <path
+                d="
+                  M20 21
+                  a8 8 0 0 0-16 0
+
+                  M12 13
+                  a5 5 0 1 0 0-10
+                  5 5 0 0 0 0 10Z
+                "
+              ></path>
+
+            </svg>
+
+          </button>
+
+
+        </div>
+
+
+      </header>
+
+
+
+      <!-- =========================================
+           DASHBOARD HERO
+      ========================================== -->
+
+      <section class="dashboard-hero">
+
+
+        <div class="dashboard-hero__content">
+
+
+          <span class="dashboard-hero__eyebrow">
+
+            <span class="status-dot"></span>
+
+            Operación en tiempo real
+
+          </span>
+
+
+          <h2>
+            Control industrial,
+            <br>
+            desde un solo lugar.
+          </h2>
+
+
+          <p>
+            Supervisa disponibilidad, criticidad y movimientos
+            de refacciones esenciales para producción.
+          </p>
+
+
+        </div>
+
+
+
+        <!-- ACCIÓN PRINCIPAL -->
+
+        <button
+          type="button"
+          class="request-part-hero"
+          id="btnWhats"
+        >
+
+
+          <span class="request-part-hero__icon">
+
+            <svg viewBox="0 0 24 24">
+
+              <path
+                d="
+                  M12 3v18
+                  M3 12h18
+                "
+              ></path>
+
+            </svg>
+
+          </span>
+
+
+          <span>
+
+            <small>
+              Acción rápida
+            </small>
+
+            <strong>
+              Solicitar refacción
+            </strong>
+
+          </span>
+
+
+          <svg
+            class="request-part-hero__arrow"
+            viewBox="0 0 24 24"
+          >
+
+            <path
+              d="
+                M5 12h14
+                M14 7l5 5-5 5
+              "
+            ></path>
+
+          </svg>
+
+
+        </button>
+
+
+      </section>
+
+
+
+      <!-- =========================================
+           DASHBOARD VIEW
+           Conservado para compatibilidad
+      ========================================== -->
+
+      <section
+        id="dashboardView"
+        class="dashboard-view"
+      ></section>
+
+
 
       <!-- =========================================
            KPIs
       ========================================== -->
-<section id="dashboardView"></section>
-      <section class="kpi-grid">
 
-        <div class="kpi-card">
+      <section
+        class="kpi-grid dashboard-kpis"
+        aria-label="Indicadores de inventario"
+      >
+
+
+
+        <!-- COMPONENTES -->
+
+        <article class="kpi-card kpi-card--primary">
+
+
+          <div class="kpi-card__header">
+
+
+            <div class="kpi-icon kpi-icon--blue">
+
+              <svg viewBox="0 0 24 24">
+
+                <path
+                  d="
+                    M4 7.5
+                    12 3
+                    l8 4.5
+                    V17
+                    l-8 4
+                    -8-4
+                    V7.5Z
+                  "
+                ></path>
+
+              </svg>
+
+            </div>
+
+
+            <span class="kpi-state">
+              Inventario
+            </span>
+
+
+          </div>
+
 
           <div class="kpi-info">
 
@@ -170,14 +780,56 @@
 
           </div>
 
-        </div>
 
-        <div class="kpi-card critical">
+          <p class="kpi-description">
+            Referencias activas
+          </p>
+
+
+        </article>
+
+
+
+        <!-- PARO DE LÍNEA -->
+
+        <article class="kpi-card kpi-card--critical critical">
+
+
+          <div class="kpi-card__header">
+
+
+            <div class="kpi-icon kpi-icon--red">
+
+              <svg viewBox="0 0 24 24">
+
+                <path
+                  d="
+                    M12 3
+                    2.5 20h19
+                    L12 3Z
+
+                    M12 9v5
+                    M12 18h.01
+                  "
+                ></path>
+
+              </svg>
+
+            </div>
+
+
+            <span class="kpi-state kpi-state--danger">
+              Atención
+            </span>
+
+
+          </div>
+
 
           <div class="kpi-info">
 
             <span>
-              Paro de Línea
+              Paro de línea
             </span>
 
             <strong id="kpiCriticos">
@@ -186,14 +838,59 @@
 
           </div>
 
-        </div>
 
-        <div class="kpi-card warning">
+          <p class="kpi-description">
+            Existencia crítica
+          </p>
+
+
+        </article>
+
+
+
+        <!-- STOCK BAJO -->
+
+        <article class="kpi-card kpi-card--warning warning">
+
+
+          <div class="kpi-card__header">
+
+
+            <div class="kpi-icon kpi-icon--orange">
+
+              <svg viewBox="0 0 24 24">
+
+                <path
+                  d="
+                    M12 4v10
+                    M12 18h.01
+
+                    M5 20h14
+                    a2 2 0 0 0 1.7-3
+                    L13.7 5
+                    a2 2 0 0 0-3.4 0
+                    L3.3 17
+                    A2 2 0 0 0 5 20Z
+                  "
+                ></path>
+
+              </svg>
+
+            </div>
+
+
+            <span class="kpi-state kpi-state--warning">
+              Revisar
+            </span>
+
+
+          </div>
+
 
           <div class="kpi-info">
 
             <span>
-              Stock Bajo
+              Stock bajo
             </span>
 
             <strong id="kpiStock">
@@ -202,14 +899,52 @@
 
           </div>
 
-        </div>
 
-        <div class="kpi-card">
+          <p class="kpi-description">
+            Requieren reposición
+          </p>
+
+
+        </article>
+
+
+
+        <!-- TOTAL PIEZAS -->
+
+        <article class="kpi-card kpi-card--success">
+
+
+          <div class="kpi-card__header">
+
+
+            <div class="kpi-icon kpi-icon--green">
+
+              <svg viewBox="0 0 24 24">
+
+                <path
+                  d="
+                    M4 12h16
+                    M12 4v16
+                  "
+                ></path>
+
+              </svg>
+
+            </div>
+
+
+            <span class="kpi-state kpi-state--success">
+              Disponible
+            </span>
+
+
+          </div>
+
 
           <div class="kpi-info">
 
             <span>
-              Total Piezas
+              Total piezas
             </span>
 
             <strong id="kpiPiezas">
@@ -218,148 +953,876 @@
 
           </div>
 
+
+          <p class="kpi-description">
+            Unidades en existencia
+          </p>
+
+
+        </article>
+
+
+      </section>
+
+
+
+      <!-- =========================================
+           INVENTARIO OPERATIVO
+      ========================================== -->
+
+      <section class="dashboard-section inventory-dashboard-section">
+
+
+
+        <!-- =====================================
+             SECTION HEADER
+        ====================================== -->
+
+        <div class="section-header dashboard-section-header">
+
+
+          <div>
+
+            <span class="section-kicker">
+              Inventario operativo
+            </span>
+
+            <h2>
+              Refacciones
+            </h2>
+
+            <p>
+              Localiza piezas y gestiona existencias directamente.
+            </p>
+
+          </div>
+
+
+          <button
+            type="button"
+            class="refresh-btn"
+            onclick="cargarInventario()"
+          >
+
+            <svg viewBox="0 0 24 24">
+
+              <path
+                d="
+                  M20 11
+                  a8 8 0 1 0-2.3 5.7
+
+                  M20 4v7h-7
+                "
+              ></path>
+
+            </svg>
+
+            <span>
+              Actualizar
+            </span>
+
+          </button>
+
+
         </div>
 
-      </section>
-      <!-- =========================================
-           FILTROS
-      ========================================== -->
-
-      <section class="filters">
-
-        <!-- BUSCADOR -->
-
-        <input
-          type="text"
-          id="searchInput"
-          placeholder="Buscar componente o No. Parte..."
-        />
-
-        <!-- FILTRO MÁQUINA -->
-
-        <select id="machineFilter">
-
-          <option value="Todas">
-            Todas las máquinas
-          </option>
-
-          <option value="VS250">
-            VS250
-          </option>
-
-          <option value="VS300">
-            VS300
-          </option>
-
-          <option value="MXCP-16">
-            MXCP-16
-          </option>
-
-          <option value="MXCP-14">
-            MXCP-14
-          </option>
-
-        </select>
-
-        <!-- FILTRO CRITICIDAD -->
-
-        <select id="criticalFilter">
-
-          <option value="Todos">
-            Todas las criticidades
-          </option>
-
-          <option value="PARO DE LINEA">
-            Paro de Línea
-          </option>
-
-          <option value="CRÍTICO">
-            Crítico
-          </option>
-
-          <option value="OPERACIONAL">
-            Operacional
-          </option>
-
-        </select>
-
-      </section>
-
-      <div class="acciones-refacciones">
-    <button id="btnWhats">
-        Solicitar Refacción
-    </button>
-</div>
-
-      <!-- =========================================
-           TABLA INVENTARIO
-      ========================================== -->
-
-      <section class="table-container">
-
-        <table>
-
-          <thead>
-
-            <tr>
-
-              <th>No. Parte</th>
-
-              <th>Descripción</th>
 
 
-              <th>Modelo</th>
+        <!-- =====================================
+             SEARCH
+        ====================================== -->
 
-          <!--     <th>Unidad</th> -->
+        <div class="dashboard-search">
 
-              <th>Criticidad</th>
 
-              <th>Stock</th>
+          <svg
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
 
-          <!--     <th>Última Modificación</th> -->
+            <circle
+              cx="11"
+              cy="11"
+              r="7"
+            ></circle>
 
-           <!--   <th>Usuario</th> -->
+            <path
+              d="
+                m20 20
+                -4-4
+              "
+            ></path>
 
-              <th>Acciones</th>
+          </svg>
 
-            </tr>
 
-          </thead>
+          <input
+            type="search"
+            id="searchInput"
+            placeholder="Buscar componente o No. de parte..."
+            autocomplete="off"
+            enterkeyhint="search"
+            aria-label="Buscar componente o número de parte"
+          >
 
-          <tbody id="inventoryTable">
-
-          </tbody>
-
-        </table>
-
-      </section>
-
-      <!-- =========================================
-           BITÁCORA
-      ========================================== -->
-
-      <section class="history-section">
-
-        <div class="section-header">
-
-          <h3>
-            Bitácora Operativa
-          </h3>
 
         </div>
+
+
+
+        <!-- =====================================
+             FILTERS
+        ====================================== -->
+
+        <div class="filters dashboard-filters">
+
+
+          <!-- MÁQUINA -->
+
+          <div class="filter-field">
+
+
+            <label for="machineFilter">
+
+              <svg viewBox="0 0 24 24">
+
+                <path
+                  d="
+                    M4 20V9
+                    l4 2V7
+                    l4 2V4
+                    l8 4v12H4Z
+                  "
+                ></path>
+
+              </svg>
+
+              Máquina
+
+            </label>
+
+
+            <div class="select-control">
+
+              <select id="machineFilter">
+
+                <option value="Todas">
+                  Todas las máquinas
+                </option>
+
+                <option value="VS250">
+                  VS250
+                </option>
+
+                <option value="VS300">
+                  VS300
+                </option>
+
+                <option value="MXCP-16">
+                  MXCP-16
+                </option>
+
+                <option value="MXCP-14">
+                  MXCP-14
+                </option>
+
+              </select>
+
+
+              <svg
+                class="select-arrow"
+                viewBox="0 0 24 24"
+              >
+
+                <path
+                  d="
+                    m6 9
+                    6 6
+                    6-6
+                  "
+                ></path>
+
+              </svg>
+
+
+            </div>
+
+
+          </div>
+
+
+
+          <!-- CRITICIDAD -->
+
+          <div class="filter-field">
+
+
+            <label for="criticalFilter">
+
+              <svg viewBox="0 0 24 24">
+
+                <path
+                  d="
+                    M12 3
+                    2.5 20h19
+                    L12 3Z
+
+                    M12 9v5
+                    M12 18h.01
+                  "
+                ></path>
+
+              </svg>
+
+              Criticidad
+
+            </label>
+
+
+            <div class="select-control">
+
+              <select id="criticalFilter">
+
+                <option value="Todos">
+                  Todas las criticidades
+                </option>
+
+                <option value="PARO DE LINEA">
+                  Paro de Línea
+                </option>
+
+                <option value="CRÍTICO">
+                  Crítico
+                </option>
+
+                <option value="OPERACIONAL">
+                  Operacional
+                </option>
+
+              </select>
+
+
+              <svg
+                class="select-arrow"
+                viewBox="0 0 24 24"
+              >
+
+                <path
+                  d="
+                    m6 9
+                    6 6
+                    6-6
+                  "
+                ></path>
+
+              </svg>
+
+
+            </div>
+
+
+          </div>
+
+
+        </div>
+
+
+
+        <!-- =====================================
+             MOBILE QUICK REQUEST
+        ====================================== -->
+
+        <div class="mobile-request-action">
+
+          <button
+            type="button"
+            class="mobile-request-btn"
+            onclick="document.getElementById('btnWhats').click()"
+          >
+
+            <svg viewBox="0 0 24 24">
+
+              <path
+                d="
+                  M12 3v18
+                  M3 12h18
+                "
+              ></path>
+
+            </svg>
+
+            Solicitar refacción
+
+          </button>
+
+        </div>
+
+
+
+        <!-- =====================================
+             INVENTORY TABLE
+        ====================================== -->
+
+        <section
+          class="table-container dashboard-table"
+          aria-label="Inventario de refacciones"
+        >
+
+
+          <table>
+
+
+            <thead>
+
+              <tr>
+
+                <th scope="col">
+                  No. Parte
+                </th>
+
+                <th scope="col">
+                  Descripción
+                </th>
+
+                <th scope="col">
+                  Modelo
+                </th>
+
+                <th scope="col">
+                  Criticidad
+                </th>
+
+                <th scope="col">
+                  Stock
+                </th>
+
+                <th
+                  scope="col"
+                  class="table-actions-heading"
+                >
+                  Acciones
+                </th>
+
+              </tr>
+
+            </thead>
+
+
+
+            <tbody
+              id="inventoryTable"
+              aria-live="polite"
+            >
+
+
+              <!--
+                El contenido se genera desde script.js
+              -->
+
+
+            </tbody>
+
+
+          </table>
+
+
+        </section>
+
+
+      </section>
+
+
+
+      <!-- =========================================
+           BITÁCORA OPERATIVA
+      ========================================== -->
+
+      <section class="history-section dashboard-section">
+
+
+        <div class="section-header dashboard-section-header">
+
+
+          <div>
+
+            <span class="section-kicker">
+              Trazabilidad
+            </span>
+
+            <h2>
+              Bitácora operativa
+            </h2>
+
+            <p>
+              Actividad reciente realizada sobre el inventario.
+            </p>
+
+          </div>
+
+
+          <button
+            type="button"
+            class="history-link-btn"
+            onclick="window.location.href='movimientos.html'"
+          >
+
+            Ver movimientos
+
+            <svg viewBox="0 0 24 24">
+
+              <path
+                d="
+                  M5 12h14
+                  M14 7l5 5-5 5
+                "
+              ></path>
+
+            </svg>
+
+          </button>
+
+
+        </div>
+
+
 
         <div
           class="history-list"
           id="historyList"
+          aria-live="polite"
         >
+
+
+          <!--
+            El contenido se genera desde script.js
+          -->
+
 
         </div>
 
+
       </section>
+
 
     </main>
 
+
+
+    <!-- =========================================
+         MOBILE NAVIGATION
+    ========================================== -->
+
+    <nav
+      class="mobile-nav"
+      aria-label="Navegación móvil"
+    >
+
+
+
+      <!-- INICIO -->
+
+      <button
+        type="button"
+        class="mobile-nav-item active"
+        aria-current="page"
+        onclick="window.location.href='index.html'"
+      >
+
+        <span class="mobile-nav-active-icon">
+
+          <svg viewBox="0 0 24 24">
+
+            <path
+              d="
+                M4 13h6V4H4v9Z
+                M14 20h6v-9h-6v9Z
+                M4 20h6v-3H4v3Z
+                M14 7h6V4h-6v3Z
+              "
+            ></path>
+
+          </svg>
+
+        </span>
+
+        <span>
+          Inicio
+        </span>
+
+      </button>
+
+
+
+      <!-- INVENTARIO -->
+
+      <button
+        type="button"
+        class="mobile-nav-item"
+        onclick="window.location.href='inventario.html'"
+      >
+
+        <svg viewBox="0 0 24 24">
+
+          <path
+            d="
+              M4 7.5
+              12 3
+              l8 4.5
+              V17
+              l-8 4
+              -8-4
+              V7.5Z
+
+              M4 7.5
+              12 12
+              l8-4.5
+
+              M12 12v9
+            "
+          ></path>
+
+        </svg>
+
+        <span>
+          Inventario
+        </span>
+
+      </button>
+
+
+
+      <!-- MOVIMIENTOS -->
+
+      <button
+        type="button"
+        class="mobile-nav-item"
+        onclick="window.location.href='movimientos.html'"
+      >
+
+        <svg viewBox="0 0 24 24">
+
+          <path
+            d="
+              M7 7h11
+              M15 4l3 3-3 3
+
+              M17 17H6
+              M9 14l-3 3 3 3
+            "
+          ></path>
+
+        </svg>
+
+        <span>
+          Movimientos
+        </span>
+
+      </button>
+
+
+
+      <!-- EVIDENCIAS -->
+
+      <button
+        type="button"
+        class="mobile-nav-item"
+        onclick="window.location.href='evidencias.html'"
+      >
+
+        <svg viewBox="0 0 24 24">
+
+          <rect
+            x="3"
+            y="4"
+            width="18"
+            height="16"
+            rx="2"
+          ></rect>
+
+          <circle
+            cx="9"
+            cy="10"
+            r="2"
+          ></circle>
+
+          <path
+            d="
+              m21 15
+              -5-5
+              L5 20
+            "
+          ></path>
+
+        </svg>
+
+        <span>
+          Evidencias
+        </span>
+
+      </button>
+
+
+
+      <!-- MÁS -->
+
+      <details class="mobile-more">
+
+
+        <summary
+          class="mobile-nav-item mobile-more-trigger"
+          aria-label="Más opciones"
+        >
+
+          <svg viewBox="0 0 24 24">
+
+            <circle
+              cx="5"
+              cy="12"
+              r="1"
+            ></circle>
+
+            <circle
+              cx="12"
+              cy="12"
+              r="1"
+            ></circle>
+
+            <circle
+              cx="19"
+              cy="12"
+              r="1"
+            ></circle>
+
+          </svg>
+
+          <span>
+            Más
+          </span>
+
+        </summary>
+
+
+
+        <!-- =====================================
+             MOBILE BOTTOM SHEET
+        ====================================== -->
+
+        <div class="mobile-more-backdrop"></div>
+
+
+        <div
+          class="mobile-more-sheet"
+          role="dialog"
+          aria-label="Más opciones"
+        >
+
+
+          <div class="mobile-sheet-handle"></div>
+
+
+          <div class="mobile-sheet-header">
+
+            <div>
+
+              <span>
+                SEFERAN
+              </span>
+
+              <h2>
+                Más opciones
+              </h2>
+
+            </div>
+
+          </div>
+
+
+
+          <div class="mobile-sheet-options">
+
+
+            <!-- AUDITORÍA -->
+
+            <button
+              type="button"
+              onclick="window.location.href='auditoria.html'"
+            >
+
+              <span class="mobile-sheet-option-icon">
+
+                <svg viewBox="0 0 24 24">
+
+                  <path
+                    d="
+                      M9 5H6
+                      a2 2 0 0 0-2 2
+                      v12h12
+
+                      M14 5h4
+                      a2 2 0 0 1 2 2v4
+
+                      M9 3h6v4H9V3Z
+
+                      M14 16l2 2 4-5
+                    "
+                  ></path>
+
+                </svg>
+
+              </span>
+
+
+              <span>
+
+                <strong>
+                  Auditoría
+                </strong>
+
+                <small>
+                  Incidencias y trazabilidad
+                </small>
+
+              </span>
+
+
+              <svg
+                class="mobile-sheet-arrow"
+                viewBox="0 0 24 24"
+              >
+
+                <path
+                  d="
+                    m9 18
+                    6-6
+                    -6-6
+                  "
+                ></path>
+
+              </svg>
+
+            </button>
+
+
+
+            <!-- USUARIOS -->
+
+            <button
+              type="button"
+              onclick="window.location.href='usuarios.html'"
+            >
+
+              <span class="mobile-sheet-option-icon">
+
+                <svg viewBox="0 0 24 24">
+
+                  <path
+                    d="
+                      M16 21v-2
+                      a4 4 0 0 0-4-4H6
+                      a4 4 0 0 0-4 4v2
+
+                      M9 11
+                      a4 4 0 1 0 0-8
+                      4 4 0 0 0 0 8Z
+                    "
+                  ></path>
+
+                </svg>
+
+              </span>
+
+
+              <span>
+
+                <strong>
+                  Usuarios
+                </strong>
+
+                <small>
+                  Accesos y permisos
+                </small>
+
+              </span>
+
+
+              <svg
+                class="mobile-sheet-arrow"
+                viewBox="0 0 24 24"
+              >
+
+                <path
+                  d="
+                    m9 18
+                    6-6
+                    -6-6
+                  "
+                ></path>
+
+              </svg>
+
+            </button>
+
+
+
+            <!-- LOGOUT -->
+
+            <button
+              type="button"
+              class="mobile-sheet-logout"
+              onclick="logout()"
+            >
+
+              <span class="mobile-sheet-option-icon">
+
+                <svg viewBox="0 0 24 24">
+
+                  <path
+                    d="
+                      M10 17l5-5-5-5
+                      M15 12H3
+
+                      M15 4h4
+                      a2 2 0 0 1 2 2v12
+                      a2 2 0 0 1-2 2h-4
+                    "
+                  ></path>
+
+                </svg>
+
+              </span>
+
+
+              <span>
+
+                <strong>
+                  Cerrar sesión
+                </strong>
+
+                <small>
+                  Salir de SEFERAN
+                </small>
+
+              </span>
+
+
+            </button>
+
+
+          </div>
+
+
+        </div>
+
+
+      </details>
+
+
+    </nav>
+
+
   </div>
+
+
 
   <!-- =========================================
        MODAL EVIDENCIA
@@ -368,109 +1831,359 @@
   <div
     class="modal-overlay hidden"
     id="evidenceModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="evidenceModalTitle"
   >
 
-    <div class="modal-card">
 
-      <!-- HEADER -->
+    <div class="modal-card evidence-modal-card">
+
+
+
+      <!-- =====================================
+           MODAL HEADER
+      ====================================== -->
 
       <div class="modal-header">
 
-        <h2>
-          Evidencia de Movimiento
-        </h2>
 
-        <button
-          class="close-btn"
-          onclick="cerrarModal()"
-        >
-          ✕
-        </button>
+        <div class="modal-title-group">
 
-      </div>
 
-      <!-- BODY -->
+          <div class="modal-icon">
 
-      <div class="modal-body">
+            <svg viewBox="0 0 24 24">
 
-        <div class="evidence-info">
+              <path
+                d="
+                  M4 7.5
+                  12 3
+                  l8 4.5
+                  V17
+                  l-8 4
+                  -8-4
+                  V7.5Z
+                "
+              ></path>
 
-          <span>
-            Pieza:
-          </span>
+            </svg>
 
-          <strong id="evidencePart">
+          </div>
 
-          </strong>
+
+          <div>
+
+            <span class="modal-kicker">
+              Trazabilidad
+            </span>
+
+            <h2 id="evidenceModalTitle">
+              Evidencia de movimiento
+            </h2>
+
+          </div>
+
 
         </div>
 
+
+
+        <button
+          type="button"
+          class="close-btn"
+          onclick="cerrarModal()"
+          aria-label="Cerrar"
+        >
+
+          <svg viewBox="0 0 24 24">
+
+            <path
+              d="
+                M6 6l12 12
+                M18 6 6 18
+              "
+            ></path>
+
+          </svg>
+
+        </button>
+
+
+      </div>
+
+
+
+      <!-- =====================================
+           MODAL BODY
+      ====================================== -->
+
+      <div class="modal-body">
+
+
+
+        <!-- PIEZA -->
+
+        <div class="evidence-part-card">
+
+
+          <span>
+            Refacción seleccionada
+          </span>
+
+
+          <strong id="evidencePart">
+            —
+          </strong>
+
+
+        </div>
+
+
+
         <!-- COMENTARIO -->
 
-        <textarea
-          id="evidenceComment"
-          placeholder="Comentarios del movimiento..."
-        ></textarea>
+        <div class="modal-field">
 
-        <!-- ARCHIVO -->
 
-        <input
-          type="file"
-          id="evidenceFile"
-          accept="image/*"
-        />
+          <label for="evidenceComment">
 
-        <!-- PREVIEW FUTURO -->
+            Comentario
+
+            <span>
+              Opcional
+            </span>
+
+          </label>
+
+
+          <textarea
+            id="evidenceComment"
+            rows="4"
+            maxlength="500"
+            placeholder="Describe el movimiento, condición de la pieza o alguna observación..."
+          ></textarea>
+
+
+        </div>
+
+
+
+        <!-- =====================================
+             FOTO / EVIDENCIA
+        ====================================== -->
+
+        <div class="modal-field">
+
+
+          <label for="evidenceFile">
+
+            Evidencia fotográfica
+
+            <span>
+              Requerida
+            </span>
+
+          </label>
+
+
+
+          <label
+            class="evidence-upload"
+            for="evidenceFile"
+          >
+
+
+            <span class="evidence-upload__icon">
+
+              <svg viewBox="0 0 24 24">
+
+                <path
+                  d="
+                    M4 7
+                    h3
+                    l2-3
+                    h6
+                    l2 3
+                    h3
+                    a2 2 0 0 1 2 2
+                    v10
+                    a2 2 0 0 1-2 2
+                    H4
+                    a2 2 0 0 1-2-2
+                    V9
+                    a2 2 0 0 1 2-2Z
+
+                    M12 17
+                    a4 4 0 1 0 0-8
+                    4 4 0 0 0 0 8Z
+                  "
+                ></path>
+
+              </svg>
+
+            </span>
+
+
+            <span class="evidence-upload__text">
+
+              <strong>
+                Tomar o seleccionar fotografía
+              </strong>
+
+              <small>
+                JPG, PNG o imagen desde la cámara
+              </small>
+
+            </span>
+
+
+            <svg
+              class="evidence-upload__arrow"
+              viewBox="0 0 24 24"
+            >
+
+              <path
+                d="
+                  m9 18
+                  6-6
+                  -6-6
+                "
+              ></path>
+
+            </svg>
+
+
+          </label>
+
+
+
+          <input
+            class="evidence-file-input"
+            type="file"
+            id="evidenceFile"
+            accept="image/*"
+            capture="environment"
+          >
+
+
+        </div>
+
+
+
+        <!-- =====================================
+             PREVIEW
+        ====================================== -->
 
         <div
           class="preview-container"
           id="previewContainer"
-        >
+          aria-live="polite"
+        ></div>
 
-        </div>
 
       </div>
 
-      <!-- ACTIONS -->
+
+
+      <!-- =====================================
+           MODAL ACTIONS
+      ====================================== -->
 
       <div class="modal-actions">
 
+
         <button
+          type="button"
           class="secondary-btn"
           onclick="cerrarModal()"
         >
+
           Cancelar
+
         </button>
 
+
         <button
-          class="primary-btn"
+          type="button"
+          class="primary-btn save-evidence-btn"
           onclick="guardarEvidencia()"
         >
-          Guardar Evidencia
+
+          <svg viewBox="0 0 24 24">
+
+            <path
+              d="
+                M20 6
+                9 17
+                l-5-5
+              "
+            ></path>
+
+          </svg>
+
+          <span>
+            Guardar evidencia
+          </span>
+
         </button>
+
 
       </div>
 
+
     </div>
+
 
   </div>
 
+
+
   <!-- =========================================
-       LOADER GLOBAL
+       GLOBAL LOADER
   ========================================== -->
 
   <div
     class="loading-overlay hidden"
     id="loadingOverlay"
+    role="status"
+    aria-live="polite"
+    aria-label="Procesando"
   >
 
-    <div class="loader"></div>
+
+    <div class="global-loader-card">
+
+
+      <div class="loader"></div>
+
+
+      <div>
+
+        <strong>
+          Procesando
+        </strong>
+
+        <span>
+          Un momento...
+        </span>
+
+      </div>
+
+
+    </div>
+
 
   </div>
 
-  <!-- SCRIPT -->
+
+
+  <!-- =========================================
+       SCRIPT
+  ========================================== -->
 
   <script src="script.js"></script>
+
 
 </body>
 

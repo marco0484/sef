@@ -7,11 +7,21 @@
 
   <meta
     name="viewport"
-    content="width=device-width, initial-scale=1.0"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  >
+
+  <meta
+    name="theme-color"
+    content="#07111f"
+  >
+
+  <meta
+    name="color-scheme"
+    content="dark"
   >
 
   <title>
-    Movimientos | SEFERAN
+    Movimientos | SEFERAN Asset Control
   </title>
 
   <link
@@ -21,118 +31,1333 @@
 
 </head>
 
-<body>
 
-<div class="app-layout">
+<body class="app-page movimientos-page">
 
-  <aside class="sidebar">
 
-    <div>
+  <!-- =========================================
+       APP
+  ========================================== -->
 
-      <div class="logo-area">
+  <div class="app-layout">
 
-        <h1>
-          ⚙️ SEFERAN
-        </h1>
 
-        <span>
-          ASSET CONTROL
-        </span>
+    <!-- =========================================
+         SIDEBAR DESKTOP
+    ========================================== -->
+
+    <aside
+      class="sidebar"
+      aria-label="Navegación principal"
+    >
+
+
+      <div class="sidebar-main">
+
+
+        <!-- BRAND -->
+
+        <div class="app-brand">
+
+          <div
+            class="brand-mark"
+            aria-hidden="true"
+          >
+
+            <svg viewBox="0 0 48 48">
+
+              <path
+                d="
+                  M24 6.5
+                  39 15
+                  v18
+                  L24 41.5
+                  9 33
+                  V15
+                  L24 6.5Z
+                "
+              ></path>
+
+              <path
+                d="
+                  M17 20.5h14
+                  M17 27.5h9
+                "
+              ></path>
+
+            </svg>
+
+          </div>
+
+
+          <div class="app-brand__text">
+
+            <strong>
+              SEFERAN
+            </strong>
+
+            <span>
+              ASSET CONTROL
+            </span>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- =====================================
+             MENU
+        ====================================== -->
+
+        <nav class="menu">
+
+
+          <!-- DASHBOARD -->
+
+          <button
+            class="menu-item"
+            type="button"
+            onclick="window.location.href='index.html'"
+          >
+
+            <span class="menu-icon">
+
+              <svg viewBox="0 0 24 24">
+
+                <path
+                  d="
+                    M4 13h6V4H4v9Z
+
+                    M14 20h6v-9h-6v9Z
+
+                    M4 20h6v-3H4v3Z
+
+                    M14 7h6V4h-6v3Z
+                  "
+                ></path>
+
+              </svg>
+
+            </span>
+
+            <span>
+              Dashboard
+            </span>
+
+          </button>
+
+
+
+          <!-- INVENTARIO -->
+
+          <button
+            class="menu-item"
+            type="button"
+            onclick="window.location.href='inventario.html'"
+          >
+
+            <span class="menu-icon">
+
+              <svg viewBox="0 0 24 24">
+
+                <path
+                  d="
+                    M4 7.5
+                    12 3
+                    l8 4.5
+                    V17
+                    l-8 4
+                    -8-4
+                    V7.5Z
+
+                    M4 7.5
+                    12 12
+                    l8-4.5
+
+                    M12 12v9
+                  "
+                ></path>
+
+              </svg>
+
+            </span>
+
+            <span>
+              Inventario
+            </span>
+
+          </button>
+
+
+
+          <!-- MOVIMIENTOS -->
+
+          <button
+            class="menu-item active"
+            type="button"
+            aria-current="page"
+            onclick="window.location.href='movimientos.html'"
+          >
+
+            <span class="menu-icon">
+
+              <svg viewBox="0 0 24 24">
+
+                <path
+                  d="
+                    M7 7h11
+                    M15 4l3 3-3 3
+
+                    M17 17H6
+                    M9 14l-3 3 3 3
+                  "
+                ></path>
+
+              </svg>
+
+            </span>
+
+            <span>
+              Movimientos
+            </span>
+
+          </button>
+
+
+
+          <!-- AUDITORIA -->
+
+          <button
+            class="menu-item"
+            type="button"
+            onclick="window.location.href='auditoria.html'"
+          >
+
+            <span class="menu-icon">
+
+              <svg viewBox="0 0 24 24">
+
+                <path
+                  d="
+                    M9 5H6
+                    a2 2 0 0 0-2 2
+                    v12
+                    h12
+
+                    M14 5h4
+                    a2 2 0 0 1 2 2
+                    v4
+
+                    M9 3h6v4H9V3Z
+
+                    M14 16l2 2 4-5
+                  "
+                ></path>
+
+              </svg>
+
+            </span>
+
+            <span>
+              Auditoría
+            </span>
+
+          </button>
+
+
+
+          <!-- USUARIOS -->
+
+          <button
+            class="menu-item"
+            type="button"
+            onclick="window.location.href='usuarios.html'"
+          >
+
+            <span class="menu-icon">
+
+              <svg viewBox="0 0 24 24">
+
+                <path
+                  d="
+                    M16 21v-2
+                    a4 4 0 0 0-4-4H6
+                    a4 4 0 0 0-4 4v2
+
+                    M9 11
+                    a4 4 0 1 0 0-8
+                    4 4 0 0 0 0 8Z
+
+                    M22 21v-2
+                    a4 4 0 0 0-3-3.87
+
+                    M16 3.13
+                    a4 4 0 0 1 0 7.75
+                  "
+                ></path>
+
+              </svg>
+
+            </span>
+
+            <span>
+              Usuarios
+            </span>
+
+          </button>
+
+
+
+          <!-- EVIDENCIAS -->
+
+          <button
+            class="menu-item"
+            type="button"
+            onclick="window.location.href='evidencias.html'"
+          >
+
+            <span class="menu-icon">
+
+              <svg viewBox="0 0 24 24">
+
+                <rect
+                  x="3"
+                  y="4"
+                  width="18"
+                  height="16"
+                  rx="2"
+                ></rect>
+
+                <circle
+                  cx="9"
+                  cy="10"
+                  r="2"
+                ></circle>
+
+                <path
+                  d="
+                    m21 15
+                    -5-5
+                    L5 20
+                  "
+                ></path>
+
+              </svg>
+
+            </span>
+
+            <span>
+              Evidencias
+            </span>
+
+          </button>
+
+
+        </nav>
 
       </div>
 
-      <nav class="menu">
 
-        <button
-          class="menu-item"
-          onclick="window.location.href='index.html'"
-        >
-          Dashboard
-        </button>
 
-        <button
-          class="menu-item"
-          onclick="window.location.href='inventario.html'"
-        >
-          Inventario
-        </button>
+      <!-- =====================================
+           USER
+      ====================================== -->
 
-        <button
-          class="menu-item active"
-          onclick="window.location.href='movimientos.html'"
-        >
-          Movimientos
-        </button>
+      <div class="sidebar-footer">
 
-        <button
-          class="menu-item"
-          onclick="window.location.href='auditoria.html'"
-        >
-          Auditoría
-        </button>
+        <div class="sidebar-user">
 
-        <button
-          class="menu-item"
-          onclick="window.location.href='usuarios.html'"
-        >
-          Usuarios
-        </button>
 
-        <button
-          class="menu-item"
-          onclick="window.location.href='evidencias.html'"
-        >
-          Evidencias
-        </button>
+          <div class="user-avatar">
 
-      </nav>
+            <svg viewBox="0 0 24 24">
 
-    </div>
+              <path
+                d="
+                  M20 21
+                  a8 8 0 0 0-16 0
 
-  </aside>
+                  M12 13
+                  a5 5 0 1 0 0-10
+                  5 5 0 0 0 0 10Z
+                "
+              ></path>
 
-  <main class="main-content">
+            </svg>
 
-    <header class="topbar">
+          </div>
 
-      <div>
 
-        <h2>
-          Movimientos de Inventario
-        </h2>
+          <div class="user-data">
 
-        <p>
-          Entradas, salidas y consumo de piezas
-        </p>
+            <strong id="sidebarUser">
+              ADMIN
+            </strong>
 
-      </div>
+            <span id="sidebarRole">
+              Administrador
+            </span>
 
-    </header>
+          </div>
 
-    <section class="page-card">
-
-      <h3>
-        Movimientos Recientes
-      </h3>
-
-      <div
-        class="timeline"
-        id="timeline"
-      >
-
-        <div class="inventory-box">
-          Cargando movimientos...
         </div>
 
       </div>
 
-    </section>
 
-  </main>
+    </aside>
 
-</div>
 
-<script src="script.js"></script>
+
+    <!-- =========================================
+         CONTENIDO
+    ========================================== -->
+
+    <main class="main-content">
+
+
+      <!-- =====================================
+           TOPBAR
+      ====================================== -->
+
+      <header class="topbar">
+
+
+        <div class="topbar-heading">
+
+          <span class="page-eyebrow">
+            Operaciones
+          </span>
+
+          <h1>
+            Movimientos
+          </h1>
+
+          <p>
+            Entradas, salidas y consumo de refacciones.
+          </p>
+
+        </div>
+
+
+
+        <!-- STATUS DESKTOP -->
+
+        <div class="topbar-actions">
+
+
+          <div class="system-status">
+
+            <span class="status-dot"></span>
+
+            <span>
+              Sistema activo
+            </span>
+
+          </div>
+
+
+          <button
+            class="icon-btn logout-icon-btn"
+            type="button"
+            onclick="logout()"
+            aria-label="Cerrar sesión"
+            title="Cerrar sesión"
+          >
+
+            <svg viewBox="0 0 24 24">
+
+              <path
+                d="
+                  M10 17
+                  l5-5
+                  -5-5
+
+                  M15 12H3
+
+                  M15 4h4
+                  a2 2 0 0 1 2 2v12
+                  a2 2 0 0 1-2 2h-4
+                "
+              ></path>
+
+            </svg>
+
+          </button>
+
+
+        </div>
+
+      </header>
+
+
+
+      <!-- =========================================
+           MOBILE HEADER
+      ========================================== -->
+
+      <div class="mobile-page-header">
+
+        <div>
+
+          <span class="mobile-page-label">
+            Operaciones
+          </span>
+
+          <strong>
+            Movimientos
+          </strong>
+
+        </div>
+
+
+        <button
+          class="mobile-profile-btn"
+          type="button"
+          onclick="logout()"
+          aria-label="Cerrar sesión"
+        >
+
+          <svg viewBox="0 0 24 24">
+
+            <path
+              d="
+                M20 21
+                a8 8 0 0 0-16 0
+
+                M12 13
+                a5 5 0 1 0 0-10
+                5 5 0 0 0 0 10Z
+              "
+            ></path>
+
+          </svg>
+
+        </button>
+
+      </div>
+
+
+
+      <!-- =========================================
+           HERO / RESUMEN
+      ========================================== -->
+
+      <section class="movements-hero">
+
+
+        <div class="movements-hero__content">
+
+          <div class="section-icon">
+
+            <svg viewBox="0 0 24 24">
+
+              <path
+                d="
+                  M7 7h11
+                  M15 4l3 3-3 3
+
+                  M17 17H6
+                  M9 14l-3 3 3 3
+                "
+              ></path>
+
+            </svg>
+
+          </div>
+
+
+          <div>
+
+            <span>
+              Trazabilidad operativa
+            </span>
+
+            <h2>
+              Historial de inventario
+            </h2>
+
+            <p>
+              Consulta cronológicamente las operaciones
+              realizadas sobre las refacciones.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="live-indicator">
+
+          <span class="status-dot"></span>
+
+          <span>
+            Actualizado
+          </span>
+
+        </div>
+
+
+      </section>
+
+
+
+      <!-- =========================================
+           HISTORIAL
+      ========================================== -->
+
+      <section class="page-card movements-card">
+
+
+        <!-- HEADER -->
+
+        <div class="section-header">
+
+
+          <div>
+
+            <span class="section-kicker">
+              Actividad
+            </span>
+
+            <h2>
+              Movimientos recientes
+            </h2>
+
+            <p>
+              Registro de entradas, consumos y ajustes
+              realizados en el inventario.
+            </p>
+
+          </div>
+
+
+          <button
+            type="button"
+            class="refresh-btn"
+            id="refreshMovements"
+            aria-label="Actualizar movimientos"
+          >
+
+            <svg viewBox="0 0 24 24">
+
+              <path
+                d="
+                  M20 11
+                  a8 8 0 1 0-2.3 5.7
+
+                  M20 4v7h-7
+                "
+              ></path>
+
+            </svg>
+
+            <span>
+              Actualizar
+            </span>
+
+          </button>
+
+
+        </div>
+
+
+
+        <!-- =====================================
+             TIMELINE
+        ====================================== -->
+
+        <div
+          class="timeline"
+          id="timeline"
+          aria-live="polite"
+        >
+
+
+          <!-- LOADING STATE -->
+
+          <div class="timeline-loading">
+
+
+            <div class="timeline-loading__icon">
+
+              <span class="loading-spinner"></span>
+
+            </div>
+
+
+            <div>
+
+              <strong>
+                Cargando movimientos
+              </strong>
+
+              <span>
+                Consultando actividad reciente...
+              </span>
+
+            </div>
+
+
+          </div>
+
+
+        </div>
+
+
+      </section>
+
+
+    </main>
+
+
+
+    <!-- =========================================
+         MOBILE NAVIGATION
+    ========================================== -->
+
+    <nav
+      class="mobile-nav"
+      aria-label="Navegación móvil"
+    >
+
+
+      <!-- DASHBOARD -->
+
+      <button
+        type="button"
+        class="mobile-nav-item"
+        onclick="window.location.href='index.html'"
+      >
+
+        <svg viewBox="0 0 24 24">
+
+          <path
+            d="
+              M4 13h6V4H4v9Z
+              M14 20h6v-9h-6v9Z
+              M4 20h6v-3H4v3Z
+              M14 7h6V4h-6v3Z
+            "
+          ></path>
+
+        </svg>
+
+        <span>
+          Inicio
+        </span>
+
+      </button>
+
+
+
+      <!-- INVENTARIO -->
+
+      <button
+        type="button"
+        class="mobile-nav-item"
+        onclick="window.location.href='inventario.html'"
+      >
+
+        <svg viewBox="0 0 24 24">
+
+          <path
+            d="
+              M4 7.5
+              12 3
+              l8 4.5
+              V17
+              l-8 4
+              -8-4
+              V7.5Z
+
+              M4 7.5
+              12 12
+              l8-4.5
+
+              M12 12v9
+            "
+          ></path>
+
+        </svg>
+
+        <span>
+          Inventario
+        </span>
+
+      </button>
+
+
+
+      <!-- MOVIMIENTOS -->
+
+      <button
+        type="button"
+        class="mobile-nav-item active"
+        aria-current="page"
+        onclick="window.location.href='movimientos.html'"
+      >
+
+        <span class="mobile-nav-active-icon">
+
+          <svg viewBox="0 0 24 24">
+
+            <path
+              d="
+                M7 7h11
+                M15 4l3 3-3 3
+
+                M17 17H6
+                M9 14l-3 3 3 3
+              "
+            ></path>
+
+          </svg>
+
+        </span>
+
+        <span>
+          Movimientos
+        </span>
+
+      </button>
+
+
+
+      <!-- EVIDENCIAS -->
+
+      <button
+        type="button"
+        class="mobile-nav-item"
+        onclick="window.location.href='evidencias.html'"
+      >
+
+        <svg viewBox="0 0 24 24">
+
+          <rect
+            x="3"
+            y="4"
+            width="18"
+            height="16"
+            rx="2"
+          ></rect>
+
+          <circle
+            cx="9"
+            cy="10"
+            r="2"
+          ></circle>
+
+          <path
+            d="
+              m21 15
+              -5-5
+              L5 20
+            "
+          ></path>
+
+        </svg>
+
+        <span>
+          Evidencias
+        </span>
+
+      </button>
+
+
+
+      <!-- MÁS -->
+
+      <button
+        type="button"
+        class="mobile-nav-item"
+        id="mobileMoreButton"
+        aria-label="Más opciones"
+        aria-expanded="false"
+        aria-controls="mobileMoreMenu"
+      >
+
+        <svg viewBox="0 0 24 24">
+
+          <circle
+            cx="5"
+            cy="12"
+            r="1"
+          ></circle>
+
+          <circle
+            cx="12"
+            cy="12"
+            r="1"
+          ></circle>
+
+          <circle
+            cx="19"
+            cy="12"
+            r="1"
+          ></circle>
+
+        </svg>
+
+        <span>
+          Más
+        </span>
+
+      </button>
+
+
+    </nav>
+
+
+
+    <!-- =========================================
+         MOBILE MORE MENU
+    ========================================== -->
+
+    <div
+      class="mobile-more-overlay"
+      id="mobileMoreOverlay"
+      aria-hidden="true"
+    >
+
+
+      <div
+        class="mobile-more-sheet"
+        id="mobileMoreMenu"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Más opciones"
+      >
+
+
+        <div class="mobile-sheet-handle"></div>
+
+
+        <div class="mobile-sheet-header">
+
+          <div>
+
+            <span>
+              SEFERAN
+            </span>
+
+            <h2>
+              Más opciones
+            </h2>
+
+          </div>
+
+
+          <button
+            class="mobile-sheet-close"
+            type="button"
+            id="closeMoreMenu"
+            aria-label="Cerrar menú"
+          >
+
+            <svg viewBox="0 0 24 24">
+
+              <path
+                d="
+                  M6 6l12 12
+                  M18 6 6 18
+                "
+              ></path>
+
+            </svg>
+
+          </button>
+
+        </div>
+
+
+
+        <div class="mobile-sheet-options">
+
+
+          <!-- AUDITORIA -->
+
+          <button
+            type="button"
+            onclick="window.location.href='auditoria.html'"
+          >
+
+            <span class="mobile-sheet-option-icon">
+
+              <svg viewBox="0 0 24 24">
+
+                <path
+                  d="
+                    M9 5H6
+                    a2 2 0 0 0-2 2
+                    v12h12
+
+                    M14 5h4
+                    a2 2 0 0 1 2 2
+                    v4
+
+                    M9 3h6v4H9V3Z
+
+                    M14 16l2 2 4-5
+                  "
+                ></path>
+
+              </svg>
+
+            </span>
+
+
+            <span>
+
+              <strong>
+                Auditoría
+              </strong>
+
+              <small>
+                Incidencias y trazabilidad
+              </small>
+
+            </span>
+
+
+            <svg
+              class="mobile-sheet-arrow"
+              viewBox="0 0 24 24"
+            >
+
+              <path
+                d="
+                  m9 18
+                  6-6
+                  -6-6
+                "
+              ></path>
+
+            </svg>
+
+          </button>
+
+
+
+          <!-- USUARIOS -->
+
+          <button
+            type="button"
+            onclick="window.location.href='usuarios.html'"
+          >
+
+            <span class="mobile-sheet-option-icon">
+
+              <svg viewBox="0 0 24 24">
+
+                <path
+                  d="
+                    M16 21v-2
+                    a4 4 0 0 0-4-4H6
+                    a4 4 0 0 0-4 4v2
+
+                    M9 11
+                    a4 4 0 1 0 0-8
+                    4 4 0 0 0 0 8Z
+                  "
+                ></path>
+
+              </svg>
+
+            </span>
+
+
+            <span>
+
+              <strong>
+                Usuarios
+              </strong>
+
+              <small>
+                Accesos y permisos
+              </small>
+
+            </span>
+
+
+            <svg
+              class="mobile-sheet-arrow"
+              viewBox="0 0 24 24"
+            >
+
+              <path
+                d="
+                  m9 18
+                  6-6
+                  -6-6
+                "
+              ></path>
+
+            </svg>
+
+          </button>
+
+
+
+          <!-- LOGOUT -->
+
+          <button
+            type="button"
+            class="mobile-sheet-logout"
+            onclick="logout()"
+          >
+
+            <span class="mobile-sheet-option-icon">
+
+              <svg viewBox="0 0 24 24">
+
+                <path
+                  d="
+                    M10 17
+                    l5-5
+                    -5-5
+
+                    M15 12H3
+
+                    M15 4h4
+                    a2 2 0 0 1 2 2v12
+                    a2 2 0 0 1-2 2h-4
+                  "
+                ></path>
+
+              </svg>
+
+            </span>
+
+
+            <span>
+
+              <strong>
+                Cerrar sesión
+              </strong>
+
+              <small>
+                Salir de SEFERAN
+              </small>
+
+            </span>
+
+
+          </button>
+
+
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+
+
+  </div>
+
+
+
+  <!-- =========================================
+       SCRIPT PRINCIPAL
+  ========================================== -->
+
+  <script src="script.js"></script>
+
+
+
+  <!-- =========================================
+       UI MÓVIL
+  ========================================== -->
+
+  <script>
+
+    document.addEventListener(
+      "DOMContentLoaded",
+      () => {
+
+
+        /* =====================================
+           MOBILE MORE MENU
+        ===================================== */
+
+        const moreButton =
+          document.getElementById(
+            "mobileMoreButton"
+          );
+
+
+        const overlay =
+          document.getElementById(
+            "mobileMoreOverlay"
+          );
+
+
+        const closeButton =
+          document.getElementById(
+            "closeMoreMenu"
+          );
+
+
+        function abrirMenuMobile(){
+
+          if(!overlay){
+            return;
+          }
+
+
+          overlay.classList.add(
+            "active"
+          );
+
+
+          overlay.setAttribute(
+            "aria-hidden",
+            "false"
+          );
+
+
+          if(moreButton){
+
+            moreButton.setAttribute(
+              "aria-expanded",
+              "true"
+            );
+
+          }
+
+
+          document.body.classList.add(
+            "mobile-menu-open"
+          );
+
+        }
+
+
+
+        function cerrarMenuMobile(){
+
+          if(!overlay){
+            return;
+          }
+
+
+          overlay.classList.remove(
+            "active"
+          );
+
+
+          overlay.setAttribute(
+            "aria-hidden",
+            "true"
+          );
+
+
+          if(moreButton){
+
+            moreButton.setAttribute(
+              "aria-expanded",
+              "false"
+            );
+
+          }
+
+
+          document.body.classList.remove(
+            "mobile-menu-open"
+          );
+
+        }
+
+
+
+        if(moreButton){
+
+          moreButton.addEventListener(
+            "click",
+            abrirMenuMobile
+          );
+
+        }
+
+
+        if(closeButton){
+
+          closeButton.addEventListener(
+            "click",
+            cerrarMenuMobile
+          );
+
+        }
+
+
+        if(overlay){
+
+          overlay.addEventListener(
+            "click",
+            (event) => {
+
+              if(event.target === overlay){
+
+                cerrarMenuMobile();
+
+              }
+
+            }
+          );
+
+        }
+
+
+
+        document.addEventListener(
+          "keydown",
+          (event) => {
+
+            if(event.key === "Escape"){
+
+              cerrarMenuMobile();
+
+            }
+
+          }
+        );
+
+
+
+        /* =====================================
+           BOTÓN ACTUALIZAR
+        ===================================== */
+
+        const refreshButton =
+          document.getElementById(
+            "refreshMovements"
+          );
+
+
+        if(refreshButton){
+
+          refreshButton.addEventListener(
+            "click",
+            () => {
+
+              window.location.reload();
+
+            }
+          );
+
+        }
+
+
+      }
+    );
+
+  </script>
+
 
 </body>
+
 </html>
