@@ -4,6 +4,7 @@ const multer = require("multer");
 const path = require("path");
 const { randomUUID } = require("crypto");
 const { createClient } = require("@supabase/supabase-js");
+const bcrypt = require("bcryptjs");
 
 const app = express();
 
@@ -493,6 +494,13 @@ app.post(
         );
       }
 
+      /*
+        IMPORTANTE:
+        cosmic_usuarios ya no maneja password en texto plano.
+        Se obtiene password_hash y la comparación se hace
+        en Node con bcryptjs.
+      */
+
       const {
         data,
         error,
@@ -500,21 +508,16 @@ app.post(
         await supabase
 
           .from(
-            "usuarios_sfa"
+            "cosmic_usuarios"
           )
 
           .select(
-            "usuario, rol, activo"
+            "id, usuario, nombre, rol, activo, id_productora, password_hash"
           )
 
           .eq(
             "usuario",
             usuario
-          )
-
-          .eq(
-            "password",
-            password
           )
 
           .eq(
@@ -540,7 +543,51 @@ app.post(
         );
       }
 
-      if (!data) {
+      /*
+        Respondemos igual si el usuario no existe o si no tiene
+        hash para evitar revelar qué usuarios están registrados.
+      */
+
+      if (
+        !data ||
+        !data.password_hash
+      ) {
+
+        return responderError(
+          res,
+          401,
+          "Credenciales inválidas."
+        );
+      }
+
+      let passwordValido = false;
+
+      try {
+
+        passwordValido =
+          await bcrypt.compare(
+            password,
+            data.password_hash
+          );
+
+      }
+      catch (error) {
+
+        logError(
+          req,
+          "Error comparando password_hash",
+          error
+        );
+
+        return responderError(
+          res,
+          500,
+          "No fue posible validar las credenciales.",
+          error
+        );
+      }
+
+      if (!passwordValido) {
 
         return responderError(
           res,
@@ -556,8 +603,14 @@ app.post(
         usuario:
           data.usuario,
 
+        nombre:
+          data.nombre || "",
+
         rol:
           data.rol || "",
+
+        id_productora:
+          data.id_productora ?? null,
 
       });
 
