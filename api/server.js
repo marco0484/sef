@@ -623,52 +623,38 @@ app.post(
    INVENTARIO
 ========================================================= */
 
-app.get(
-  "/api/piezas",
-  asyncRoute(
+app.get("/api/piezas",asyncRoute(
     async (req, res) => {
 
-      const {
-        data,
-        error,
-      } =
+      const { data, error, count } =
         await supabase
+          .from("cat_piezas")
+          .select("*", { count: "exact" })
+          .order("id_pieza", {
+            ascending: true
+          });
 
-          .from(
-            "cat_piezas"
-          )
-
-          .select("*")
-
-          .eq(
-            "ind_activo",
-            1
-          )
-
-          .order(
-            "id_pieza",
-            {
-              ascending: true,
-            }
-          );
+      console.log("========== DEBUG PIEZAS ==========");
+      console.log("DATA:", data);
+      console.log("COUNT:", count);
+      console.log("ERROR:", error);
+      console.log("===================================");
 
       if (error) {
 
-  console.error("ERROR SUPABASE PIEZAS:", error);
+        return responderError(
+          res,
+          500,
+          "Error consultando cat_piezas",
+          error
+        );
 
-  return res.status(500).json({
-    error: "No fue posible consultar el inventario.",
-    detail: error.message,
-    code: error.code,
-    hint: error.hint,
-    details: error.details
-  });
+      }
 
-}
-
-      return res.json(
-        data || []
-      );
+      return res.json({
+        count,
+        data
+      });
 
     }
   )
