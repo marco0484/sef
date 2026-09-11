@@ -1354,92 +1354,64 @@ async function restar(id){
 }
 
 
-async function actualizarStock(
-  id,
-  cantidad
-){
+async function actualizarStock(id, cantidad){
 
   mostrarLoader(true);
 
-
   try{
 
-    const response =
-      await fetch(
-        `${SEFERAN.endpoints.piezas}/${id}`,
-        {
+    const response = await fetch(
+      `/api/piezas/${id}`,
+      {
+        method: "PUT",
 
-          method:"PUT",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
 
-          headers:{
-            "Content-Type":
-              "application/json"
-          },
+        body: JSON.stringify({
+          cantidad: Number(cantidad),
+          usuario: localStorage.getItem("usuario") || "ADMIN"
+        })
+      }
+    );
 
-          body:JSON.stringify({
+    const texto = await response.text();
 
-            cantidad,
-
-            usuario:
-              obtenerUsuarioSesion()
-              ||
-              "ADMIN"
-
-          })
-
-        }
-      );
-
-
-    const data =
-      await leerJSONSeguro(
-        response
-      );
-
+    console.log("PUT STOCK");
+    console.log("ID:", id);
+    console.log("Cantidad:", cantidad);
+    console.log("Status:", response.status);
+    console.log("Respuesta:", texto);
 
     if(!response.ok){
 
       throw new Error(
-        mensajeErrorAPI(
-          data,
-          "No fue posible actualizar el stock."
-        )
+        `Error ${response.status}: ${texto}`
       );
 
     }
 
-
     await cargarInventario();
 
-
     mostrarToast(
-      "Stock actualizado."
+      `Stock actualizado: ${cantidad}`
     );
 
-
-    return true;
-
   }
-
   catch(error){
 
     console.error(
-      "Error actualizando stock:",
+      "ERROR ACTUALIZANDO STOCK:",
       error
     );
 
-
     mostrarToast(
-      error.message
-      ||
-      "Error actualizando stock."
+      "No fue posible actualizar el stock"
     );
 
-
-    return false;
-
   }
-
   finally{
 
     mostrarLoader(false);
