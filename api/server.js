@@ -654,19 +654,17 @@ app.get(
 
       if (error) {
 
-        logError(
-          req,
-          "Error obteniendo piezas",
-          error
-        );
+  console.error("ERROR SUPABASE PIEZAS:", error);
 
-        return responderError(
-          res,
-          500,
-          "No fue posible consultar el inventario.",
-          error
-        );
-      }
+  return res.status(500).json({
+    error: "No fue posible consultar el inventario.",
+    detail: error.message,
+    code: error.code,
+    hint: error.hint,
+    details: error.details
+  });
+
+}
 
       return res.json(
         data || []
