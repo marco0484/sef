@@ -623,43 +623,50 @@ app.post(
    INVENTARIO
 ========================================================= */
 
-app.get("/api/piezas",asyncRoute(
+/* =========================================================
+   INVENTARIO
+========================================================= */
+
+app.get(
+  "/api/piezas",
+  asyncRoute(
     async (req, res) => {
 
-      const { data, error, count } =
-        await supabase
-          .from("cat_piezas")
-          .select("*", { count: "exact" })
-          .order("id_pieza", {
-            ascending: true
-          });
-
-      console.log("========== DEBUG PIEZAS ==========");
-      console.log("DATA:", data);
-      console.log("COUNT:", count);
-      console.log("ERROR:", error);
-      console.log("===================================");
+      const {
+        data,
+        error
+      } = await supabase
+        .from("cat_piezas")
+        .select("*")
+        .eq("ind_activo", 1)
+        .order("id_pieza", {
+          ascending: true
+        });
 
       if (error) {
+
+        logError(
+          req,
+          "Error obteniendo piezas",
+          error
+        );
 
         return responderError(
           res,
           500,
-          "Error consultando cat_piezas",
+          "No fue posible consultar el inventario.",
           error
         );
 
       }
 
-      return res.json({
-        count,
-        data
-      });
+      return res.json(
+        data || []
+      );
 
     }
   )
 );
-
 
 /* =========================================================
    ACTUALIZAR STOCK
