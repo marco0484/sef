@@ -20,10 +20,7 @@ const SUPABASE_URL =
   process.env.SUPABASE_URL ||
   "https://uqrbykxgsarsfyyvmibr.supabase.co";
 
-const SUPABASE_KEY =
-  process.env.SUPABASE_PUBLISHABLE_KEY ||
-  process.env.SUPABASE_ANON_KEY ||
-  process.env.SUPABASE_KEY;
+const SUPABASE_KEY = process.env.SUPABASE_SECRET_KEY;
 
 const EVIDENCE_BUCKET =
   process.env.SUPABASE_EVIDENCE_BUCKET ||
@@ -34,7 +31,7 @@ const MAX_IMAGE_SIZE =
 
 if (!SUPABASE_KEY) {
   throw new Error(
-    "Falta configurar SUPABASE_PUBLISHABLE_KEY, SUPABASE_ANON_KEY o SUPABASE_KEY."
+    "Falta configurar SUPABASE_SECRET_KEY en las variables de entorno."
   );
 }
 
