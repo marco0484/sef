@@ -527,20 +527,6 @@
 
           </span>
 
-
-          <span>
-
-            <small>
-              Acción rápida
-            </small>
-
-            <strong>
-              Solicitar refacción
-            </strong>
-
-          </span>
-
-
           <svg
             class="request-part-hero__arrow"
             viewBox="0 0 24 24"
@@ -552,50 +538,26 @@
                 M14 7l5 5-5 5
               "
             ></path>
-
           </svg>
-
-
         </button>
-
-
       </section>
 
 
 
-      <!-- =========================================
-           DASHBOARD VIEW
-           Conservado para compatibilidad
-      ========================================== -->
+      <!-- DASHBOARD VIEW-->
 
       <section
         id="dashboardView"
         class="dashboard-view"
       ></section>
 
+      <!-- KPIs -->
 
-
-      <!-- =========================================
-           KPIs
-      ========================================== -->
-
-      <section
-        class="kpi-grid dashboard-kpis"
-        aria-label="Indicadores de inventario"
-      >
-
-
-
+      <section class="kpi-grid dashboard-kpis" aria-label="Indicadores de inventario">
         <!-- COMPONENTES -->
-
         <article class="kpi-card kpi-card--primary">
-
-
           <div class="kpi-card__header">
-
-
             <div class="kpi-icon kpi-icon--blue">
-
               <svg viewBox="0 0 24 24">
 
                 <path
@@ -625,26 +587,11 @@
 
           <div class="kpi-info">
 
-            <span>
-              Componentes
-            </span>
-
-            <strong id="kpiTotal">
-              0
-            </strong>
-
+            <span> Componentes </span>
+            <strong id="kpiTotal"> 0 </strong>
           </div>
-
-
-          <p class="kpi-description">
-            Referencias activas
-          </p>
-
-
+          <p class="kpi-description"> Referencias activas </p>
         </article>
-
-
-
         <!-- PARO DE LÍNEA -->
 
         <article class="kpi-card kpi-card--critical critical">
@@ -1743,72 +1690,35 @@
           </span>
 
 
-          <strong id="evidencePart">
-            —
-          </strong>
-
-
+          <strong id="evidencePart"> — </strong>
         </div>
-
-
-
         <!-- COMENTARIO -->
 
         <div class="modal-field">
-
-
           <label for="evidenceComment">
-
             Comentario
-
-            <span>
-              Opcional
-            </span>
-
+            <span> Opcional </span>
           </label>
-
-
           <textarea
             id="evidenceComment"
             rows="4"
             maxlength="500"
             placeholder="Describe el movimiento, condición de la pieza o alguna observación..."
           ></textarea>
-
-
         </div>
-
-
-
-        <!-- =====================================
-             FOTO / EVIDENCIA
-        ====================================== -->
+        <!-- FOTO / EVIDENCIA-->
 
         <div class="modal-field">
-
-
           <label for="evidenceFile">
-
             Evidencia fotográfica
-
-            <span>
-              Requerida
-            </span>
-
+            <span> Requerida </span>
           </label>
-
-
-
           <label
             class="evidence-upload"
             for="evidenceFile"
           >
-
-
             <span class="evidence-upload__icon">
-
               <svg viewBox="0 0 24 24">
-
                 <path
                   d="
                     M4 7
@@ -1835,20 +1745,10 @@
 
             </span>
 
-
             <span class="evidence-upload__text">
-
-              <strong>
-                Tomar o seleccionar fotografía
-              </strong>
-
-              <small>
-                JPG, PNG o imagen desde la cámara
-              </small>
-
+              <strong> Tomar o seleccionar fotografía </strong>
+              <small> JPG, PNG o imagen desde la cámara</small>
             </span>
-
-
             <svg
               class="evidence-upload__arrow"
               viewBox="0 0 24 24"
@@ -1861,14 +1761,8 @@
                   -6-6
                 "
               ></path>
-
             </svg>
-
-
           </label>
-
-
-
           <input
             class="evidence-file-input"
             type="file"
@@ -1876,30 +1770,15 @@
             accept="image/*"
             capture="environment"
           >
-
-
         </div>
-
-
-
-        <!-- =====================================
-             PREVIEW
-        ====================================== -->
-
+        <!-- PREVIEW -->
         <div
           class="preview-container"
           id="previewContainer"
           aria-live="polite"
         ></div>
-
-
       </div>
-
-
-
-      <!-- =====================================
-           MODAL ACTIONS
-      ====================================== -->
+      <!-- MODAL ACTIONS  -->
 
       <div class="modal-actions">
 
@@ -1936,23 +1815,11 @@
           <span>
             Guardar evidencia
           </span>
-
         </button>
-
-
       </div>
-
-
     </div>
-
-
   </div>
-
-
-
-  <!-- =========================================
-       GLOBAL LOADER
-  ========================================== -->
+  <!-- GLOBAL LOADER-->
 
   <div
     class="loading-overlay hidden"
