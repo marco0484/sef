@@ -1379,12 +1379,6 @@ async function actualizarStock(id, cantidad){
 
     const texto = await response.text();
 
-    console.log("PUT STOCK");
-    console.log("ID:", id);
-    console.log("Cantidad:", cantidad);
-    console.log("Status:", response.status);
-    console.log("Respuesta:", texto);
-
     if(!response.ok){
 
       throw new Error(
@@ -2839,13 +2833,8 @@ async function guardarEvidencia(){
       `Pieza ${evidenciaActual.id_pieza}`
     );
 
-
     cerrarModal();
-
-
-    mostrarToast(
-      "Evidencia guardada correctamente."
-    );
+    mostrarToast( "Evidencia guardada correctamente.");
 
   }
 
@@ -2880,20 +2869,11 @@ async function guardarEvidencia(){
 
 function iniciarEvidencias(){
 
-  const search =
-    $("evidenceSearch");
-
-  const period =
-    $("evidencePeriod");
-
-  const clear =
-    $("clearEvidenceSearch");
-
-  const closeViewer =
-    $("closeEvidenceViewer");
-
-  const viewer =
-    $("evidenceViewer");
+  const search      = $("evidenceSearch");
+  const period      = $("evidencePeriod");
+  const clear       = $("clearEvidenceSearch");
+  const closeViewer = $("closeEvidenceViewer");
+  const viewer      =$("evidenceViewer");
 
 
   if(search){
@@ -2990,10 +2970,7 @@ function iniciarEvidencias(){
 
 
 async function cargarEvidencias(){
-
-  const grid =
-    $("evidenceGrid");
-
+  const grid = $("evidenceGrid");
 
   if(!grid){
     return;
