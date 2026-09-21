@@ -502,48 +502,7 @@
 
 
         </div>
-
-
       </header>
-
-
-
-      <!-- =========================================
-           DASHBOARD HERO
-      ========================================== -->
-
-      <section class="dashboard-hero">
-          <span class="request-part-hero__icon">
-            <svg viewBox="0 0 24 24">
-
-              <path
-                d="
-                  M12 3v18
-                  M3 12h18
-                "
-              ></path>
-
-            </svg>
-
-          </span>
-
-          <svg
-            class="request-part-hero__arrow"
-            viewBox="0 0 24 24"
-          >
-
-            <path
-              d="
-                M5 12h14
-                M14 7l5 5-5 5
-              "
-            ></path>
-          </svg>
-        </button>
-      </section>
-
-
-
       <!-- DASHBOARD VIEW-->
 
       <section
@@ -1016,26 +975,14 @@
                     6-6
                   "
                 ></path>
-
               </svg>
-
-
             </div>
-
-
           </div>
-
-
         </div>
 
-
-
-        <!-- =====================================
-             MOBILE QUICK REQUEST
-        ====================================== -->
+        <!-- MOBILE QUICK REQUEST-->
 
         <div class="mobile-request-action">
-
           <button
             type="button"
             class="mobile-request-btn"
@@ -1050,114 +997,47 @@
                   M3 12h18
                 "
               ></path>
-
             </svg>
-
             Solicitar refacción
 
           </button>
 
         </div>
-
-
-
-        <!-- =====================================
-             INVENTORY TABLE
-        ====================================== -->
+        <!-- INVENTORY TABLE -->
 
         <section
           class="table-container dashboard-table"
           aria-label="Inventario de refacciones"
         >
 
-
           <table>
-
-
             <thead>
-
               <tr>
-
-                <th scope="col">
-                  No. Parte
-                </th>
-
-                <th scope="col">
-                  Descripción
-                </th>
-
-                <th scope="col">
-                  Modelo
-                </th>
-
-                <th scope="col">
-                  Criticidad
-                </th>
-
-                <th scope="col">
-                  Stock
-                </th>
-
-                <th
-                  scope="col"
-                  class="table-actions-heading"
-                >
-                  Acciones
-                </th>
-
+                <th scope="col"> No. Parte </th>
+                <th scope="col"> Descripción </th>
+                <th scope="col"> Modelo </th>
+                <th scope="col"> Criticidad</th>
+                <th scope="col"> Stock </th>
+                <th scope="col" class="table-actions-heading"> Acciones</th>
               </tr>
-
             </thead>
+            <tbody id="inventoryTable" aria-live="polite" >
 
-
-
-            <tbody
-              id="inventoryTable"
-              aria-live="polite"
-            >
-
-
-              <!--
-                El contenido se genera desde script.js
-              -->
-
-
+              <!-- El contenido se genera desde script.js-->
             </tbody>
-
-
           </table>
-
-
         </section>
-
-
       </section>
 
-
-
-      <!-- =========================================
-           BITÁCORA OPERATIVA
-      ========================================== -->
-
+      <!-- BITÁCORA OPERATIVA -->
       <section class="history-section dashboard-section">
-
-
         <div class="section-header dashboard-section-header">
-
-
           <div>
 
-            <span class="section-kicker">
-              Trazabilidad
-            </span>
+            <span class="section-kicker"> Trazabilidad</span>
 
-            <h2>
-              Bitácora operativa
-            </h2>
-
-            <p>
-              Actividad reciente realizada sobre el inventario.
-            </p>
+            <h2> Bitácora operativa</h2>
+            <p> Actividad reciente realizada sobre el inventario. </p>
 
           </div>
 
@@ -1169,7 +1049,6 @@
           >
 
             Ver movimientos
-
             <svg viewBox="0 0 24 24">
 
               <path
@@ -1178,14 +1057,10 @@
                   M14 7l5 5-5 5
                 "
               ></path>
-
             </svg>
-
           </button>
 
-
         </div>
-
 
 
         <div
@@ -1193,34 +1068,12 @@
           id="historyList"
           aria-live="polite"
         >
-
-
-          <!--
-            El contenido se genera desde script.js
-          -->
-
-
+          <!--El contenido se genera desde script.js-->
         </div>
-
-
       </section>
-
-
     </main>
-
-
-
-    <!-- =========================================
-         MOBILE NAVIGATION
-    ========================================== -->
-
-    <nav
-      class="mobile-nav"
-      aria-label="Navegación móvil"
-    >
-
-
-
+    <!-- MOBILE NAVIGATION -->
+    <nav class="mobile-nav" aria-label="Navegación móvil">
       <!-- INICIO -->
 
       <button
@@ -1315,14 +1168,8 @@
 
         </svg>
 
-        <span>
-          Movimientos
-        </span>
-
+        <span> Movimientos </span>
       </button>
-
-
-
       <!-- EVIDENCIAS -->
 
       <button
@@ -1397,17 +1244,10 @@
 
           </svg>
 
-          <span>
-            Más
-          </span>
-
+          <span> Más </span>
         </summary>
 
-
-
-        <!-- =====================================
-             MOBILE BOTTOM SHEET
-        ====================================== -->
+        <!--  MOBILE BOTTOM SHEET -->
 
         <div class="mobile-more-backdrop"></div>
 
@@ -1420,29 +1260,16 @@
 
 
           <div class="mobile-sheet-handle"></div>
-
-
           <div class="mobile-sheet-header">
 
             <div>
 
-              <span>
-                SEFERAN
-              </span>
-
-              <h2>
-                Más opciones
-              </h2>
-
+              <span> SFA </span>
+              <h2> Más opciones </h2>
             </div>
-
           </div>
 
-
-
           <div class="mobile-sheet-options">
-
-
             <!-- AUDITORÍA -->
 
             <button
@@ -1476,22 +1303,10 @@
 
               <span>
 
-                <strong>
-                  Auditoría
-                </strong>
-
-                <small>
-                  Incidencias y trazabilidad
-                </small>
-
+                <strong> Auditoría </strong>
+                <small> Incidencias y trazabilidad </small>
               </span>
-
-
-              <svg
-                class="mobile-sheet-arrow"
-                viewBox="0 0 24 24"
-              >
-
+              <svg class="mobile-sheet-arrow" viewBox="0 0 24 24" >
                 <path
                   d="
                     m9 18
@@ -1499,13 +1314,8 @@
                     -6-6
                   "
                 ></path>
-
               </svg>
-
             </button>
-
-
-
             <!-- USUARIOS -->
 
             <button
